@@ -9,6 +9,7 @@ public class MapGeneration : MonoBehaviour
     public float offsetx;
     public float miny, maxy;
     public float SpawnPos;
+    public float SpawnFreq;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class MapGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((transform.position.x - SpawnPos) >= 12)
+        if ((transform.position.x - SpawnPos) >= SpawnFreq)
         SpawnMapPiece();
     }
 
