@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public Sprite dead;
     public float yoffset;
     public bool isDead;
+    public GameObject curtain;
 
     public Sprite[] hearts;
     public Image heartsicon;
@@ -43,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void CheckDead()
     {
-        if (CurHealth <= 0)
+        if (CurHealth <= 0 && !isDead)
             Death();
 
         else if (!isDead)
@@ -66,6 +67,7 @@ public class PlayerHealth : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = dead;
         GameObject.Find("Main Camera").GetComponent<CameraMove>().CameraSpeed = 0;  
         heartsicon.sprite = hearts[0];  
+        StartCoroutine(ReloadDelay());
     }
 
     void OnTriggerStay2D (Collider2D collision)
@@ -74,6 +76,9 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(collision.gameObject.GetComponent<EnemyInfo>().PlayerDamage);
         }
+        else if ((collision.gameObject.CompareTag("MainCamera")) && !isDead)
+        Death();
+        
     }
 
     IEnumerator TakeDamageEffect()
@@ -92,5 +97,12 @@ public class PlayerHealth : MonoBehaviour
             sprite.color = new Color(sprite.color.r,sprite.color.g,sprite.color.b,1);
             yield return new WaitForSeconds(InvDel);
         }
+    }
+
+    IEnumerator ReloadDelay()
+    {
+        yield return new WaitForSeconds(2);
+        curtain.SetActive(true);
+        curtain.GetComponent<CurtainScript>().FadeTo();
     }
 }
