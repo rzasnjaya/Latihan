@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,10 +10,20 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer sprite;
     public float ColorChangeTime, InvDel;
     public float Transparancy;
+    public int MaxHealth;
+    public int CurHealth;
+    public Sprite dead;
+    public float yoffset;
+    public bool isDead;
+
+    public Sprite[] hearts;
+    public Image heartsicon;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        isDead = false;
+        CurHealth = MaxHealth;
     }
 
     // Update is called once per frame
@@ -26,10 +37,35 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        print("Player took" + damage.ToString() + " damage.");
-        InvTime = MaxInvTime;
-        StartCoroutine(TakeDamageEffect());
-        StartCoroutine(InvicibilityTime());
+        CurHealth -= damage;
+        CheckDead();
+    }
+
+    public void CheckDead()
+    {
+        if (CurHealth <= 0)
+            Death();
+
+        else if (!isDead)
+        {
+            InvTime = MaxInvTime;
+            StartCoroutine(TakeDamageEffect());
+            StartCoroutine(InvicibilityTime());
+            heartsicon.sprite = hearts[CurHealth];
+        }
+    }
+
+    public void Death()
+    {
+        isDead = true;
+        gameObject.GetComponent<PlayerMovement>().enabled = false;
+        transform.position = new Vector3(transform.position.x, transform.position.y + yoffset, transform.position.z);
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+        gameObject.GetComponent<Animator>().enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().sprite = dead;
+        GameObject.Find("Main Camera").GetComponent<CameraMove>().CameraSpeed = 0;  
+        heartsicon.sprite = hearts[0];  
     }
 
     void OnTriggerStay2D (Collider2D collision)
