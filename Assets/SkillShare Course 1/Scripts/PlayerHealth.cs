@@ -68,6 +68,7 @@ public class PlayerHealth : MonoBehaviour
         GameObject.Find("Main Camera").GetComponent<CameraMove>().CameraSpeed = 0;  
         heartsicon.sprite = hearts[0];  
         StartCoroutine(ReloadDelay());
+        gameObject.GetComponent<PlayerDiamonds>().SaveDiamonds();
     }
 
     void OnTriggerStay2D (Collider2D collision)
