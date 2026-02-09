@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7246985684748569413}
   - component: {fileID: 1073665666180487142}
   - component: {fileID: 6297551992780968481}
+  - component: {fileID: -1137246411123137406}
   m_Layer: 0
   m_Name: FloorTile7A
   m_TagString: Ground
@@ -133,6 +134,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.497267, y: 1.1003356}
   m_EdgeRadius: 0
+--- !u!114 &-1137246411123137406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8979798185575211789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b993633916d4c084bad01a860b427ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chance: 3
+  diamond: {fileID: 6359182853854226548, guid: 5137c6e7a0b0677498780b79c0a2bde2, type: 3}
+  rb: {fileID: 0}
+  offset: 0.5
+  launch: 8
 --- !u!1001 &2102229059270131171
 PrefabInstance:
   m_ObjectHideFlags: 0
