@@ -436,16 +436,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maptiles:
-  - {fileID: 8979798185575211789, guid: 86ff393565330074d8fcbba57d606983, type: 3}
-  - {fileID: 8979798185575211789, guid: a11b00f51fac41c4d8f0fab64634f121, type: 3}
-  - {fileID: 8979798185575211789, guid: 43918e66ee0ddcc4d933c96216ab5fca, type: 3}
-  - {fileID: 8979798185575211789, guid: 6f9cf88a813fc34479f0f3865c0814f4, type: 3}
-  - {fileID: 8979798185575211789, guid: bef7f87f44527ff45b5dd5390fd4876f, type: 3}
-  - {fileID: 8979798185575211789, guid: af132ee0b42c0f4449d202c7f30f6892, type: 3}
-  - {fileID: 8979798185575211789, guid: df430cf74300ac745b3629c4c17faa87, type: 3}
-  - {fileID: 8979798185575211789, guid: 5c94dc8b363bae74a813042888a5b2da, type: 3}
-  - {fileID: 8979798185575211789, guid: 33525fe2c34357441af924dcea99cfd7, type: 3}
-  - {fileID: 8979798185575211789, guid: 44f93cf5c31653f4f911629ec4bf5c79, type: 3}
+  - {fileID: 8979798185575211789, guid: a9c2f36bf3f092a489ffb1357ff5b7a1, type: 3}
+  - {fileID: 8979798185575211789, guid: a9c2f36bf3f092a489ffb1357ff5b7a1, type: 3}
   tilestorage: {fileID: 282824566}
   offsetx: 25
   miny: -7
