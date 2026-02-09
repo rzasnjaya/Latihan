@@ -436,8 +436,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maptiles:
+  - {fileID: 8979798185575211789, guid: 86ff393565330074d8fcbba57d606983, type: 3}
+  - {fileID: 8979798185575211789, guid: a11b00f51fac41c4d8f0fab64634f121, type: 3}
+  - {fileID: 8979798185575211789, guid: 43918e66ee0ddcc4d933c96216ab5fca, type: 3}
+  - {fileID: 8979798185575211789, guid: 6f9cf88a813fc34479f0f3865c0814f4, type: 3}
+  - {fileID: 8979798185575211789, guid: bef7f87f44527ff45b5dd5390fd4876f, type: 3}
+  - {fileID: 8979798185575211789, guid: af132ee0b42c0f4449d202c7f30f6892, type: 3}
+  - {fileID: 8979798185575211789, guid: df430cf74300ac745b3629c4c17faa87, type: 3}
+  - {fileID: 8979798185575211789, guid: 5c94dc8b363bae74a813042888a5b2da, type: 3}
+  - {fileID: 8979798185575211789, guid: 33525fe2c34357441af924dcea99cfd7, type: 3}
+  - {fileID: 8979798185575211789, guid: 44f93cf5c31653f4f911629ec4bf5c79, type: 3}
+  - {fileID: 8979798185575211789, guid: 03e205ffddef2bb4987a73349ce6ecb8, type: 3}
   - {fileID: 8979798185575211789, guid: a9c2f36bf3f092a489ffb1357ff5b7a1, type: 3}
-  - {fileID: 8979798185575211789, guid: a9c2f36bf3f092a489ffb1357ff5b7a1, type: 3}
+  - {fileID: 8979798185575211789, guid: 5b13b56c3ace0e54290745670fbc5e82, type: 3}
+  - {fileID: 8979798185575211789, guid: d5869e2795e177245aa7dfbea7b1db36, type: 3}
+  - {fileID: 8979798185575211789, guid: 7c501402a85a49a43869b044c4ab1525, type: 3}
+  - {fileID: 8979798185575211789, guid: 6872d95cf1418074498a08d985d3a22c, type: 3}
+  - {fileID: 8979798185575211789, guid: 667d37699fb7c5649881e6ff0dabd233, type: 3}
+  - {fileID: 8979798185575211789, guid: bec2260a433808545acc8146b64275aa, type: 3}
+  - {fileID: 8979798185575211789, guid: f23f7750b11c7e2428b544e24110444a, type: 3}
+  - {fileID: 8979798185575211789, guid: 41a20693af6cec94f98777434e62c356, type: 3}
   tilestorage: {fileID: 282824566}
   offsetx: 25
   miny: -7
@@ -795,6 +813,7 @@ GameObject:
   - component: {fileID: 1353687507}
   - component: {fileID: 1353687506}
   - component: {fileID: 1353687510}
+  - component: {fileID: 1353687512}
   - component: {fileID: 1353687511}
   m_Layer: 0
   m_Name: Player
@@ -981,6 +1000,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1353687512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353687505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0651f4f10a5504ba457e19f6be72e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxInvTime: 1.5
+  InvTime: 0
+  sprite: {fileID: 1353687508}
+  ColorChangeTime: 0.2
 --- !u!1 &2116442304
 GameObject:
   m_ObjectHideFlags: 0
