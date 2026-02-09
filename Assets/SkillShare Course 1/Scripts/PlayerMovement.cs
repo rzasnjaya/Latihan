@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public bool IsGrounded;
     public float x;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +25,18 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
+
+        anim.SetBool("IsRunning", x !=0);
     }
 
     void FixedUpdate()
     {
         rb.velocity = new Vector2(x * PlayerSpeed, rb.velocity.y);
+
+        if (rb.velocity.x < 0)
+        transform.rotation = Quaternion.Euler(0,180,0);
+        else if (rb.velocity.x > 0)
+        transform.rotation = Quaternion.Euler(0,0,0);
     }
 
     public void Jump()
@@ -41,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             IsGrounded = true;
+            anim.SetBool("IsGrounded", IsGrounded);
         }    
     }
 
@@ -49,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Ground"))
         {
             IsGrounded = false;
+            anim.SetBool("IsGrounded", IsGrounded);
         }       
     }
 }
