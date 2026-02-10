@@ -6,6 +6,7 @@ public class CameraMove : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float CameraSpeed;
+    public float speed = 0;
 
     void FixedUpdate()
     {

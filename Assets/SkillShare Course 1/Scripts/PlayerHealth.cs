@@ -66,7 +66,7 @@ public class PlayerHealth : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
         gameObject.GetComponent<Animator>().enabled = false;
         gameObject.GetComponent<SpriteRenderer>().sprite = dead;
-        GameObject.Find("Main Camera").GetComponent<CameraMove>().CameraSpeed = 0;  
+        GameObject.Find("Main Camera").GetComponent<CameraMove>().speed = 0;  
         heartsicon.sprite = hearts[0];  
         StartCoroutine(ReloadDelay());
         gameObject.GetComponent<PlayerDiamonds>().SaveDiamonds();
