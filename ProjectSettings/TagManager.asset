@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Diamond
   - StartZone
+  - Obstacle
   layers:
   - Default
   - TransparentFX
