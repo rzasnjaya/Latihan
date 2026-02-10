@@ -8,10 +8,14 @@ public class RobotMove : MonoBehaviour
     public float x;
     public float minx, maxx;
     public Rigidbody2D rb;
+    public AudioManager am;
     // Start is called before the first frame update
     void Start()
     {
         x = speed;
+        am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        am.sfx[1].volume = 0.01f;
+        transform.parent.GetComponent<TileClear>().robotonboard = true;
     }
 
     // Update is called once per frame

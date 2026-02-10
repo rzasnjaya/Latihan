@@ -5,6 +5,7 @@ using UnityEngine;
 public class TileClear : MonoBehaviour
 {
     public Transform cam;
+    public bool robotonboard;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,10 @@ public class TileClear : MonoBehaviour
     void Update()
     {
         if (transform.position.x - cam.position.x <= -28)
-        Destroy(gameObject);   
+        {
+            Destroy(gameObject);
+            if (robotonboard)
+                GameObject.Find("AudioManager").GetComponent<AudioManager>().sfx[1].volume = 0f;
+        }
     }
 }

@@ -20,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
     public Sprite[] hearts;
     public Image heartsicon;
     public ParticleSystem ps;
+    public AudioManager am;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         CurHealth -= damage;
+        am.PlaySound(am.sfx[2]);
         CheckDead();
     }
 
@@ -71,6 +73,7 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(ReloadDelay());
         gameObject.GetComponent<PlayerDiamonds>().SaveDiamonds();
         ps.Play();
+
     }
 
     void OnTriggerStay2D (Collider2D collision)
@@ -81,7 +84,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else if ((collision.gameObject.CompareTag("MainCamera")) && !isDead)
         Death();
-        
+        am.PlaySound(am.sfx[3]);
     }
 
     IEnumerator TakeDamageEffect()

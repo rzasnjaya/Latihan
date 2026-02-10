@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1073665666180487142}
   - component: {fileID: 6297551992780968481}
   - component: {fileID: -1137246411123137406}
+  - component: {fileID: -5972810879872165004}
   m_Layer: 0
   m_Name: FloorTile7A
   m_TagString: Ground
@@ -151,6 +152,20 @@ MonoBehaviour:
   rb: {fileID: 0}
   offset: 0.5
   launch: 8
+--- !u!114 &-5972810879872165004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8979798185575211789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ed790d42e6cfa4282e8f94b4f5f67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  robotonboard: 0
 --- !u!1001 &2102229059270131171
 PrefabInstance:
   m_ObjectHideFlags: 0
