@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
 
     public Sprite[] hearts;
     public Image heartsicon;
+    public ParticleSystem ps;
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +70,7 @@ public class PlayerHealth : MonoBehaviour
         heartsicon.sprite = hearts[0];  
         StartCoroutine(ReloadDelay());
         gameObject.GetComponent<PlayerDiamonds>().SaveDiamonds();
+        ps.Play();
     }
 
     void OnTriggerStay2D (Collider2D collision)
