@@ -10,6 +10,6 @@ public class CameraMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(CameraSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(speed, rb.velocity.y);
     }
 }

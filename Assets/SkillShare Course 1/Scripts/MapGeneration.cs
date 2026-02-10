@@ -11,7 +11,6 @@ public class MapGeneration : MonoBehaviour
     public float miny, maxy;
     public float SpawnPos;
     public float SpawnFreq;
-    // Start is called before the first frame update
     public void BeginGame()
     {
         SpawnMapPiece(true);
@@ -21,7 +20,7 @@ public class MapGeneration : MonoBehaviour
     void Update()
     {
         if ((transform.position.x - SpawnPos) >= SpawnFreq)
-        SpawnMapPiece(false);
+            SpawnMapPiece(false);
     }
 
     public void SpawnMapPiece(bool starting)
@@ -30,8 +29,8 @@ public class MapGeneration : MonoBehaviour
         GameObject tile = maptiles[Random.Range(0, maptiles.Length)];
         GameObject spawnedtile = Instantiate(tile) as GameObject;
         spawnedtile.transform.SetParent(tilestorage);
-        spawnedtile.transform.position = new Vector3(gameObject.transform.position.x + offsetx, Random.Range(miny, maxy), 0);
+        spawnedtile.transform.position = new Vector3(transform.position.x + offsetx, Random.Range(miny, maxy), 0);
         if (starting)
-            spawnedtile.transform.position = new Vector3(gameObject.transform.position.x + offsetx, Random.Range(miny, maxy), 0);
+            spawnedtile.transform.position = new Vector3(transform.position.x + startoffsetx, Random.Range(miny, maxy), 0);
     }
 }
