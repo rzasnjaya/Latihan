@@ -11,9 +11,11 @@ public class StateManager : MonoBehaviour
     public SpriteRenderer sprite;
     public ParticleSystem ps;
     public MusicManager music;
+    public Menu menu;
     void Start()
     {
-        state = "Playing";
+        state = "Idle";
+        move.ResetGravity(0);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -37,11 +39,17 @@ public class StateManager : MonoBehaviour
 
     public void Respawn()
     {
+        menu.ChangeMenu(true);
         transform.position = new Vector3(-8.52f, -1.69f, 0);
+    }
+
+    public void StartGame()
+    {
         state = "Playing";
         move.ResetGravity(3);
         map.ClearStorage();
         sprite.enabled = true;
+        menu.ChangeMenu(false);
     }
 
     IEnumerator Delay()
