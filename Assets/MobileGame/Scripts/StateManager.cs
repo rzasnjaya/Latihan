@@ -8,6 +8,9 @@ public class StateManager : MonoBehaviour
     public MapSpawner map;
     public Movement move;
     public Score score;
+    public SpriteRenderer sprite;
+    public ParticleSystem ps;
+    public MusicManager music;
     void Start()
     {
         state = "Playing";
@@ -26,6 +29,9 @@ public class StateManager : MonoBehaviour
         state = "Dead";
         move.ResetGravity(0);
         score.End();
+        sprite.enabled = false;
+        ps.Play();
+        music.PlayDie();
         StartCoroutine(Delay());
     }
 
@@ -35,6 +41,7 @@ public class StateManager : MonoBehaviour
         state = "Playing";
         move.ResetGravity(3);
         map.ClearStorage();
+        sprite.enabled = true;
     }
 
     IEnumerator Delay()

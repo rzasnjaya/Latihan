@@ -10,6 +10,12 @@ public class Score : MonoBehaviour
     public TextMeshProUGUI scoretext, highscoretext;
     public int highscore;
 
+    void Start()
+    {
+        highscore = PlayerPrefs.GetInt("Score");
+        highscoretext.text = "Highscore: " + highscore.ToString();
+    }
+
     void Update()
     {
         score = Mathf.RoundToInt(player.transform.position.x - transform.position.x);
@@ -22,6 +28,8 @@ public class Score : MonoBehaviour
         {
             highscore = score;
             highscoretext.text = "Highscore: " + highscore.ToString();
+            PlayerPrefs.SetInt("Score", highscore);
+            PlayerPrefs.Save();
         }
     }
 }

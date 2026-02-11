@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     public int jumpforce;
     public bool grounded;
     public StateManager statemanage;
+    public MusicManager music;
     void Start()
     {
         
@@ -44,6 +45,7 @@ public class Movement : MonoBehaviour
 
     public void Jump()
     {
+        music.PlayJump();
         rb.velocity = new Vector2(rb.velocity.x, jumpforce);
     }
 
