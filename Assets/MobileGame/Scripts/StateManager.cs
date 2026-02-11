@@ -5,6 +5,9 @@ using UnityEngine;
 public class StateManager : MonoBehaviour
 {
     public string state;
+    public MapSpawner map;
+    public Movement move;
+    public Score score;
     void Start()
     {
         state = "Playing";
@@ -12,7 +15,7 @@ public class StateManager : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<PolygonCollider2D>().CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle"))
         {
             Die();
         }
@@ -21,6 +24,8 @@ public class StateManager : MonoBehaviour
     public void Die()
     {
         state = "Dead";
+        move.ResetGravity(0);
+        score.End();
         StartCoroutine(Delay());
     }
 
@@ -28,6 +33,8 @@ public class StateManager : MonoBehaviour
     {
         transform.position = new Vector3(-8.52f, -1.69f, 0);
         state = "Playing";
+        move.ResetGravity(3);
+        map.ClearStorage();
     }
 
     IEnumerator Delay()

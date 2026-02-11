@@ -31,7 +31,15 @@ public class Movement : MonoBehaviour
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
         }
-        
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
+    }
+
+    public void ResetGravity(int x)
+    {
+        rb.gravityScale = x;
     }
 
     public void Jump()
@@ -39,7 +47,7 @@ public class Movement : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, jumpforce);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Ground"))
         {
