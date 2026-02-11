@@ -12,6 +12,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     public float boost = 1f;
     private float boostPower = 5f;
+    private bool boosting = false;
+
+    [SerializeField] private float energy;
+    [SerializeField] private float maxEnergy;
+    [SerializeField] private float energyRegen;
 
     void Awake()
     {
@@ -29,6 +34,8 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        energy = maxEnergy;
+        UIController.Instance.UpdateEnergySlider(energy, maxEnergy);
     }
 
     void Update()
@@ -53,17 +60,40 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = new Vector2(playerDirection.x * moveSpeed * boost, playerDirection.y * moveSpeed * boost);
+
+        if (boosting)
+        {
+        if(energy >= 0.2) energy -= 0.2f;
+        else 
+        { 
+            ExitBoost();
+        }
+        }
+        else
+        {
+            if (energy < maxEnergy)
+            {
+                energy += energyRegen;
+            }
+        }
+        UIController.Instance.UpdateEnergySlider(energy, maxEnergy);
     }
 
     private void EnterBoost()
     {
-        animator.SetBool("boosting", true);
-        boost = boostPower;
+        if (energy > 10)
+        {
+            animator.SetBool("boosting", true);
+            boost = boostPower;
+            boosting = true;
+        }
+        
     }
 
     private void ExitBoost()
     {
         animator.SetBool("boosting", false);
         boost = 1f;
+        boosting = false;
     }
 }
