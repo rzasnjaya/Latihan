@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 433361095}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -798,21 +798,15 @@ MonoBehaviour:
       type: 3}
     spawnTimer: 0
     spawnInterval: 1
-    objetsPerWave: 5
+    objetsPerWave: 10
     spawnedObjectCount: 0
-  - prefab: {fileID: 4633561390323428972, guid: a499bb9f302952b4e9d628fb061f6b6f,
+  - prefab: {fileID: 4633561390323428972, guid: af4033d173267034490ff86a76220083,
       type: 3}
     spawnTimer: 0
-    spawnInterval: 1.5
-    objetsPerWave: 3
+    spawnInterval: 5
+    objetsPerWave: 1
     spawnedObjectCount: 0
   - prefab: {fileID: 8423540955678288275, guid: fe1f1e61e0077fc4bb2f27f492659b65,
-      type: 3}
-    spawnTimer: 0
-    spawnInterval: 0.2
-    objetsPerWave: 2
-    spawnedObjectCount: 0
-  - prefab: {fileID: 4633561390323428972, guid: a499bb9f302952b4e9d628fb061f6b6f,
       type: 3}
     spawnTimer: 0
     spawnInterval: 5
@@ -2700,7 +2694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.60784316, g: 0.60784316, b: 1, a: 0.392}
+  m_Color: {r: 0.60784316, g: 0.60784316, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

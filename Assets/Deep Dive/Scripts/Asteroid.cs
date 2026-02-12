@@ -12,6 +12,8 @@ public class Asteroid : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+        
         spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
         float pushX = Random.Range(-1f, 0);
         float pushY = Random.Range(-1f, 1f);

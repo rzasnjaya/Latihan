@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Deep Dive/Scene/GameOver.unity
     guid: 2f4d157cc55e90049a69862d242f9909
+  - enabled: 1
+    path: Assets/Deep Dive/Scene/Level 1 Complete.unity
+    guid: e7b77ba7353816242aea68d1d8b8c162
   m_configObjects: {}
