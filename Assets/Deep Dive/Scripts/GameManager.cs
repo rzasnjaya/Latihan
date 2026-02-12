@@ -19,4 +19,33 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Fire3"))
+        {
+            Pause();
+        }
+    }
+
+    public void Pause()
+    {
+        if (UIController.Instance.pausePanel.activeSelf == false)
+        {
+            UIController.Instance.pausePanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            UIController.Instance.pausePanel.SetActive(false);
+            Time.timeScale = 1f;
+            PlayerController.Instance.ExitBoost();
+        }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
+

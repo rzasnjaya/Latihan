@@ -19,7 +19,7 @@ TagManager:
   - Player
   - LevelBoundaries
   - Obstacle
-  - 
+  - UI
   - 
   - 
   - 
@@ -52,9 +52,9 @@ TagManager:
   - name: Player
     uniqueID: 3205672741
     locked: 0
-  - name: UI
-    uniqueID: 2043269949
-    locked: 0
   - name: Objects
     uniqueID: 928495655
+    locked: 0
+  - name: UI
+    uniqueID: 2043269949
     locked: 0
