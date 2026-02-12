@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/SkillShare Course 1/Scenes/MainScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Deep Dive/Scene/MainMenu.unity
+    guid: 313d780629fa97c41ab14660d39eee2c
+  - enabled: 1
+    path: Assets/Deep Dive/Scene/Level1.unity
+    guid: fd752497b96db744b8f8c62a0c670fba
   m_configObjects: {}
