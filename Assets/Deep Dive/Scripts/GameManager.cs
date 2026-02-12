@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        StarCoroutine(ShowGameOverScreen());
+        StartCoroutine(ShowGameOverScreen());
     }
 
     IEnumerator ShowGameOverScreen()
