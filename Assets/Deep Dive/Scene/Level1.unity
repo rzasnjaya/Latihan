@@ -701,7 +701,7 @@ MonoBehaviour:
   maxEnergy: 50
   energyRegen: 0.1
   health: 0
-  maxHealth: 5
+  maxHealth: 3
   destroyEffect: {fileID: 6890167714664360184, guid: e37ca08b73ccd6e4ab9820f0174cce3b,
     type: 3}
 --- !u!95 &433361094

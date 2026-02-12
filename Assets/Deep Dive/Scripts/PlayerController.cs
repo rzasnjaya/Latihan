@@ -123,6 +123,7 @@ public class PlayerController : MonoBehaviour
             boost = 0f;
             gameObject.SetActive(false);
             Instantiate(destroyEffect, transform.position, transform.rotation);
+            GameManager.Instance.GameOver();
         }
     }
 }

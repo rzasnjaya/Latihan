@@ -53,5 +53,16 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void GameOver()
+    {
+        StarCoroutine(ShowGameOverScreen());
+    }
+
+    IEnumerator ShowGameOverScreen()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("GameOver");
+    }
 }
 
