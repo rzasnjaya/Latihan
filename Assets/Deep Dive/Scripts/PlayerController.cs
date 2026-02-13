@@ -8,6 +8,11 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
+
+    private Material defaultMaterial;
+    [SerializeField] private Material whiteMaterial;
+
     private Vector2 playerDirection;
     [SerializeField] private float moveSpeed;
     public float boost = 1f;
@@ -37,6 +42,9 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        defaultMaterial = spriteRenderer.material;
+
         energy = maxEnergy;
         UIController.Instance.UpdateEnergySlider(energy, maxEnergy);
         health = maxHealth;
@@ -120,6 +128,8 @@ public class PlayerController : MonoBehaviour
         health -= damage;
         UIController.Instance.UpdateHealthSlider(health, maxHealth);
         AudioManager2.Instance.PlaySound(AudioManager2.Instance.hit);
+        spriteRenderer.material = whiteMaterial;
+        StartCoroutine("ResetMaterial");
         if (health <= 0)
         {
             boost = 0f;
@@ -128,5 +138,11 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.GameOver();
             AudioManager2.Instance.PlaySound(AudioManager2.Instance.ice);
         }
+    }
+
+    IEnumerator ResetMaterial()
+    {
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.material = defaultMaterial;
     }
 }

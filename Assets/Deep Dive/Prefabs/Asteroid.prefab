@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aba195439a492e43b959feea256dff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whiteMaterial: {fileID: 2100000, guid: 7001718b9d88b624e90b25789b14a046, type: 2}
   sprites:
   - {fileID: 2100278135, guid: 72e9250ce0409e54981a5e1fc41ae09e, type: 3}
   - {fileID: -1625763803, guid: 72e9250ce0409e54981a5e1fc41ae09e, type: 3}

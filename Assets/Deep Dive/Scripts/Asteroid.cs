@@ -7,11 +7,15 @@ public class Asteroid : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
 
+    private Material defaultMaterial;
+    [SerializeField] private Material whiteMaterial;
+
     [SerializeField] private Sprite[] sprites;
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        defaultMaterial = spriteRenderer.material;
         rb = GetComponent<Rigidbody2D>();
         
         spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
@@ -30,5 +34,20 @@ public class Asteroid : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionEnter2D (Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            spriteRenderer.material = whiteMaterial;
+            StartCoroutine("ResetMaterial");
+        }
+    }
+
+    IEnumerator ResetMaterial()
+    {
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.material = defaultMaterial;
     }
 }
