@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
     {
         if (energy > 10)
         {
+            AudioManager2.Instance.PlaySound(AudioManager2.Instance.fire);
             animator.SetBool("boosting", true);
             boost = boostPower;
             boosting = true;
@@ -118,12 +119,14 @@ public class PlayerController : MonoBehaviour
     {
         health -= damage;
         UIController.Instance.UpdateHealthSlider(health, maxHealth);
+        AudioManager2.Instance.PlaySound(AudioManager2.Instance.hit);
         if (health <= 0)
         {
             boost = 0f;
             gameObject.SetActive(false);
             Instantiate(destroyEffect, transform.position, transform.rotation);
             GameManager.Instance.GameOver();
+            AudioManager2.Instance.PlaySound(AudioManager2.Instance.ice);
         }
     }
 }
