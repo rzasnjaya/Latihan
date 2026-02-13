@@ -1855,7 +1855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31290dbcc715f454aaf833603bc69c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldSpeed: 2
+  worldSpeed: 1
   critterCounter: 0
   boss1: {fileID: 7152483425587358278, guid: 1db848f9baa901642879c848f2667751, type: 3}
 --- !u!4 &595744216
