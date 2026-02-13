@@ -15,6 +15,7 @@ public class AudioManager2 : MonoBehaviour
     public AudioSource hitrock;
     public AudioSource shoot;
     public AudioSource squished;
+    public AudioSource burn;
 
     
     void Awake()
