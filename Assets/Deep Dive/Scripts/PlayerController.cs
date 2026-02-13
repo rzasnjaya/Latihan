@@ -128,6 +128,10 @@ public class PlayerController : MonoBehaviour
         {
             TakeDamage(1);
         }
+        else if (collision.gameObject.CompareTag("Boss"))
+        {
+            TakeDamage(5);
+        }
     }
 
     private void TakeDamage(int damage)

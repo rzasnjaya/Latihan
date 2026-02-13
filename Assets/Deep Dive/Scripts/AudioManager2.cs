@@ -16,6 +16,8 @@ public class AudioManager2 : MonoBehaviour
     public AudioSource shoot;
     public AudioSource squished;
     public AudioSource burn;
+    public AudioSource hitArmor;
+    public AudioSource bossCharge;
 
     
     void Awake()

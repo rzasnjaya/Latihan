@@ -72,12 +72,14 @@ public class Critter1 : MonoBehaviour
             Instantiate(zappedEffect, transform.position, transform.rotation);
             Destroy(gameObject);
             AudioManager2.Instance.PlayModifiedSound(AudioManager2.Instance.squished);
+            GameManager.Instance.critterCounter++;
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
             Instantiate(burnEffect, transform.position, transform.rotation);
             Destroy(gameObject);
             AudioManager2.Instance.PlayModifiedSound(AudioManager2.Instance.burn);
+            GameManager.Instance.critterCounter++;
         }
     }
 }
