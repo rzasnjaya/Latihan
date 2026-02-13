@@ -28,6 +28,7 @@ public class PhaserWeapon : MonoBehaviour
     {
         //Instantiate(prefab, transform.position, transform.rotation);
         GameObject bullet = bulletPool.GetPooledObject();
+        AudioManager2.Instance.PlayModifiedSound(AudioManager2.Instance.shoot);
         bullet.transform.position = transform.position;
         bullet.SetActive(true);
     }

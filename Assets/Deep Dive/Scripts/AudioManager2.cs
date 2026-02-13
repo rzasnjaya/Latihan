@@ -11,6 +11,9 @@ public class AudioManager2 : MonoBehaviour
     public AudioSource hit;
     public AudioSource pause;
     public AudioSource unpause;
+    public AudioSource boom2;
+    public AudioSource hitrock;
+    public AudioSource shoot;
 
     
     void Awake()
@@ -29,6 +32,13 @@ public class AudioManager2 : MonoBehaviour
 
     public  void PlaySound(AudioSource sound)
     {
+        sound.Stop();
+        sound.Play();
+    }
+
+    public  void PlayModifiedSound(AudioSource sound)
+    {
+        sound.pitch = Random.Range(0.7f, 1.3f);
         sound.Stop();
         sound.Play();
     }

@@ -9,6 +9,8 @@ public class Asteroid : MonoBehaviour
 
     private Material defaultMaterial;
     [SerializeField] private Material whiteMaterial;
+    [SerializeField] private GameObject destroyEffect;
+    [SerializeField] private int lives;
 
     [SerializeField] private Sprite[] sprites;
     // Start is called before the first frame update
@@ -23,6 +25,8 @@ public class Asteroid : MonoBehaviour
         float pushY = Random.Range(-1f, 1f);
 
         rb.velocity = new Vector2(pushX,pushY);
+        float randomScale = Random.Range(0.6f, 1f);
+        transform.localScale = new Vector2(randomScale, randomScale);
     }
 
     // Update is called once per frame
@@ -42,6 +46,14 @@ public class Asteroid : MonoBehaviour
         {
             spriteRenderer.material = whiteMaterial;
             StartCoroutine("ResetMaterial");
+            AudioManager2.Instance.PlayModifiedSound(AudioManager2.Instance.hitrock);
+            lives--;
+            if (lives <=0)
+            {
+                Instantiate(destroyEffect, transform.position, transform.rotation);
+                AudioManager2.Instance.PlayModifiedSound(AudioManager2.Instance.boom2);
+                Destroy(gameObject);
+            }
         }
     }
 

@@ -162,6 +162,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whiteMaterial: {fileID: 2100000, guid: 7001718b9d88b624e90b25789b14a046, type: 2}
+  destroyEffect: {fileID: 2741441434104683212, guid: d592da035484ae245a4e20c4f5aaa982,
+    type: 3}
+  lives: 5
   sprites:
   - {fileID: 2100278135, guid: 72e9250ce0409e54981a5e1fc41ae09e, type: 3}
   - {fileID: -1625763803, guid: 72e9250ce0409e54981a5e1fc41ae09e, type: 3}
