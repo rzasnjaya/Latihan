@@ -18,6 +18,7 @@ public class AudioManager2 : MonoBehaviour
     public AudioSource burn;
     public AudioSource hitArmor;
     public AudioSource bossCharge;
+    public AudioSource bossSpawn;
 
     
     void Awake()

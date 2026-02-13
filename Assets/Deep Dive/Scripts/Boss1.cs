@@ -18,40 +18,56 @@ public class Boss1 : MonoBehaviour
         lives = 100;
         animator = GetComponent<Animator>();
         EnterChargeState();
+        AudioManager2.Instance.PlaySound(AudioManager2.Instance.bossSpawn);
     }
 
     void Update()
-{
-    if (switchTimer > 0)
     {
-        switchTimer -= Time.deltaTime;
-    }
-    else
-    {
-        if (charging)
+        float playerPosition = PlayerController.Instance.transform.position.x;
+        if (switchTimer > 0)
         {
-            EnterPatrolState();
+            switchTimer -= Time.deltaTime;
         }
         else
         {
+            if (charging && transform.position.x > playerPosition)
+            {
+                EnterPatrolState();
+            }
+            else
+            {
+                EnterChargeState();
+            }
+        }
+
+        if (transform.position.y > 3 || transform.position.y < -3)
+        {
+            speedY *= -1;
+        }
+        else if (transform.position.x < playerPosition)
+        {
             EnterChargeState();
         }
-    }
-    if (transform.position.y > 3 || transform.position.y < -3)
-    {
-        speedY *= -1;
-    }
 
-    float moveX = speedX * Time.deltaTime;
-    float moveY = speedY * Time.deltaTime;
+        bool boost = PlayerController.Instance.boosting;
+        float moveX;
+        if (boost && !charging)
+        {
+            moveX = GameManager.Instance.worldSpeed * Time.deltaTime * -0.5f;
+        }
+        else
+        {
+            moveX = speedX * Time.deltaTime;
+        }
+        float moveY = speedY * Time.deltaTime;
 
-    transform.position += new Vector3(-moveX, moveY); 
-    
-    if (transform.position.x < -11)
-    {
-        Destroy(gameObject);
-    }
-}
+        transform.position += new Vector3(moveX, moveY); 
+        
+        if (transform.position.x < -11)
+        {
+            Destroy(gameObject);
+        }
+    }   
 
     void EnterPatrolState()
     {
@@ -65,13 +81,13 @@ public class Boss1 : MonoBehaviour
 
     void EnterChargeState()
     {
-        speedX = 5f;
+        if (!charging) AudioManager2.Instance.PlaySound(AudioManager2.Instance.bossCharge);
+        speedX = -10f;
         speedY = 0;
-        switchInterval = Random.Range(2f, 2.5f);
+        switchInterval = Random.Range(0.6f, 1.3f);
         switchTimer = switchInterval;
         charging = true;
         animator.SetBool("charging", true);
-        AudioManager2.Instance.PlayModifiedSound(AudioManager2.Instance.bossCharge);
     }
 
     public void TakeDamage(int damage)
