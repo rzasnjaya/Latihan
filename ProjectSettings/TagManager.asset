@@ -10,6 +10,7 @@ TagManager:
   - StartZone
   - Obstacle
   - Bullet
+  - Critter
   layers:
   - Default
   - TransparentFX

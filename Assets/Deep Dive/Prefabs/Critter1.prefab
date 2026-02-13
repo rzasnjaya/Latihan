@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9006607514733846071}
   m_Layer: 10
   m_Name: Critter1
-  m_TagString: Untagged
+  m_TagString: Critter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,6 +104,8 @@ MonoBehaviour:
   - {fileID: 966767968, guid: a29d5bc5e32c2364698309ddf08adaf2, type: 3}
   - {fileID: -315921661, guid: a29d5bc5e32c2364698309ddf08adaf2, type: 3}
   - {fileID: 119402437, guid: a29d5bc5e32c2364698309ddf08adaf2, type: 3}
+  zappedEffect: {fileID: 5600976212375369494, guid: a0fd7c01b2b841a4ebbdd51700c15095,
+    type: 3}
 --- !u!58 &2530392371192161997
 CircleCollider2D:
   m_ObjectHideFlags: 0
