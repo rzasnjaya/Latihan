@@ -121,15 +121,12 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            TakeDamage(1);
-        }
-        else if (collision.gameObject.CompareTag("Boss"))
-        {
-            TakeDamage(5);
+            Asteroid asteroid = collision.gameObject.GetComponent<Asteroid>();
+            if (asteroid) asteroid.TakeDamage(1);
         }
     }
 
-    private void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         health -= damage;
         UIController.Instance.UpdateHealthSlider(health, maxHealth);
