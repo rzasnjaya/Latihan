@@ -1291,7 +1291,7 @@ MonoBehaviour:
   boosting: 0
   energy: 0
   maxEnergy: 50
-  energyRegen: 0.1
+  energyRegen: 0.05
   health: 0
   maxHealth: 3
   destroyEffect: {fileID: 6890167714664360184, guid: e37ca08b73ccd6e4ab9820f0174cce3b,
@@ -1403,15 +1403,27 @@ MonoBehaviour:
       type: 3}
     spawnTimer: 0
     spawnInterval: 1
+    objetsPerWave: 20
+    spawnedObjectCount: 0
+  - prefab: {fileID: 8423540955678288275, guid: fe1f1e61e0077fc4bb2f27f492659b65,
+      type: 3}
+    spawnTimer: 0
+    spawnInterval: 0.6
+    objetsPerWave: 40
+    spawnedObjectCount: 0
+  - prefab: {fileID: 8423540955678288275, guid: fe1f1e61e0077fc4bb2f27f492659b65,
+      type: 3}
+    spawnTimer: 0
+    spawnInterval: 0.4
+    objetsPerWave: 100
+    spawnedObjectCount: 0
+  - prefab: {fileID: 8423540955678288275, guid: fe1f1e61e0077fc4bb2f27f492659b65,
+      type: 3}
+    spawnTimer: 0
+    spawnInterval: 2
     objetsPerWave: 10
     spawnedObjectCount: 0
   - prefab: {fileID: 4633561390323428972, guid: af4033d173267034490ff86a76220083,
-      type: 3}
-    spawnTimer: 0
-    spawnInterval: 5
-    objetsPerWave: 1
-    spawnedObjectCount: 0
-  - prefab: {fileID: 8423540955678288275, guid: fe1f1e61e0077fc4bb2f27f492659b65,
       type: 3}
     spawnTimer: 0
     spawnInterval: 5
@@ -3289,7 +3301,7 @@ Transform:
   m_GameObject: {fileID: 874411583}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11, y: -5, z: 0}
+  m_LocalPosition: {x: 15, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9789,7 +9801,7 @@ Transform:
   m_GameObject: {fileID: 1871005451}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11, y: 4, z: 0}
+  m_LocalPosition: {x: 15, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9848,7 +9860,12 @@ MonoBehaviour:
     spawnedObjectCount: 0
   - prefab: {fileID: 215933505150631466, guid: fbf132456202d54469e6af49695f4145, type: 3}
     spawnTimer: 0
-    spawnInterval: 0.2
+    spawnInterval: 1.2
+    objetsPerWave: 20
+    spawnedObjectCount: 0
+  - prefab: {fileID: 215933505150631466, guid: fbf132456202d54469e6af49695f4145, type: 3}
+    spawnTimer: 0
+    spawnInterval: 5
     objetsPerWave: 3
     spawnedObjectCount: 0
 --- !u!4 &1927684710
