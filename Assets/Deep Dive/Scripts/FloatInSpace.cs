@@ -10,7 +10,7 @@ public class FloatInSpace : MonoBehaviour
         transform.position += new Vector3(-moveX, 0);
         if (transform.position.x < -11)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
