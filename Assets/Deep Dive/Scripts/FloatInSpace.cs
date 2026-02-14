@@ -2,16 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boom : MonoBehaviour
+public class FloatInSpace : MonoBehaviour
 {
-    private Animator animator;
-
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-        Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
-    }
-
     void Update()
     {
         float moveX = GameManager.Instance.worldSpeed * Time.deltaTime;

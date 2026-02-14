@@ -1171,6 +1171,7 @@ GameObject:
   - component: {fileID: 433361093}
   - component: {fileID: 433361092}
   - component: {fileID: 433361095}
+  - component: {fileID: 433361096}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1286,7 +1287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c55476cf6d86d54e94e146bed12e490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whiteMaterial: {fileID: 2100000, guid: 7001718b9d88b624e90b25789b14a046, type: 2}
   moveSpeed: 5
   boosting: 0
   energy: 0
@@ -1353,6 +1353,18 @@ CircleCollider2D:
   m_Offset: {x: -0.5, y: 0}
   serializedVersion: 2
   m_Radius: 0.36
+--- !u!114 &433361096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433361089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9306178fad299144b96b492e61628870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &440350347
 GameObject:
   m_ObjectHideFlags: 0

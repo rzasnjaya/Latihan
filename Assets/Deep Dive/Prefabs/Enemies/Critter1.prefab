@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7488371580728706517}
   - component: {fileID: 2530392371192161997}
   - component: {fileID: 9006607514733846071}
+  - component: {fileID: -409496699862766950}
   m_Layer: 10
   m_Name: Critter1
   m_TagString: Critter
@@ -170,3 +171,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-409496699862766950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215933505150631466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ff80acfbcd5174fac9a647e14bfff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
