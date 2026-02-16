@@ -1605,7 +1605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c55476cf6d86d54e94e146bed12e490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 2
   boosting: 0
   energy: 0
   maxEnergy: 50
@@ -1721,18 +1721,18 @@ MonoBehaviour:
   waves:
   - pool: {fileID: 1027272369}
     spawnTimer: 0
-    spawnInterval: 0.5
-    objetsPerWave: 10
+    spawnInterval: 0.8
+    objetsPerWave: 20
     spawnedObjectCount: 0
   - pool: {fileID: 100256849}
     spawnTimer: 0
     spawnInterval: 0.5
-    objetsPerWave: 3
+    objetsPerWave: 0
     spawnedObjectCount: 0
   - pool: {fileID: 532079246}
     spawnTimer: 0
     spawnInterval: 0.5
-    objetsPerWave: 3
+    objetsPerWave: 0
     spawnedObjectCount: 0
 --- !u!4 &440350349
 Transform:

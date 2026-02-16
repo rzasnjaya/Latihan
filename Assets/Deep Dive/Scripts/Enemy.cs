@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     protected float speedX = 0;
     protected float speedY = 0;
 
-    void OnEnable()
+    public virtual void OnEnable()
     {
         lives = maxLives;
     }
@@ -30,8 +30,7 @@ public class Enemy : MonoBehaviour
         flashWhite = GetComponent<FlashWhite>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         transform.position += new Vector3(speedX * Time.deltaTime, speedY * Time.deltaTime);
     }
