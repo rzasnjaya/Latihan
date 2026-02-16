@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public float worldSpeed;
 
     public int critterCounter;
-    [SerializeField] private GameObject boss1;
+    private ObjectPooler boss1Pool;
 
     void Awake()
     {
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        boss1Pool = GameObject.Find("Boss1Pool").GetComponent<ObjectPooler>();
         critterCounter = 0;
     }
 
@@ -39,7 +40,11 @@ public class GameManager : MonoBehaviour
         if (critterCounter > 15)
         {
             critterCounter = 0;
-            Instantiate(boss1, new Vector2(15f, 0), Quaternion.Euler(0,0,-90));
+            GameObject boss1 = boss1Pool.GetPooledObject();
+            boss1.transform.position = new Vector2(15f, 0);
+            boss1.transform.rotation = Quaternion.Euler(0,0,-90);
+            boss1.SetActive(true);
+            //Instantiate(boss1, new Vector2(15f, 0), Quaternion.Euler(0,0,-90));
         }
     }
 

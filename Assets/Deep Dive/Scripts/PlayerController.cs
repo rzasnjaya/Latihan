@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float energyRegen;
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
-    [SerializeField] private GameObject destroyEffect;
+    private ObjectPooler destroyEffectPool;
     [SerializeField] private ParticleSystem engineEffect;
 
     void Awake()
@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         flashWhite = GetComponent<FlashWhite>();
+        destroyEffectPool = GameObject.Find("Boom2Pool").GetComponent<ObjectPooler>();
 
         energy = maxEnergy;
         UIController.Instance.UpdateEnergySlider(energy, maxEnergy);
@@ -137,7 +138,10 @@ public class PlayerController : MonoBehaviour
             ExitBoost();
             GameManager.Instance.SetWorldSpeed(0f);
             gameObject.SetActive(false);
-            Instantiate(destroyEffect, transform.position, transform.rotation);
+            GameObject destroyEffect = destroyEffectPool.GetPooledObject();
+            destroyEffect.transform.position = transform.position;
+            destroyEffect.transform.rotation = transform.rotation;
+            destroyEffect.SetActive(true);
             GameManager.Instance.GameOver();
             AudioManager2.Instance.PlaySound(AudioManager2.Instance.ice);
         }
