@@ -23,6 +23,11 @@ public class PlayerController : MonoBehaviour
     private ObjectPooler destroyEffectPool;
     [SerializeField] private ParticleSystem engineEffect;
 
+    [SerializeField] private int experience;
+    [SerializeField] private int currentLevel;
+    [SerializeField] private int maxLevel;
+    [SerializeField] private List<int> playerLevels;
+
     void Awake()
     {
         if (Instance != null)
@@ -42,10 +47,17 @@ public class PlayerController : MonoBehaviour
         flashWhite = GetComponent<FlashWhite>();
         destroyEffectPool = GameObject.Find("Boom2Pool").GetComponent<ObjectPooler>();
 
+        for (int i = playerLevels.Count; i < maxLevel; i++)
+        {
+            playerLevels.Add(Mathf.CeilToInt(playerLevels[playerLevels.Count - 1] * 1.1f + 15));
+        }
+
         energy = maxEnergy;
         UIController.Instance.UpdateEnergySlider(energy, maxEnergy);
         health = maxHealth;
         UIController.Instance.UpdateHealthSlider(health, maxHealth);
+        experience = 0;
+        UIController.Instance.UpdateExperienceSlider(experience, playerLevels[currentLevel]);
     }
 
     void Update()
@@ -123,7 +135,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             Asteroid asteroid = collision.gameObject.GetComponent<Asteroid>();
-            if (asteroid) asteroid.TakeDamage(1);
+            if (asteroid) asteroid.TakeDamage(1, false);
         }
     }
 
@@ -145,5 +157,26 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.GameOver();
             AudioManager2.Instance.PlaySound(AudioManager2.Instance.ice);
         }
+    }
+
+    public void GetExperience(int exp)
+    {
+        experience += exp;
+        UIController.Instance.UpdateExperienceSlider(experience, playerLevels[currentLevel]);
+        if (experience > playerLevels[currentLevel])
+        {
+            LevelUp();
+        }
+    }
+
+    public void LevelUp()
+    {
+        experience -= playerLevels[currentLevel];
+        if (currentLevel < maxLevel - 1) currentLevel++;
+        UIController.Instance.UpdateExperienceSlider(experience, playerLevels[currentLevel]);
+        PhaserWeapon.Instance.LevelUp();
+        maxHealth++;
+        health = maxHealth;
+        UIController.Instance.UpdateHealthSlider(health, maxHealth);
     }
 }
