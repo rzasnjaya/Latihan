@@ -9411,9 +9411,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cadb9928a57af924c841f16609c75ad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponLevel: 0
+  stats:
+  - speed: 5
+    damage: 1
+    size: 1
+    amount: 1
+    range: 1
+  - speed: 8
+    damage: 2
+    size: 1.4
+    amount: 2
+    range: 1
+  - speed: 11
+    damage: 3
+    size: 1.8
+    amount: 3
+    range: 1
+  - speed: 14
+    damage: 4
+    size: 2.2
+    amount: 10
+    range: 5
   bulletPool: {fileID: 886077592}
-  speed: 12
-  damage: 1
 --- !u!1 &1408102506
 GameObject:
   m_ObjectHideFlags: 0
