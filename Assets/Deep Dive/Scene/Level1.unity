@@ -1771,6 +1771,11 @@ MonoBehaviour:
   maxPos: {fileID: 874411584}
   waveNumber: 0
   waves:
+  - pool: {fileID: 100256849}
+    spawnTimer: 0
+    spawnInterval: 0.8
+    objetsPerWave: 20
+    spawnedObjectCount: 0
   - pool: {fileID: 1880665518}
     spawnTimer: 0
     spawnInterval: 0.8

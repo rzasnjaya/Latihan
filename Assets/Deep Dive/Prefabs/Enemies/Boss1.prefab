@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5291102820435527578}
+  - component: {fileID: 1601625887804634990}
   - component: {fileID: 2619547523990887567}
   - component: {fileID: 3485295312352058456}
-  - component: {fileID: 1601625887804634990}
   - component: {fileID: 1998155075562436231}
   - component: {fileID: 1982775062731517491}
   m_Layer: 12
@@ -36,6 +36,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &1601625887804634990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7152483425587358278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752d7968f268a3045a3f96860bb5fb20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 0
+  maxLives: 10
+  damage: 20
+  experienceToGive: 20
 --- !u!212 &2619547523990887567
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -109,18 +125,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1601625887804634990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7152483425587358278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 752d7968f268a3045a3f96860bb5fb20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &1998155075562436231
 CircleCollider2D:
   m_ObjectHideFlags: 0
