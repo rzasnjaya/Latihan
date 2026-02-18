@@ -13,7 +13,7 @@ public class Beetlemorph : Enemy
     public override void OnEnable()
     {
         base.OnEnable();
-        timer = 0;
+        timer = transform.position.y;
         frequency = Random.Range(0.3f, 1f);
         amplitude = Random.Range(0.8f, 1.5f);
         centerY = transform.position.y;

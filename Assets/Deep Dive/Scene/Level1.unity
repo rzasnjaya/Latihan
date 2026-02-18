@@ -1722,17 +1722,57 @@ MonoBehaviour:
   - pool: {fileID: 1027272369}
     spawnTimer: 0
     spawnInterval: 0.8
-    objetsPerWave: 20
+    objetsPerWave: 2
     spawnedObjectCount: 0
   - pool: {fileID: 100256849}
     spawnTimer: 0
-    spawnInterval: 0.5
-    objetsPerWave: 0
+    spawnInterval: 0.1
+    objetsPerWave: 5
     spawnedObjectCount: 0
   - pool: {fileID: 532079246}
     spawnTimer: 0
     spawnInterval: 0.5
-    objetsPerWave: 0
+    objetsPerWave: 70
+    spawnedObjectCount: 0
+  - pool: {fileID: 100256849}
+    spawnTimer: 0
+    spawnInterval: 0.1
+    objetsPerWave: 10
+    spawnedObjectCount: 0
+  - pool: {fileID: 1027272369}
+    spawnTimer: 0
+    spawnInterval: 0.8
+    objetsPerWave: 40
+    spawnedObjectCount: 0
+  - pool: {fileID: 532079246}
+    spawnTimer: 0
+    spawnInterval: 0.5
+    objetsPerWave: 70
+    spawnedObjectCount: 0
+  - pool: {fileID: 100256849}
+    spawnTimer: 0
+    spawnInterval: 0.1
+    objetsPerWave: 7
+    spawnedObjectCount: 0
+  - pool: {fileID: 532079246}
+    spawnTimer: 0
+    spawnInterval: 0.5
+    objetsPerWave: 30
+    spawnedObjectCount: 0
+  - pool: {fileID: 100256849}
+    spawnTimer: 0
+    spawnInterval: 0.1
+    objetsPerWave: 7
+    spawnedObjectCount: 0
+  - pool: {fileID: 1761545516}
+    spawnTimer: 0
+    spawnInterval: 1
+    objetsPerWave: 1
+    spawnedObjectCount: 0
+  - pool: {fileID: 532079246}
+    spawnTimer: 0
+    spawnInterval: 0.5
+    objetsPerWave: 30
     spawnedObjectCount: 0
 --- !u!4 &440350349
 Transform:
@@ -2627,6 +2667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldSpeed: 1
+  adjustedWorldSpeed: 0
   critterCounter: 0
 --- !u!4 &595744216
 Transform:
@@ -9587,6 +9628,7 @@ Transform:
   - {fileID: 1168286741}
   - {fileID: 1027272368}
   - {fileID: 1529245343}
+  - {fileID: 1761545515}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1206604110
@@ -10593,6 +10635,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1761545514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1761545515}
+  - component: {fileID: 1761545516}
+  m_Layer: 0
+  m_Name: LostWhalePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1761545515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761545514}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1191617510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1761545516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761545514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391d12aa9817ceb43ad1cead67688b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4633561390323428972, guid: af4033d173267034490ff86a76220083, type: 3}
+  poolSize: 1
 --- !u!1 &1790566928
 GameObject:
   m_ObjectHideFlags: 0

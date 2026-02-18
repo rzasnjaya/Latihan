@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public float worldSpeed;
+    public float adjustedWorldSpeed;
 
     public int critterCounter;
     private ObjectPooler boss1Pool;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        adjustedWorldSpeed = worldSpeed * Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Fire3"))
         {
             Pause();

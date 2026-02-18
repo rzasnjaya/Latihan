@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5337070056053521396}
   - component: {fileID: 7166104421129331130}
   - component: {fileID: 2551967941344742166}
+  - component: {fileID: 8731071864214482257}
   m_Layer: 13
   m_Name: Beetlemorph
   m_TagString: Enemy
@@ -166,5 +167,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9306178fad299144b96b492e61628870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8731071864214482257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5521174233146424753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc574c4a9642cfb48af66a22e29f6840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
