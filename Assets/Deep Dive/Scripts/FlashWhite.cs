@@ -29,6 +29,6 @@ public class FlashWhite : MonoBehaviour
 
     public void Reset()
     {
-        spriteRenderer.material = defaultMaterial;
+        if (defaultMaterial) spriteRenderer.material = defaultMaterial;
     }
 }

@@ -24,6 +24,13 @@ public class AudioManager2 : MonoBehaviour
     public AudioSource locustHit;
     public AudioSource locustDestroy;
     public AudioSource locustCharge;
+    public AudioSource squidHit;
+    public AudioSource squidHit2;
+    public AudioSource squidDestroy;
+    public AudioSource squidDestroy2;
+    public AudioSource squidShoot;
+    public AudioSource squidShoot2;
+    public AudioSource squidShoot3;
 
     
     void Awake()
