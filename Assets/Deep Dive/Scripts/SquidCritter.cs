@@ -13,7 +13,7 @@ public class SquidCritter : Enemy
     public override void OnEnable()
     {
         base.OnEnable();
-        moveSpeed = 2f;
+        moveSpeed = 8f;
         targetMoveSpeed = Random.Range(0.1f, 1.2f);
     }
 
