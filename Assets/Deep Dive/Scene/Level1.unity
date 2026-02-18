@@ -1771,20 +1771,20 @@ MonoBehaviour:
   maxPos: {fileID: 874411584}
   waveNumber: 0
   waves:
-  - pool: {fileID: 100256849}
+  - pool: {fileID: 1204744368}
     spawnTimer: 0
-    spawnInterval: 0.8
-    objetsPerWave: 20
+    spawnInterval: 1
+    objetsPerWave: 1
+    spawnedObjectCount: 0
+  - pool: {fileID: 532079246}
+    spawnTimer: 0
+    spawnInterval: 0.3
+    objetsPerWave: 70
     spawnedObjectCount: 0
   - pool: {fileID: 1880665518}
     spawnTimer: 0
     spawnInterval: 0.8
     objetsPerWave: 10
-    spawnedObjectCount: 0
-  - pool: {fileID: 532079246}
-    spawnTimer: 0
-    spawnInterval: 0.5
-    objetsPerWave: 70
     spawnedObjectCount: 0
   - pool: {fileID: 1027272369}
     spawnTimer: 0
@@ -9693,6 +9693,7 @@ Transform:
   - {fileID: 1563311345}
   - {fileID: 1206604111}
   - {fileID: 1168286741}
+  - {fileID: 1204744367}
   - {fileID: 1027272368}
   - {fileID: 1529245343}
   - {fileID: 1880665517}
@@ -9700,6 +9701,52 @@ Transform:
   - {fileID: 1761545515}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1204744366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1204744367}
+  - component: {fileID: 1204744368}
+  m_Layer: 0
+  m_Name: Boss2Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1204744367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204744366}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1191617510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1204744368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204744366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391d12aa9817ceb43ad1cead67688b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2739361024155306765, guid: ac4dc6ee502677c4f8c9e5d132a2627c, type: 3}
+  poolSize: 1
 --- !u!1 &1206604110
 GameObject:
   m_ObjectHideFlags: 0

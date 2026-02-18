@@ -5,7 +5,6 @@ using UnityEngine;
 public class Boss1 : Enemy
 {
     private Animator animator;
-
     private bool charging;
 
     private float switchInterval;
@@ -31,7 +30,6 @@ public class Boss1 : Enemy
         destroyEffectPool = GameObject.Find("Boom3Pool").GetComponent<ObjectPooler>();
         hitSound = AudioManager2.Instance.hitArmor;
         destroySound = AudioManager2.Instance.boom2;
-        
     }
 
     public override void Update()
