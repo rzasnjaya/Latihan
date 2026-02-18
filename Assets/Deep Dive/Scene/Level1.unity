@@ -2089,50 +2089,65 @@ MonoBehaviour:
   maxPos: {fileID: 874411584}
   waveNumber: 0
   waves:
-  - pool: {fileID: 1631425741}
+  - pool: {fileID: 1027272369}
     spawnTimer: 0
-    spawnInterval: 3
-    objetsPerWave: 200
+    spawnInterval: 0.8
+    objetsPerWave: 15
     spawnedObjectCount: 0
   - pool: {fileID: 532079246}
     spawnTimer: 0
     spawnInterval: 0.3
-    objetsPerWave: 70
+    objetsPerWave: 30
     spawnedObjectCount: 0
   - pool: {fileID: 1880665518}
     spawnTimer: 0
     spawnInterval: 0.8
     objetsPerWave: 10
     spawnedObjectCount: 0
-  - pool: {fileID: 1027272369}
+  - pool: {fileID: 532079246}
     spawnTimer: 0
-    spawnInterval: 0.8
-    objetsPerWave: 2
+    spawnInterval: 0.3
+    objetsPerWave: 30
     spawnedObjectCount: 0
   - pool: {fileID: 100256849}
     spawnTimer: 0
     spawnInterval: 0.1
-    objetsPerWave: 5
+    objetsPerWave: 30
+    spawnedObjectCount: 0
+  - pool: {fileID: 532079246}
+    spawnTimer: 0
+    spawnInterval: 0.5
+    objetsPerWave: 30
+    spawnedObjectCount: 0
+  - pool: {fileID: 1204744368}
+    spawnTimer: 0
+    spawnInterval: 0.1
+    objetsPerWave: 1
+    spawnedObjectCount: 0
+  - pool: {fileID: 532079246}
+    spawnTimer: 0
+    spawnInterval: 0.5
+    objetsPerWave: 30
+    spawnedObjectCount: 0
+  - pool: {fileID: 2089995765}
+    spawnTimer: 0
+    spawnInterval: 3
+    objetsPerWave: 1
     spawnedObjectCount: 0
   - pool: {fileID: 532079246}
     spawnTimer: 0
     spawnInterval: 0.5
     objetsPerWave: 70
     spawnedObjectCount: 0
-  - pool: {fileID: 100256849}
+  - pool: {fileID: 1761545516}
     spawnTimer: 0
-    spawnInterval: 0.1
-    objetsPerWave: 10
+    spawnInterval: 1
+    objetsPerWave: 1
     spawnedObjectCount: 0
   - pool: {fileID: 1027272369}
     spawnTimer: 0
     spawnInterval: 0.8
     objetsPerWave: 40
-    spawnedObjectCount: 0
-  - pool: {fileID: 532079246}
-    spawnTimer: 0
-    spawnInterval: 0.5
-    objetsPerWave: 70
     spawnedObjectCount: 0
   - pool: {fileID: 100256849}
     spawnTimer: 0
@@ -2148,11 +2163,6 @@ MonoBehaviour:
     spawnTimer: 0
     spawnInterval: 0.1
     objetsPerWave: 7
-    spawnedObjectCount: 0
-  - pool: {fileID: 1761545516}
-    spawnTimer: 0
-    spawnInterval: 1
-    objetsPerWave: 1
     spawnedObjectCount: 0
   - pool: {fileID: 532079246}
     spawnTimer: 0
@@ -10445,6 +10455,7 @@ Transform:
   - {fileID: 1206604111}
   - {fileID: 1168286741}
   - {fileID: 1204744367}
+  - {fileID: 2089995764}
   - {fileID: 1027272368}
   - {fileID: 1529245343}
   - {fileID: 1880665517}
@@ -12976,6 +12987,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a172b0fe523001f4ca5fa484fe6944a1, type: 3}
+--- !u!1 &2089995763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2089995764}
+  - component: {fileID: 2089995765}
+  m_Layer: 0
+  m_Name: Boss3Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2089995764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089995763}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.1942873, y: 17.755009, z: -0.2116392}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1191617510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2089995765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089995763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391d12aa9817ceb43ad1cead67688b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7075262925686068394, guid: b9eea1b09d2f2b64185c3235f93a5fc4, type: 3}
+  poolSize: 1
 --- !u!1 &2143913141
 GameObject:
   m_ObjectHideFlags: 0
