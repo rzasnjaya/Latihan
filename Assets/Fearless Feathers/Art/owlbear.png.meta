@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,13 +37,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -108,18 +108,5474 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: owlbear_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf88bf3a57564347891e24ec6951c15
+      internalID: -926305013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9575d8df43b075429f9531754ce2bb8
+      internalID: -780003101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3035cd66315304043bc3d386b5092c08
+      internalID: -75057296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ec2289ea08cf848951d982db4f8bd5
+      internalID: 1079896869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2abca0c733c94542a88eaa18935c672
+      internalID: 1462293147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_5
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4efa0208d72114dbd5f3b5cc101c95
+      internalID: 1184134359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_6
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4d68d1bb87bb34a9d18e9ced7f4b1b
+      internalID: -1940093590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_7
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28529386500946b40942c56f4c8077cc
+      internalID: -923342749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_8
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c233a42c5f51d042bd45cdefa6dcb8c
+      internalID: -1034983575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_9
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 506089999662ebf42b9caa341b0f79ee
+      internalID: -1125567677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_10
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63dd5d4b3b8eae94aaa5d15f413bd455
+      internalID: 2007737907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_11
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfaaa0527603dec4d87534d23d016a3a
+      internalID: -799851780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_12
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88251bc690fae841a7f0144948e1420
+      internalID: -765428440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_13
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 048100f317d529747bae60452c4021fd
+      internalID: -1698951936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_14
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e45088d8b424a2b47bc6051a9feb68a0
+      internalID: 1164331823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_15
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fed53e14476bf74482b00d434001845
+      internalID: 1901976227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_16
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5361c46d2a69be409414d522a354eba
+      internalID: -656903952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_17
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6361b42b92623a54bb2feddebac3abf6
+      internalID: 358246139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_18
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcdfa13e975393541925bf6b1d7ddc46
+      internalID: 1684272818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_19
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f86de06dc6f504fbc8e6fdccca1bc5
+      internalID: 1988953180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_20
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0cdcaccf437ea54385abc19d0ae076a
+      internalID: -146917820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_21
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a17b54ed6582a47bcea63fcde7cd0a
+      internalID: 709699874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_22
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d30e9197d73e14d90ba4cef96d9441
+      internalID: 413689109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_23
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04bbaaf1df651244f8c97fbbcca9e2cf
+      internalID: 199959378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_24
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a25211f46ec7f0d4ca6c1fe4d202c221
+      internalID: 253050709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_25
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a35943529c8dfc241adeca2684e94741
+      internalID: -992158194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_26
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb53ae3ea3b2714eacc5e31f0be60ab
+      internalID: 1556288256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_27
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 623b854e161ec7e489ddb16a9e21e5e6
+      internalID: -1022832650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_28
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3feefb7700354a4fa02bb494166f33f
+      internalID: -1155742924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_29
+      rect:
+        serializedVersion: 2
+        x: 5800
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7de9e2ebabdc84f8401a0cb1502c49
+      internalID: 912771463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_30
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b220c4219289bb54f82edd4d46082ece
+      internalID: 865735081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ada3cb106e6a3f5489d03f25aa7f3f10
+      internalID: -970957722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_32
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b77486adfb73d40499c723848d9bce46
+      internalID: 1070855837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_33
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6055cc04f8b5dd468b8f12659ee7948
+      internalID: -808887079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_34
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47144c0b23e034e44bdb6f5b20c9f983
+      internalID: -360895392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_35
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3901249fc6ea6974d8dd07782a86520b
+      internalID: -2007858936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_36
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ce4ca243c4c4b46b9729418c41cb88
+      internalID: -1766049568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_37
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ce9c6a2ee8d2d9439224ee70314aeaa
+      internalID: 480167498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_38
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d86fe4fd3ac40d4abc7680a46c615b6
+      internalID: 1060168502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_39
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c68b2330ba67b3b46a21df30c3203015
+      internalID: -330510379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_40
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f24fca973b4f4e46bbdacec20ffe740
+      internalID: 2137803558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_41
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5b8b52bb39bbd047aee8f9da33c4862
+      internalID: 570194723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_42
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89a211039850576438f891e85d5a9c47
+      internalID: 1403087539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_43
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be709f8fc1477f4ba11270fd5ddbd68
+      internalID: 690021221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_44
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775e9e8362022cb498ccef317dd3cd63
+      internalID: -1559970025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_45
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f4adfa1325de4b4298b4f2c180c9a03
+      internalID: 66622894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_46
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bdd7a06ac1804642b28fcef9862d15b
+      internalID: 1023418199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_47
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e4a4aba6d4f004f86273ebe306d7b2
+      internalID: 266695571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_48
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea37f3b326a7044ca618054eeabd301
+      internalID: -2017904430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_49
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9642245ae4c21194b94df0fc26fe14ac
+      internalID: -799841642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_50
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e319a0f82a465504a922b08456206df9
+      internalID: -1883890637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_51
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c11fc798af7e74880cc100464260b5
+      internalID: -1111652599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_52
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7ca25709b9bc34d8469a605b898e15
+      internalID: 1494179375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_53
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 334f972689a11cd4b811467e59502243
+      internalID: 256537405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_54
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77eb5c762205ca24cb1fd7cecb8a585d
+      internalID: 1128712105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_55
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b54a1fbe249b44d40967e1a6f9823634
+      internalID: 1197294730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_56
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64214a567781e03488d313bf7f83208c
+      internalID: -2138360386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_57
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d682b974855514cbf800b95a767698
+      internalID: -496417679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_58
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ddfaf53ec23c624bb4242bead630da7
+      internalID: 103067720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_59
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 289f2ad3f3d4d494abac3b2d651821a9
+      internalID: 605726793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_60
+      rect:
+        serializedVersion: 2
+        x: 5800
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afadb5ee7b08e3c4bbbaee1d069acc6d
+      internalID: -822772398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_61
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a156986cc6c324cbf0f539439a137d
+      internalID: -536328645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_62
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0cdb50a0f71d7343aabfb11c00ef76f
+      internalID: -162458171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_63
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b33fcc540f77c943af712e0d8e7e8d8
+      internalID: 780810157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_64
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cd02fa111a3bbd44a2db67f8960c152
+      internalID: 169635447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_65
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26b4db133077cc44abb3a51ef49b980a
+      internalID: -435899428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_66
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b42a7f7b985ea8f48ba1f724695fc644
+      internalID: -1318180952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_67
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f7d84c4173c4f409b1fbd339b2f45e
+      internalID: -1803916598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_68
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b320a3a3651560418aa669bfae7c374
+      internalID: -688327424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_69
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7628aa1582edfce4a9ade8e9c77e10fc
+      internalID: 525433461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_70
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14dce720ae3f7074d98d14853d93f391
+      internalID: 1143500669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_71
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f8cd02afe9d1444f922de4cec465587
+      internalID: -162442881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_72
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75c359b98b3d1041b217358935d59f4
+      internalID: 1713664979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_73
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301e2d91aadf57a4d86ebaf2fe67d184
+      internalID: 410856123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_74
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7517ba9de813754dba389d3d0307899
+      internalID: -1527666830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_75
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 081f219ba093e0b42b3ca07e746e9cd3
+      internalID: 1027111351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_76
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd0ff3219f14cb4abeb7d08848797f5
+      internalID: -664958869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_77
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6beec8e25ca385145891ca38d413e4f3
+      internalID: 1213765439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_78
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99470c91e928bd043acbb11da7b93ddf
+      internalID: -1345126282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_79
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da05c21760d187843b7ed7f8a127fa5d
+      internalID: -1538598806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_80
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db66fb9fa3825c49867b96d21ca9d1a
+      internalID: 746929462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_81
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87255efebb2917b4eb83ddbf099af72d
+      internalID: -1084408779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_82
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c14735b9d324d46a6bc5a9c01f1652
+      internalID: 225463818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_83
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ea2ba33fd2be747ac926238de2e2b7
+      internalID: -1483422024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_84
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f932889a4f72f84c80de2bfe19d61f7
+      internalID: 587009264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_85
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d316ee6d24c16e64db9ff4ba22fb38ad
+      internalID: -1220349800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_86
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad1d6f876cb1ff249bed74364b26de3b
+      internalID: -1733596819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_87
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef675bb9319a6014dbfb7d822c326042
+      internalID: -1389287394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_88
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e388a91dd688354395a6605db8b5a87
+      internalID: 149575406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_89
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9732b09288a6ef4f905a680ac4583c8
+      internalID: 817333769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_90
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdfc85dd004ce7b4686842d064fab167
+      internalID: 1319835707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_91
+      rect:
+        serializedVersion: 2
+        x: 5800
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37d39a5da528aa4cac8f51cdcbd2388
+      internalID: -2026151953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_92
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1489456e6a1854c46a72d66b9254378d
+      internalID: -1447849188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_93
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c3cbb7f67b444b4186c819a774efffa
+      internalID: 297494380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_94
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0141605c317fca409fa4b5ee1016485
+      internalID: -1768371084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_95
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb186a02be5386a499fae5b04ca6b093
+      internalID: 433383849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_96
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2edc1d0ed52b404418d9f31b28c4ca83
+      internalID: -296927440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_97
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b2c8a4baa41fde458ed772b475cd0f2
+      internalID: -1268562977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_98
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7819e141b6d9c2641b34d418c37eeedb
+      internalID: -427687311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_99
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9558135483d5bf94587be6320391381b
+      internalID: -1313774756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_100
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 140fdd6136439b34fb1394d574728d35
+      internalID: 1091053970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_101
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74051980195a0434bb34bf4768ce9741
+      internalID: -1330171805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_102
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d0fdb096279ed74f9dcef9620c26757
+      internalID: 861810044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_103
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f4ab26428764942bdc9f22aee4d8c8
+      internalID: -141968482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_104
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c81bc94a4661eb149ae0047f8ba6dc2f
+      internalID: -1998185275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_105
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29b7f566ab70aed4c9a8d585cbf1d2ce
+      internalID: 1289231136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_106
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d561d8448c8e7740a442356aaf73131
+      internalID: -402621996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_107
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88baf783e1f4f6f4ab45fa0455a241d9
+      internalID: 1301840033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_108
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f61f4aa01f970b948bd9e6de19bc240e
+      internalID: 2110769275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_109
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1688cb7f9da074dae4f1cc19a559fe
+      internalID: -33236559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_110
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ee5fd04b1c2c544fb21d12089997cba
+      internalID: -1042858028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_111
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e529092bc4124304e914bb5d3c448e35
+      internalID: -1676787153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_112
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89606e6d0a8c95b4a85445bbcd6294ba
+      internalID: -1215616554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_113
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0121f806d4473c2408091be5a748fd49
+      internalID: -1528927393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_114
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef12022c8e782c1419647bae01598160
+      internalID: 186848619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_115
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 516aba69f85021345a01742523a8910d
+      internalID: 452195701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_116
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 181829d41212cc3438223941ef2fe2c6
+      internalID: -410986291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_117
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 960932234ceb12043b18c2e81db0a475
+      internalID: 139458503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_118
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ce66a16c378dd34aa3d3ab6a0cb397a
+      internalID: -1162647145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_119
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2861c1fcdeae4414d9528bf1f1c01290
+      internalID: 1348934145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_120
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f272a560275de6419d750d9899df9db
+      internalID: -250084728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_121
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7e7c36b70814549aaaeecaa6f3daf6
+      internalID: -1741688544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_122
+      rect:
+        serializedVersion: 2
+        x: 5800
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a823a8b3c024e12438d7f19a21112b2b
+      internalID: 1324829987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_123
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 800
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ce2b74e4703db46840cd39bc9abf10
+      internalID: 1538522513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_124
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43e3e80f43d2314697941477e936082
+      internalID: -1938698331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_125
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3450a1e624be61f4e813b981eeff782e
+      internalID: -112170803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_126
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 682d030a63fafd743bcecd5d89add2ab
+      internalID: 30905911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_127
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bc46b450119c3843a34fbe5c3193a1d
+      internalID: 1771824179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_128
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f013c27fbedbb4ab5ae511b6c2aa43
+      internalID: 2053269929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_129
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c5f1ebf4dfb84c45b7e5673e2ac1b5a
+      internalID: 1117643038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_130
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd31aec3950c26428784b309b022ce0
+      internalID: 693392056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_131
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b372f7722aa99214faeec6c9e3393b45
+      internalID: -572924640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_132
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83ba35a8f93e7f4aa530bf45eeded09
+      internalID: -1968524835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_133
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1029fd2f4c84004b94c15281c9a126d
+      internalID: 525599291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_134
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa38eef04b11f16438249490d2cfa860
+      internalID: 508093012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_135
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945cc3d9246dc194d8f9243a397c186b
+      internalID: -1206302755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_136
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ad44e8e2c7f0b479963efa085dbd03
+      internalID: 1928448585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_137
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f78fa3096d7be4fbc50f2e12e3ba40
+      internalID: -1136714243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_138
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dacf64f594c3c71469fd73a417ae9379
+      internalID: 255581679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_139
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3e6e1807142ee4c87adc47fa50cfb8
+      internalID: -2126000134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_140
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a6f3bcdff670e42b92fb290abd1310
+      internalID: 92783876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_141
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf600151a0a2ab478ca053a1bbe64a1
+      internalID: -1470667483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_142
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29f888d8afee8a49b3a2d5647c6a829
+      internalID: 2049464462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_143
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ff44c10a75c4154489e9852579f667f
+      internalID: -1903540706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_144
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a937b1bbd9ba5f0478ca86c3992e2d33
+      internalID: 402911405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_145
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8c57626ef3cb5e4e8c3c1efd0ba4078
+      internalID: 2105221719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_146
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae13affe8718d0e4691c219e6adffe2e
+      internalID: 1481007058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_147
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff3b8d5b0e3ad294cb4b373dcfca7906
+      internalID: 1286685875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_148
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a95da4bb78c6a48ae13299834164b0
+      internalID: -513768666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_149
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5db1915092f19943a682eb29eaadd6f
+      internalID: -1785250422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_150
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf59b0028688c147882ab6787dc1ff3
+      internalID: -155209111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_151
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64413a4fba054bd4bb5116075d22d46c
+      internalID: -178090809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_152
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b87086b92062e4a9a5abb11594db71
+      internalID: -1217150878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_153
+      rect:
+        serializedVersion: 2
+        x: 5800
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0bc4b5d6c8756845a6d3cf930b2baa2
+      internalID: 325341335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_154
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 600
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0471f5a4a0c2a40a27e81fdc0e9528
+      internalID: 612424170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_155
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43f466b948905649aef7f485559a69d
+      internalID: 2097326394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_156
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a445f81e76260f42b6aa407197c1767
+      internalID: -120992609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_157
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821be74f5435abd4da0c74149721d2ba
+      internalID: -1805602675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_158
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e47b87991260549a09f53577d73ba6
+      internalID: -581986149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_159
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401e89eba08d2c54a96b2ccc16611759
+      internalID: -1705632019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_160
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9845ad6b6e62545955f7e78ca0cffc
+      internalID: 947607331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_161
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8c35ec2c88c5c4697c54d43c603c16
+      internalID: -108340305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_162
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed366c87b51e77945b07a3df7d1ad05a
+      internalID: 640126475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_163
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d08463b86dfb284696eb4e61df3a98b
+      internalID: -1059563161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_164
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e89819b008253d54e84558204a980768
+      internalID: 109291604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_165
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47846ed713ff75c41928c10abaf6ae59
+      internalID: -1075905941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_166
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb5356cfc137c3e458f4be5f682483f0
+      internalID: 918610204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_167
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c360980a8bd9c44e8670c8219f83a80
+      internalID: 1045344077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_168
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 237fefd8d1bd12b4e8acf977965fe324
+      internalID: 1058630536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_169
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bdd186dfeb10184c973f527209d96ab
+      internalID: 1492272361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_170
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5f460509cceff24db609ca07724c620
+      internalID: 676347931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_171
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553aaec20b799c5428c433f261fb618f
+      internalID: -1904040267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_172
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f1d552e30f5cc4eb17c75e7ba849a3
+      internalID: 1377767959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_173
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76803352f8dacdb4ab537948eeaab7a0
+      internalID: -1947770008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_174
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3574be1cb6287b84f95797c2b626e65a
+      internalID: 1206541052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_175
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffb5ce6e8bc94e646a51bcd9283f077d
+      internalID: 921557079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_176
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88bc8dabdb1d0054dbf1412197da6696
+      internalID: -184070651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_177
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c35542a6e5435a4abfca2b302c8ad55
+      internalID: -665925020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_178
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23fc0cb44d86b0148a0bdf3ecf67f4b1
+      internalID: 1500141930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_179
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4d54cdd2aa0474ba0c8344e0dd9d87
+      internalID: 626800910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_180
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7001ae568179d2e499d8e294cad4ec98
+      internalID: -1864591798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_181
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e84d4213cba2f347b3c94bdb0d59e53
+      internalID: 522652642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_182
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9b92fab6243464c8c12a8504786889
+      internalID: -377319535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_183
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12306f7b3b9cb1a4e8c70149e726ba7d
+      internalID: 2128330902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_184
+      rect:
+        serializedVersion: 2
+        x: 5800
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf8e716ed305ff48a1cec2934b40f8b
+      internalID: 99521404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_185
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 400
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60d687a994ea26a4aad1f8e319a1303a
+      internalID: 1836721324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_186
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 185cadf5979891449b057ffb216be895
+      internalID: 1345610027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_187
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7f0a978a52a4147b6c35cee99aeb5d
+      internalID: -486430940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_188
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607b1fe443210e4429c12069fff1f2c3
+      internalID: -1318290209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_189
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf1810be5315ae40bdac774d1e7d85e
+      internalID: 790429461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_190
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f1fb8bb907f2e7448d5683dfbd42a02
+      internalID: 2127507642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_191
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632ccd60007012d4fa0f0569ac0bb81a
+      internalID: -199961281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_192
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55afafab9ea31d4881d757d8e57433e
+      internalID: -1646851535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_193
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d032b06d4ceeeb4daa7a5849204ec51
+      internalID: 662061893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_194
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90dd0b925070174db9094b1ebf76feb
+      internalID: -1915294834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_195
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940e44b7a0799834097ee6bae1b0bb19
+      internalID: 388732249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_196
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb0a4c106e01d37448abd23fa28e684f
+      internalID: 1491908996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_197
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a0222acc7ec2e84eaefd5c9d31ffe85
+      internalID: -500972630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_198
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f78db8e23dcb9c4093b702c60ca3d89
+      internalID: 1222705156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_199
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2882c12ecf83a444e9db1999e98db850
+      internalID: 494526062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_200
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9a60056139fe31468307f5ef0bb1f4a
+      internalID: -1777211005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_201
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4081f9c6dccb89b48ab358200bd0488a
+      internalID: 718755865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_202
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da0d94205eb6c1646943bf8ac147d005
+      internalID: -94692802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_203
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5db4d78a3a6fd74b8a44739132e2585
+      internalID: 1270453005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_204
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb2c4f43fb9bfa945bfa8e6dc64a9a4f
+      internalID: -1733909028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_205
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d875eaf4126f78740a692643c1a760f1
+      internalID: 644487348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_206
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73288751b9ca92140b910cd0bc0ea31c
+      internalID: -270712469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_207
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dcaf26790e25174c878f4d1aefc0c5d
+      internalID: -149351864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_208
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3695f2c51c1d0140a0e4914818d3238
+      internalID: -1158523454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_209
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71e9e9894aaa3a24891b2d504ae93fb9
+      internalID: -313554885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_210
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db7b921559ee5444ab297580a122db30
+      internalID: -7354252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_211
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5920ffbc6cd8326438797ee6d23e4d02
+      internalID: -1335578907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_212
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562db799c221248489eeed8e989c3590
+      internalID: 518500980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_213
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a148200b6f922646932e3aed70f8cbc
+      internalID: 829907039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_214
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73794386e0d1cf34f97fe2425f70f61c
+      internalID: -562402317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_215
+      rect:
+        serializedVersion: 2
+        x: 5800
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 006c500a8353f684886c4596ce630235
+      internalID: 85181948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_216
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 200
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219092076400d144f9f0de634faf0a0a
+      internalID: -1479246413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_217
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c6a8ccd52deda343ad0d226944fb812
+      internalID: -170082741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_218
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaecf6363cf99ab42b4c8f3624ad397c
+      internalID: 1188874129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_219
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e9c30ebe49df44cb26e35c33bea775
+      internalID: -1631303279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_220
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79a040bdfbbc2445b3b447481089d55
+      internalID: -1383011397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_221
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99fc94609ab364c4e8a6284d2fbbe51d
+      internalID: 260224312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_222
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f400ddc2b8004d4893e2e3f21e736cb
+      internalID: 669919762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_223
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8b75a394cdf3a448a2b64a2f67f681d
+      internalID: 746046520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_224
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889c85e3cf52c6146afb96a5137b8b0c
+      internalID: -119333365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_225
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b795ebe07cadd4b99e39ed0b9af07b
+      internalID: 1404277922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_226
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4d82d2a5fae7f42aa932d1c5afd07f
+      internalID: 911259142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_227
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bea0d6cd9b0b4ce469e068abbf5bb242
+      internalID: -245811373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_228
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42da13ef7166c794ca6b8a6a7604d47c
+      internalID: 2101796008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_229
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1eccdd8ee85f24d990f33d746414f9
+      internalID: -996661524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_230
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec8e4db1b7c17e84887a31bf463ebb6c
+      internalID: 891346633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_231
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f039d6edc9c923846950119b297005a7
+      internalID: 2055110291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_232
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a5286643870004f840b28333ec54b3
+      internalID: 850622601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_233
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1209465d741db0f469168908abfe553a
+      internalID: -1517931810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_234
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba526969a488bbd4196f7b4736a67d91
+      internalID: 1848623123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_235
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbdff73b2c776244fa73e2cfb205f976
+      internalID: -265999826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_236
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea18ca1171dcff47b83c28912cad99f
+      internalID: 651881126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_237
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbde10e59ef58d04d8c17032090cc359
+      internalID: 1901701036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_238
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adbb3083e07b57c4586fa2f72080cc9e
+      internalID: 598688855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_239
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 178f2fa4945ec2246b363b171113bc3d
+      internalID: 1456899131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_240
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 525db8bb8010d4f48914fc68af83490a
+      internalID: -1137631341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_241
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc1dfa999a832864fa15c8866f7a4aba
+      internalID: 1224003888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_242
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626628770da263c44a158d0028da9ab9
+      internalID: 1271436568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_243
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 694ddc8292072cd43bd584c910a0e67f
+      internalID: -638515687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_244
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc7fc06c593bff419f004175f3d13a9
+      internalID: -1214378898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_245
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 944de39c50c27d74b95eccd20ff6b22b
+      internalID: -265805409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_246
+      rect:
+        serializedVersion: 2
+        x: 5800
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36f94a778d58a8b45b84ec8101c1d832
+      internalID: 1113118910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: owlbear_247
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 0
+        width: 200
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 049d13d14cf46604d9e8a70b59501c5e
+      internalID: -2041024256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 492fa58209341be4aabe26d421d19e49
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      owlbear_0: -926305013
+      owlbear_1: -780003101
+      owlbear_10: 2007737907
+      owlbear_100: 1091053970
+      owlbear_101: -1330171805
+      owlbear_102: 861810044
+      owlbear_103: -141968482
+      owlbear_104: -1998185275
+      owlbear_105: 1289231136
+      owlbear_106: -402621996
+      owlbear_107: 1301840033
+      owlbear_108: 2110769275
+      owlbear_109: -33236559
+      owlbear_11: -799851780
+      owlbear_110: -1042858028
+      owlbear_111: -1676787153
+      owlbear_112: -1215616554
+      owlbear_113: -1528927393
+      owlbear_114: 186848619
+      owlbear_115: 452195701
+      owlbear_116: -410986291
+      owlbear_117: 139458503
+      owlbear_118: -1162647145
+      owlbear_119: 1348934145
+      owlbear_12: -765428440
+      owlbear_120: -250084728
+      owlbear_121: -1741688544
+      owlbear_122: 1324829987
+      owlbear_123: 1538522513
+      owlbear_124: -1938698331
+      owlbear_125: -112170803
+      owlbear_126: 30905911
+      owlbear_127: 1771824179
+      owlbear_128: 2053269929
+      owlbear_129: 1117643038
+      owlbear_13: -1698951936
+      owlbear_130: 693392056
+      owlbear_131: -572924640
+      owlbear_132: -1968524835
+      owlbear_133: 525599291
+      owlbear_134: 508093012
+      owlbear_135: -1206302755
+      owlbear_136: 1928448585
+      owlbear_137: -1136714243
+      owlbear_138: 255581679
+      owlbear_139: -2126000134
+      owlbear_14: 1164331823
+      owlbear_140: 92783876
+      owlbear_141: -1470667483
+      owlbear_142: 2049464462
+      owlbear_143: -1903540706
+      owlbear_144: 402911405
+      owlbear_145: 2105221719
+      owlbear_146: 1481007058
+      owlbear_147: 1286685875
+      owlbear_148: -513768666
+      owlbear_149: -1785250422
+      owlbear_15: 1901976227
+      owlbear_150: -155209111
+      owlbear_151: -178090809
+      owlbear_152: -1217150878
+      owlbear_153: 325341335
+      owlbear_154: 612424170
+      owlbear_155: 2097326394
+      owlbear_156: -120992609
+      owlbear_157: -1805602675
+      owlbear_158: -581986149
+      owlbear_159: -1705632019
+      owlbear_16: -656903952
+      owlbear_160: 947607331
+      owlbear_161: -108340305
+      owlbear_162: 640126475
+      owlbear_163: -1059563161
+      owlbear_164: 109291604
+      owlbear_165: -1075905941
+      owlbear_166: 918610204
+      owlbear_167: 1045344077
+      owlbear_168: 1058630536
+      owlbear_169: 1492272361
+      owlbear_17: 358246139
+      owlbear_170: 676347931
+      owlbear_171: -1904040267
+      owlbear_172: 1377767959
+      owlbear_173: -1947770008
+      owlbear_174: 1206541052
+      owlbear_175: 921557079
+      owlbear_176: -184070651
+      owlbear_177: -665925020
+      owlbear_178: 1500141930
+      owlbear_179: 626800910
+      owlbear_18: 1684272818
+      owlbear_180: -1864591798
+      owlbear_181: 522652642
+      owlbear_182: -377319535
+      owlbear_183: 2128330902
+      owlbear_184: 99521404
+      owlbear_185: 1836721324
+      owlbear_186: 1345610027
+      owlbear_187: -486430940
+      owlbear_188: -1318290209
+      owlbear_189: 790429461
+      owlbear_19: 1988953180
+      owlbear_190: 2127507642
+      owlbear_191: -199961281
+      owlbear_192: -1646851535
+      owlbear_193: 662061893
+      owlbear_194: -1915294834
+      owlbear_195: 388732249
+      owlbear_196: 1491908996
+      owlbear_197: -500972630
+      owlbear_198: 1222705156
+      owlbear_199: 494526062
+      owlbear_2: -75057296
+      owlbear_20: -146917820
+      owlbear_200: -1777211005
+      owlbear_201: 718755865
+      owlbear_202: -94692802
+      owlbear_203: 1270453005
+      owlbear_204: -1733909028
+      owlbear_205: 644487348
+      owlbear_206: -270712469
+      owlbear_207: -149351864
+      owlbear_208: -1158523454
+      owlbear_209: -313554885
+      owlbear_21: 709699874
+      owlbear_210: -7354252
+      owlbear_211: -1335578907
+      owlbear_212: 518500980
+      owlbear_213: 829907039
+      owlbear_214: -562402317
+      owlbear_215: 85181948
+      owlbear_216: -1479246413
+      owlbear_217: -170082741
+      owlbear_218: 1188874129
+      owlbear_219: -1631303279
+      owlbear_22: 413689109
+      owlbear_220: -1383011397
+      owlbear_221: 260224312
+      owlbear_222: 669919762
+      owlbear_223: 746046520
+      owlbear_224: -119333365
+      owlbear_225: 1404277922
+      owlbear_226: 911259142
+      owlbear_227: -245811373
+      owlbear_228: 2101796008
+      owlbear_229: -996661524
+      owlbear_23: 199959378
+      owlbear_230: 891346633
+      owlbear_231: 2055110291
+      owlbear_232: 850622601
+      owlbear_233: -1517931810
+      owlbear_234: 1848623123
+      owlbear_235: -265999826
+      owlbear_236: 651881126
+      owlbear_237: 1901701036
+      owlbear_238: 598688855
+      owlbear_239: 1456899131
+      owlbear_24: 253050709
+      owlbear_240: -1137631341
+      owlbear_241: 1224003888
+      owlbear_242: 1271436568
+      owlbear_243: -638515687
+      owlbear_244: -1214378898
+      owlbear_245: -265805409
+      owlbear_246: 1113118910
+      owlbear_247: -2041024256
+      owlbear_25: -992158194
+      owlbear_26: 1556288256
+      owlbear_27: -1022832650
+      owlbear_28: -1155742924
+      owlbear_29: 912771463
+      owlbear_3: 1079896869
+      owlbear_30: 865735081
+      owlbear_31: -970957722
+      owlbear_32: 1070855837
+      owlbear_33: -808887079
+      owlbear_34: -360895392
+      owlbear_35: -2007858936
+      owlbear_36: -1766049568
+      owlbear_37: 480167498
+      owlbear_38: 1060168502
+      owlbear_39: -330510379
+      owlbear_4: 1462293147
+      owlbear_40: 2137803558
+      owlbear_41: 570194723
+      owlbear_42: 1403087539
+      owlbear_43: 690021221
+      owlbear_44: -1559970025
+      owlbear_45: 66622894
+      owlbear_46: 1023418199
+      owlbear_47: 266695571
+      owlbear_48: -2017904430
+      owlbear_49: -799841642
+      owlbear_5: 1184134359
+      owlbear_50: -1883890637
+      owlbear_51: -1111652599
+      owlbear_52: 1494179375
+      owlbear_53: 256537405
+      owlbear_54: 1128712105
+      owlbear_55: 1197294730
+      owlbear_56: -2138360386
+      owlbear_57: -496417679
+      owlbear_58: 103067720
+      owlbear_59: 605726793
+      owlbear_6: -1940093590
+      owlbear_60: -822772398
+      owlbear_61: -536328645
+      owlbear_62: -162458171
+      owlbear_63: 780810157
+      owlbear_64: 169635447
+      owlbear_65: -435899428
+      owlbear_66: -1318180952
+      owlbear_67: -1803916598
+      owlbear_68: -688327424
+      owlbear_69: 525433461
+      owlbear_7: -923342749
+      owlbear_70: 1143500669
+      owlbear_71: -162442881
+      owlbear_72: 1713664979
+      owlbear_73: 410856123
+      owlbear_74: -1527666830
+      owlbear_75: 1027111351
+      owlbear_76: -664958869
+      owlbear_77: 1213765439
+      owlbear_78: -1345126282
+      owlbear_79: -1538598806
+      owlbear_8: -1034983575
+      owlbear_80: 746929462
+      owlbear_81: -1084408779
+      owlbear_82: 225463818
+      owlbear_83: -1483422024
+      owlbear_84: 587009264
+      owlbear_85: -1220349800
+      owlbear_86: -1733596819
+      owlbear_87: -1389287394
+      owlbear_88: 149575406
+      owlbear_89: 817333769
+      owlbear_9: -1125567677
+      owlbear_90: 1319835707
+      owlbear_91: -2026151953
+      owlbear_92: -1447849188
+      owlbear_93: 297494380
+      owlbear_94: -1768371084
+      owlbear_95: 433383849
+      owlbear_96: -296927440
+      owlbear_97: -1268562977
+      owlbear_98: -427687311
+      owlbear_99: -1313774756
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
