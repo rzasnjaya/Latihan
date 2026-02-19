@@ -14,7 +14,7 @@ public class Board : MonoBehaviour
     private BallFactory ballFactory;
 
     private BallSlot[] ballSlots;
-    void Start()
+    private void Start()
     {
         pathCreator = FindObjectOfType<PathCreator>();
         ballFactory = FindObjectOfType<BallFactory>();
@@ -41,7 +41,12 @@ public class Board : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
+    {
+        ProduceBallsOnTrack();
+    }
+
+    private void ProduceBallsOnTrack()
     {
         BallSlot zeroSlot = BallSlotsByDistance[0];
         if (!zeroSlot.ball)
@@ -80,6 +85,57 @@ public class Board : MonoBehaviour
         {
             ballSlot.ball.MoveToSlot();
         }
+
+        StartCoroutine(DestroyMatchingBallsCo(landingBall.slot));
+    }
+
+    private IEnumerator DestroyMatchingBallsCo(BallSlot landedBallSlot)
+    {
+        yield return new WaitUntil(() => BallSlotsByDistance.All(bs => !bs.ball || bs.ball.state != BallState.Landing && bs.ball.state != BallState.SwitchingSlots));
+        List<BallSlot> ballsToDestroySlots = GetSimiliarBalls(landedBallSlot);
+
+        if (ballsToDestroySlots.Count >= 3)
+        {
+            foreach (BallSlot ballsToDestroySlot in ballsToDestroySlots)
+            {
+                ballsToDestroySlot.ball.StartDestroying();
+                ballsToDestroySlot.AssignBall(null);
+            }
+        }
+    }
+
+    private List<BallSlot> GetSimiliarBalls(BallSlot landedBallSlot)
+    {
+        List<BallSlot> ballsToDestroySlots = new List<BallSlot> { landedBallSlot };
+        int indexOfLandedBallSlot = Array.IndexOf(BallSlotsByDistance, landedBallSlot);
+
+        for (int i = indexOfLandedBallSlot + 1; i < BallSlotsByDistance.Length; i--)
+        {
+            BallSlot ballSlot = BallSlotsByDistance[i];
+            if (ballSlot.ball && !ballsToDestroySlots.Contains(ballSlot) && ballSlot.ball.type == landedBallSlot.ball.type)
+            {
+                ballsToDestroySlots.Add(ballSlot);
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        for (int i = indexOfLandedBallSlot + 1; i < BallSlotsByDistance.Length; i++)
+        {
+            BallSlot ballSlot = BallSlotsByDistance[i];
+            if (!ballsToDestroySlots.Contains(ballSlot) && ballSlot.ball.type == landedBallSlot.ball.type)
+            {
+                ballsToDestroySlots.Add(ballSlot);
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        return ballsToDestroySlots;
     }
 
     private static int FirstEmptySlotIndexAfter(int indexOfCollidedSlot, BallSlot[] ballSlotsByDistance)

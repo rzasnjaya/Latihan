@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using PathCreation;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
@@ -60,7 +57,7 @@ public class Ball : MonoBehaviour
                 break;
 
             case BallState.Landing:
-                transform.position = Vector3.MoveTowards(transform.position, slot.transform.position, 5 * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, slot.transform.position, gameProperties.ballLandingSpeed * Time.deltaTime);
                 if (Vector3.Distance(transform.position, slot.transform.position) < 0.1f)
                 {
                     state = BallState.InSlot;
@@ -88,10 +85,6 @@ public class Ball : MonoBehaviour
         circleCollider2D.enabled = true;
     }
 
-    public void Land()
-    {
-        state = BallState.Landing;
-    }
 
     public void MoveToSlot()
     {
@@ -100,16 +93,27 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Ball Slot"))
+        if (!other.CompareTag("Ball Slot"))
         {
-            BallSlot ballSlot = other.GetComponent<BallSlot>();
-
-            if (ballSlot.ball & state == BallState.Shooting)
-            {
-                Debug.Log("Boo!!");
-                board.LandBall(ballSlot, this);
-                circleCollider2D.enabled = false;
-            }
+            return;
         }
+        BallSlot ballSlot = other.GetComponent<BallSlot>();
+
+        if (!ballSlot.ball || state != BallState.Shooting)
+        {
+            return;
+        }
+        board.LandBall(ballSlot, this);
+        circleCollider2D.enabled = false;
     }
+    public void Land()
+    {
+        state = BallState.Landing;
+    }
+
+    public void StartDestroying()
+    {
+        state = BallState.Destroying;
+    }
+
 }
