@@ -6,6 +6,8 @@ using UnityEngine;
 public class BallSlot : MonoBehaviour
 {
     private PathCreator pathCreator;
+
+    public Ball ball;
     public float distanceTraveled;
     
     void Start()
@@ -17,6 +19,10 @@ public class BallSlot : MonoBehaviour
     void Update()
     {
         distanceTraveled += Time.deltaTime;
+        if (distanceTraveled > pathCreator.path.length)
+        {
+            distanceTraveled = 0;
+        }
         transform.position = pathCreator.path.GetPointAtDistance(distanceTraveled);
     }
 }
