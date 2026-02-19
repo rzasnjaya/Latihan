@@ -8,6 +8,7 @@ public class Ball : MonoBehaviour
    private GameProperties gameProperties;
 
    public BallState state;
+   public BallType type;
    private float upscaleCounter;
    private float downscaleCounter = 1;
    private Vector3 shootDirection;

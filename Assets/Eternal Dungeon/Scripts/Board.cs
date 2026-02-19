@@ -31,7 +31,7 @@ public class Board : MonoBehaviour
         for (int i = 0; i < slotsCount; i++)
         {
             float distanceTraveled = i * step;
-            Vector3 slotPos = pathCreator.path.GetPointAtDistance(i);
+            Vector3 slotPos = pathCreator.path.GetPointAtDistance(distanceTraveled);
             BallSlot ballSlot = Instantiate(ballSlotPrefab, slotPos, Quaternion.identity);
             ballSlot.distanceTraveled = distanceTraveled;
             ballSlot.transform.parent = ballSlotsContainer.transform;
@@ -45,7 +45,7 @@ public class Board : MonoBehaviour
         BallSlot zeroSlot = ballSlots.OrderBy(bs => bs.distanceTraveled).ToArray()[0];
         if (!zeroSlot.ball)
         {
-            Ball ball = ballFactory.CreateBallAt(zeroSlot.transform.position);
+            Ball ball = ballFactory.CreateRandomBallAt(zeroSlot.transform.position);
             zeroSlot.ball = ball;
             ball.transform.parent = zeroSlot.transform;
             ball.transform.localScale = Vector3.zero;
