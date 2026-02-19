@@ -5,14 +5,6 @@ using UnityEngine;
 public class GameProperties : MonoBehaviour
 {
     public float ballUpscaleSpeed = 2f;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float ballDownscaleSpeed = 2f;
+    public float ballSlotsSpeed = 4f;
 }
