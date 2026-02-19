@@ -7,6 +7,11 @@ public class Ball : MonoBehaviour
 {
    private GameProperties gameProperties;
 
+   private Board board;
+
+   private CircleCollider2D circleCollider2D;
+
+   public BallSlot slot; 
    public BallState state;
    public BallType type;
    private float upscaleCounter;
@@ -16,11 +21,9 @@ public class Ball : MonoBehaviour
    private void Start()
    {
         gameProperties = FindObjectOfType<GameProperties>();
-
-        if (state == BallState.Spawning)
-        {
-            transform.localScale = Vector3.zero;
-        }
+        board = FindObjectOfType<Board>();
+        circleCollider2D = GetComponent<CircleCollider2D>();
+        circleCollider2D.enabled = false;
    }
 
 
@@ -55,6 +58,26 @@ public class Ball : MonoBehaviour
             case BallState.Shooting:
                 transform.position += shootDirection * (gameProperties.ballShootingSpeed * Time.deltaTime);
                 break;
+
+            case BallState.Landing:
+                transform.position = Vector3.MoveTowards(transform.position, slot.transform.position, 5 * Time.deltaTime);
+                if (Vector3.Distance(transform.position, slot.transform.position) < 0.1f)
+                {
+                    state = BallState.InSlot;
+                    transform.position = slot.transform.position;
+                    transform.parent = slot.transform;
+                }
+                break;
+
+            case BallState.SwitchingSlots:
+                transform.position = Vector3.MoveTowards(transform.position, slot.transform.position, 5 * Time.deltaTime);
+                if (Vector3.Distance(transform.position, slot.transform.position) < 0.1f)
+                {
+                    state = BallState.InSlot;
+                    transform.position = slot.transform.position;
+                    transform.parent = slot.transform;
+                }
+                break;
         }
     }
 
@@ -62,6 +85,17 @@ public class Ball : MonoBehaviour
     {
         shootDirection = direction;
         state = BallState.Shooting;
+        circleCollider2D.enabled = true;
+    }
+
+    public void Land()
+    {
+        state = BallState.Landing;
+    }
+
+    public void MoveToSlot()
+    {
+        state = BallState.SwitchingSlots;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -73,6 +107,8 @@ public class Ball : MonoBehaviour
             if (ballSlot.ball & state == BallState.Shooting)
             {
                 Debug.Log("Boo!!");
+                board.LandBall(ballSlot, this);
+                circleCollider2D.enabled = false;
             }
         }
     }

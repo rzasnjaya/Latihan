@@ -29,7 +29,6 @@ public class Shooter : MonoBehaviour
         {
             Vector3 shootDirection = (GetMousePos() - transform.position).normalized;
 
-            nextShootBall.transform.parent = null;
             nextShootBall.Shoot(shootDirection);
             nextShootBall = null;
         }

@@ -33,7 +33,6 @@ public class BallFactory : MonoBehaviour
         Ball ball = Instantiate(ballPrefab, point, Quaternion.identity);
         ball.type = ballType;
         ball.state = BallState.Spawning;
-        ball.transform.localScale = Vector3.zero;
         SpriteRenderer spriteRenderer = ball.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = GetSpriteByType(ballType);
 
