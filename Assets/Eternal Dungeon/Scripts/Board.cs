@@ -60,14 +60,15 @@ public class Board : MonoBehaviour
             return;
         }
         BallSlot zeroSlot = BallSlotsByDistance[0];
-        if (!zeroSlot.ball)
+        if (zeroSlot.ball)
         {
-            Ball ball = ballFactory.CreateBallAt(zeroSlot.transform.position, ballFactory.GetRandomBallType());
-            zeroSlot.AssignBall(ball);
-            ball.transform.parent = zeroSlot.transform;
-            ball.transform.localScale = Vector3.zero;
-            ball.state = BallState.Spawning;
+            return;
         }
+        Ball ball = ballFactory.CreateBallAt(zeroSlot.transform.position, ballFactory.GetRandomBallType());
+        zeroSlot.AssignBall(ball);
+        ball.transform.parent = zeroSlot.transform;
+        ball.transform.localScale = Vector3.zero;
+        ball.state = BallState.Spawning;
     }
 
     public void LandBall(BallSlot collidedSlot, Ball landingBall)
@@ -124,6 +125,10 @@ public class Board : MonoBehaviour
             {
                 StartCoroutine(StartReverseCo());
             }
+            if (ballsToDestroySlots.FindIndex(bs => bs.ball.type == BallType.TimeSlow) != -1)
+            {
+                StartCoroutine(TimeSlowCo());
+            }
 
             foreach (BallSlot ballsToDestroySlot in ballsToDestroySlots)
             {
@@ -143,6 +148,30 @@ public class Board : MonoBehaviour
         isDestroyingMatchingBalls = false;
     }
 
+    private IEnumerator TimeSlowCo()
+    {
+        yield return new WaitUntil(() => BallSlotsByDistance.All(bs =>
+            isDestroyingMatchingBalls == false
+            && isReverse == false
+            && (!bs.ball
+                || bs.ball.state != BallState.Landing
+                && bs.ball.state != BallState.SwitchingSlots)
+            )
+        );
+
+        foreach (BallSlot ballSlot in ballSlots)
+        {
+            ballSlot.speedMultiplier = 0.5f;
+        }
+
+        yield return new WaitForSeconds(gameProperties.timeSlowDuration);
+
+        foreach (BallSlot ballSlot in ballSlots)
+        {
+            ballSlot.speedMultiplier = 1f;
+        }
+    }
+
     private IEnumerator StartReverseCo()
     {
         yield return new WaitUntil(() => BallSlotsByDistance.All(bs =>
@@ -157,14 +186,14 @@ public class Board : MonoBehaviour
 
         foreach (BallSlot ballSlot in ballSlots)
         {
-            ballSlot.direction = -1;
+            ballSlot.speedMultiplier = -1;
         }
 
         yield return new WaitForSeconds(gameProperties.reverseDuration);
 
         foreach (BallSlot ballSlot in ballSlots)
         {
-            ballSlot.direction = 1;
+            ballSlot.speedMultiplier = 1;
         }
 
         isReverse = false;
@@ -199,7 +228,7 @@ public class Board : MonoBehaviour
 
     private void MoveSeperatedBallsBack()
     {
-        int firstEmptyIndex = Array.FindIndex(BallSlotsByDistance, bs => !bs.ball);
+        int firstEmptyIndex = Array.FindIndex(BallSlotsByDistance, 1, bs => !bs.ball);
         int firstNonEmptyIndexAfter = Array.FindIndex(BallSlotsByDistance, firstEmptyIndex, bs => bs.ball);
         int emptySlotsCount = firstNonEmptyIndexAfter - firstEmptyIndex;
 

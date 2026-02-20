@@ -66,8 +66,7 @@ public class Ball : MonoBehaviour
                 if (Vector3.Distance(transform.position, slot.transform.position) < 0.1f)
                 {
                     state = BallState.InSlot;
-                    transform.position = slot.transform.position;
-                    transform.parent = slot.transform;
+                    PlaceInSlotTransform();
                 }
                 break;
 
@@ -79,11 +78,16 @@ public class Ball : MonoBehaviour
                 if (Mathf.Abs(distanceTraveled - slot.distanceTraveled) < 0.1f)
                 {
                     state = BallState.InSlot;
-                    transform.position = slot.transform.position;
-                    transform.parent = slot.transform;
+                    PlaceInSlotTransform();
                 }
                 break;
         }
+    }
+
+    private void PlaceInSlotTransform()
+    {
+        transform.position = slot.transform.position;
+        transform.parent = slot.transform;
     }
 
     public void Shoot(Vector3 direction)

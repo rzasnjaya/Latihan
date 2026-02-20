@@ -9,7 +9,7 @@ public class Shooter : MonoBehaviour
     private Board board;
 
     public Ball nextShootBall;
-    void Start()
+    private void Start()
     {
         ballFactory = FindObjectOfType<BallFactory>();
         board = FindObjectOfType<Board>();
@@ -18,7 +18,7 @@ public class Shooter : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         FaceMouse();
 
@@ -27,7 +27,7 @@ public class Shooter : MonoBehaviour
             nextShootBall = ballFactory.CreateRandomBallAt(transform.position); 
         }
 
-        if (Input.GetMouseButtonDown(0) && !board.isDestroyingMatchingBalls)
+        if (Input.GetMouseButtonDown(0) && !board.isDestroyingMatchingBalls && !board.isReverse)
         {
             Vector3 shootDirection = (GetMousePos() - transform.position).normalized;
 
