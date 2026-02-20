@@ -11,6 +11,7 @@ public class Board : MonoBehaviour
 {
     public BallSlot ballSlotPrefab;
     public GameObject ballSlotsContainer;
+    public GameProperties gameProperties;
 
     public bool isDestroyingMatchingBalls;
 
@@ -22,6 +23,7 @@ public class Board : MonoBehaviour
     {
         pathCreator = FindObjectOfType<PathCreator>();
         ballFactory = FindObjectOfType<BallFactory>();
+        gameProperties = FindObjectOfType<GameProperties>();
 
         InitBallSlots();
     }
@@ -112,6 +114,8 @@ public class Board : MonoBehaviour
                 break;
             }
 
+            AddBallsIfThereIsBomb(ballsToDestroySlots);
+
             foreach (BallSlot ballsToDestroySlot in ballsToDestroySlots)
             {
                 ballsToDestroySlot.ball.StartDestroying();
@@ -128,6 +132,33 @@ public class Board : MonoBehaviour
         yield return new WaitUntil(() => BallSlotsByDistance.All(bs =>
             !bs.ball || bs.ball.state != BallState.SwitchingSlots));
         isDestroyingMatchingBalls = false;
+    }
+
+    private void AddBallsIfThereIsBomb(List<BallSlot> ballsToDestroySlots)
+    {
+        BallSlot ballSlot = ballsToDestroySlots.FirstOrDefault(bs => bs.ball.type == BallType.Bomb);
+
+        if (ballSlot)
+        {
+            int indexOfBombSlot = Array.IndexOf(BallSlotsByDistance, ballSlot);
+            for (int i = 1; i <= gameProperties.bombRadius; i++)
+            {
+                int leftIndex = indexOfBombSlot - i;
+                int rightIndex = indexOfBombSlot + i;
+
+                if (leftIndex >= 0 && BallSlotsByDistance[leftIndex].ball &&
+                    !ballsToDestroySlots.Contains(BallSlotsByDistance[leftIndex]))
+                {
+                    ballsToDestroySlots.Add(BallSlotsByDistance[leftIndex]);
+                }
+
+                if (rightIndex < BallSlotsByDistance.Length && BallSlotsByDistance[rightIndex].ball &&
+                    !ballsToDestroySlots.Contains(BallSlotsByDistance[rightIndex]))
+                {
+                    ballsToDestroySlots.Add(BallSlotsByDistance[rightIndex]);
+                }
+            }
+        }
     }
 
     private void MoveSeperatedBallsBack()

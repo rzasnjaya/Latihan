@@ -156,9 +156,9 @@ MonoBehaviour:
   redSprite: {fileID: 21300000, guid: ad367a20f9ce8294fbdeaf0d2c422d04, type: 3}
   greenSprite: {fileID: 21300000, guid: e2bb5ebc5132a134a99fa5d3b81fea6b, type: 3}
   blueSprite: {fileID: 21300000, guid: 39e65360c7ba0ef4882d166fd9fba685, type: 3}
-  bombSprite: {fileID: 0}
-  reverseSprite: {fileID: 0}
-  timeSlowSprite: {fileID: 0}
+  bombSprite: {fileID: 21300000, guid: ab5fed8983057c248abfca3b8b8afdb8, type: 3}
+  reverseSprite: {fileID: 21300000, guid: 6b231cfd94529224f96e6eb319c088eb, type: 3}
+  timeSlowSprite: {fileID: 21300000, guid: f3febbfbd32419e44a0138fe672760fa, type: 3}
 --- !u!4 &392654898
 Transform:
   m_ObjectHideFlags: 0
@@ -336,6 +336,7 @@ MonoBehaviour:
   ballSlotPrefab: {fileID: 103428944647142049, guid: 05fa6a24ace2adc4aaeea990a49c2cd4,
     type: 3}
   ballSlotsContainer: {fileID: 1106314764}
+  gameProperties: {fileID: 0}
   isDestroyingMatchingBalls: 0
 --- !u!1 &1199020530
 GameObject:
@@ -834,6 +835,7 @@ MonoBehaviour:
   ballShootingSpeed: 20
   ballLandingSpeed: 5
   ballSlotSwitchingSpeed: 5
+  bombRadius: 1
 --- !u!4 &1851441561
 Transform:
   m_ObjectHideFlags: 0
