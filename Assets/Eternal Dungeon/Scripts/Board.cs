@@ -12,6 +12,8 @@ public class Board : MonoBehaviour
     public BallSlot ballSlotPrefab;
     public GameObject ballSlotsContainer;
     public GameProperties gameProperties;
+    private Shooter shooter;
+    private AudioManager3 audioManager;
 
     public bool isDestroyingMatchingBalls;
     public bool isReverse;
@@ -25,8 +27,12 @@ public class Board : MonoBehaviour
         pathCreator = FindObjectOfType<PathCreator>();
         ballFactory = FindObjectOfType<BallFactory>();
         gameProperties = FindObjectOfType<GameProperties>();
+        shooter = FindAnyObjectByType<Shooter>();
+
+        audioManager = FindObjectOfType<AudioManager3>();
 
         InitBallSlots();
+        audioManager.PlayRandomMusic();
     }
 
     private void InitBallSlots()
@@ -68,11 +74,12 @@ public class Board : MonoBehaviour
         zeroSlot.AssignBall(ball);
         ball.transform.parent = zeroSlot.transform;
         ball.transform.localScale = Vector3.zero;
-        ball.state = BallState.Spawning;
+        ball.state = BallState.SpawningOnTrack;
     }
 
     public void LandBall(BallSlot collidedSlot, Ball landingBall)
     {
+        audioManager.PlaySfx(0);
         BallSlot[] ballSlotsByDistance = BallSlotsByDistance;
         int indexOfCollidedSlot = Array.IndexOf(ballSlotsByDistance, collidedSlot);
         int firstEmptySlotIndexAfter = FirstEmptySlotIndexAfter(indexOfCollidedSlot, ballSlotsByDistance);
@@ -104,6 +111,7 @@ public class Board : MonoBehaviour
     private IEnumerator DestroyMatchingBallsCo(BallSlot landedBallSlot)
     {
         isDestroyingMatchingBalls = true;
+        shooter.isShooterDisabledFromOutside = true;
 
         List<BallSlot> ballsToDestroySlots;
         BallSlot collidedBallSlot = landedBallSlot;
@@ -141,7 +149,9 @@ public class Board : MonoBehaviour
 
         yield return new WaitUntil(() => BallSlotsByDistance.All(bs =>
             !bs.ball || bs.ball.state != BallState.SwitchingSlots));
+
         isDestroyingMatchingBalls = false;
+        shooter.isShooterDisabledFromOutside = false;
     }
 
     private void DestroyAllBallsInList(List<BallSlot> ballsToDestroySlots)
@@ -152,6 +162,8 @@ public class Board : MonoBehaviour
             ballsToDestroySlot.ball.StartDestroying();
             ballsToDestroySlot.AssignBall(null);
         }
+
+        audioManager.PlaySfx(1);
     }
 
     private IEnumerator TimeSlowCo()
@@ -189,6 +201,7 @@ public class Board : MonoBehaviour
         );
 
         isReverse = true;
+        shooter.isShooterDisabledFromOutside = true;
 
         foreach (BallSlot ballSlot in ballSlots)
         {
@@ -203,6 +216,7 @@ public class Board : MonoBehaviour
         }
 
         isReverse = false;
+        shooter.isShooterDisabledFromOutside = false;
     }
 
     private void AddBallsIfThereIsBomb(List<BallSlot> ballsToDestroySlots)

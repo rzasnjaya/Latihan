@@ -5,16 +5,21 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     public Transform shootPoint;
+    public Sprite activeSprite;
+    public Sprite inactiveSprite;
 
     private Camera mainCamera;
     private BallFactory ballFactory;
-    private Board board;
+    private SpriteRenderer spriteRenderer;
+    private AudioManager3 audioManager;
 
     public Ball nextShootBall;
+    public bool isShooterDisabledFromOutside;
     private void Start()
     {
         ballFactory = FindObjectOfType<BallFactory>();
-        board = FindObjectOfType<Board>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        audioManager = FindObjectOfType<AudioManager3>();
 
         mainCamera = Camera.main;
     }
@@ -23,20 +28,27 @@ public class Shooter : MonoBehaviour
     private void Update()
     {
         FaceMouse();
+        UpdateSprite();
 
         if (!nextShootBall)
         {
             nextShootBall = ballFactory.CreateRandomBallAt(shootPoint.position);
+            nextShootBall.state = BallState.SpawningToShoot;
             nextShootBall.transform.parent = shootPoint;
         }
 
-        if (Input.GetMouseButtonDown(0) && !board.isDestroyingMatchingBalls && !board.isReverse)
+        if (Input.GetMouseButtonDown(0) && !isShooterDisabledFromOutside)
         {
             Vector3 shootDirection = (GetMousePos() - transform.position).normalized;
-
+            audioManager.PlaySfx(2);
             nextShootBall.Shoot(shootDirection);
             nextShootBall = null;
         }
+    }
+
+    public void UpdateSprite()
+    {
+        spriteRenderer.sprite = !isShooterDisabledFromOutside && IsNextBallReady ? activeSprite : inactiveSprite;
     }
 
     private void ShootNextBall()
@@ -63,4 +75,6 @@ public class Shooter : MonoBehaviour
 
         return mousePos;
     }
+
+    private bool IsNextBallReady => nextShootBall && nextShootBall.state == BallState.ReadyToShoot;
 }

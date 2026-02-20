@@ -35,19 +35,32 @@ public class Ball : MonoBehaviour
    {
         switch (state)
         {
-            case BallState.Spawning:
-            {
-                upscaleCounter += gameProperties.ballUpscaleSpeed * Time.deltaTime;
-
-                if (upscaleCounter >= 1)
+            case BallState.SpawningOnTrack:
                 {
-                    state = BallState.InSlot;
-                    return;
-                }
+                    upscaleCounter += gameProperties.ballUpscaleSpeed * Time.deltaTime;
 
-                transform.localScale = Vector3.one * upscaleCounter;
-                break;
-        }
+                    if (upscaleCounter >= 1)
+                    {
+                        state = BallState.InSlot;
+                        return;
+                    }
+
+                    transform.localScale = Vector3.one * upscaleCounter;
+                    break;
+                }
+            case BallState.SpawningToShoot:
+                {
+                    upscaleCounter += gameProperties.ballUpscaleSpeed * Time.deltaTime;
+
+                    if (upscaleCounter >= 1)
+                    {
+                        state = BallState.ReadyToShoot;
+                        return;
+                    }
+
+                    transform.localScale = Vector3.one * upscaleCounter;
+                    break;
+                }
             case BallState.Destroying:
                 float multiplier = downscaleCounter > 0.9f ? 0.3f : 1;
                 downscaleCounter -= multiplier * gameProperties.ballUpscaleSpeed * Time.deltaTime;
@@ -75,8 +88,8 @@ public class Ball : MonoBehaviour
                 break;
 
             case BallState.SwitchingSlots:
-            int direction = distanceTraveled > slot.distanceTraveled ? -1 : 1;
-            distanceTraveled += direction * gameProperties.ballSlotSwitchingSpeed * Time.deltaTime;
+                int direction = distanceTraveled > slot.distanceTraveled ? -1 : 1;
+                distanceTraveled += direction * gameProperties.ballSlotSwitchingSpeed * Time.deltaTime;
 
                 transform.position = pathCreator.path.GetPointAtDistance(distanceTraveled);
                 if (Mathf.Abs(distanceTraveled - slot.distanceTraveled) < 0.1f)
@@ -84,6 +97,10 @@ public class Ball : MonoBehaviour
                     state = BallState.InSlot;
                     PlaceInSlotTransform();
                 }
+                break;
+            case BallState.InSlot:
+                break;
+            case BallState.ReadyToShoot:
                 break;
         }
     }
