@@ -12,14 +12,17 @@ public class Shooter : MonoBehaviour
     private BallFactory ballFactory;
     private SpriteRenderer spriteRenderer;
     private AudioManager3 audioManager;
+    private Board board;
 
     public Ball nextShootBall;
     public bool isShooterDisabledFromOutside;
     private void Start()
     {
         ballFactory = FindObjectOfType<BallFactory>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         audioManager = FindObjectOfType<AudioManager3>();
+        board = FindObjectOfType<Board>();
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         mainCamera = Camera.main;
     }
@@ -27,17 +30,20 @@ public class Shooter : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        FaceMouse();
-        UpdateSprite();
+        if (!board.isPaused)
+        {
+            FaceMouse();
+            UpdateSprite();
+        }
 
-        if (!nextShootBall)
+            if (!nextShootBall)
         {
             nextShootBall = ballFactory.CreateRandomBallAt(shootPoint.position);
             nextShootBall.state = BallState.SpawningToShoot;
             nextShootBall.transform.parent = shootPoint;
         }
 
-        if (Input.GetMouseButtonDown(0) && !isShooterDisabledFromOutside)
+        if (Input.GetMouseButtonUp(0) && !isShooterDisabledFromOutside && !board.isPaused)
         {
             Vector3 shootDirection = (GetMousePos() - transform.position).normalized;
             audioManager.PlaySfx(2);

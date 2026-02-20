@@ -17,6 +17,7 @@ public class Board : MonoBehaviour
 
     public bool isDestroyingMatchingBalls;
     public bool isReverse;
+    public bool isPaused;
 
     private PathCreator pathCreator;
     private BallFactory ballFactory;
@@ -33,6 +34,8 @@ public class Board : MonoBehaviour
 
         InitBallSlots();
         audioManager.PlayRandomMusic();
+
+        Time.timeScale = 1;
     }
 
     private void InitBallSlots()
