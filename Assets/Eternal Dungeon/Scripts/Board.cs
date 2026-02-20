@@ -91,16 +91,58 @@ public class Board : MonoBehaviour
 
     private IEnumerator DestroyMatchingBallsCo(BallSlot landedBallSlot)
     {
-        yield return new WaitUntil(() => BallSlotsByDistance.All(bs => !bs.ball || bs.ball.state != BallState.Landing && bs.ball.state != BallState.SwitchingSlots));
-        List<BallSlot> ballsToDestroySlots = GetSimiliarBalls(landedBallSlot);
+        List<BallSlot> ballsToDestroySlots;
+        BallSlot collidedBallSlot = landedBallSlot
 
-        if (ballsToDestroySlots.Count >= 3)
+        do
         {
+            yield return new WaitUntil(() => BallSlotsByDistance.All(bs =>
+            !bs.ball || bs.ball.state != BallState.Landing && bs.ball.state != BallState.SwitchingSlots));
+
+            ballsToDestroySlots = GetSimiliarBalls(collidedBallSlot);
+
+            if (ballsToDestroySlots.Count < 3)
+            {
+                break;
+            }
+
             foreach (BallSlot ballsToDestroySlot in ballsToDestroySlots)
             {
                 ballsToDestroySlot.ball.StartDestroying();
                 ballsToDestroySlot.AssignBall(null);
             }
+
+            collidedBallSlot = ballsToDestroySlots[0];
+
+            yield return new WaitForSeconds(0.5f);
+
+            MoveSeperatedBallsBack();
+        } while (ballsToDestroySlots.Count >= 3 && collidedBallSlot);
+    }
+
+    private void MoveSeperatedBallsBack()
+    {
+        int firstEmptyIndex = Array.FindIndex(BallSlotsByDistance, bs => !bs.ball);
+        int firstNonEmptyIndexAfter = Array.FindIndex(BallSlotsByDistance, firstEmptyIndex, bs => bs.ball);
+        int emptySlotsCount = firstNonEmptyIndexAfter - firstEmptyIndex;
+
+        if (firstNonEmptyIndexAfter == -1 || firstEmptyIndex == -1)
+        {
+            return;
+        }
+
+        for (int i = firstEmptyIndex; i < BallSlotsByDistance.Length - emptySlotsCount; i++)
+        {
+            BallSlotsByDistance[i].AssignBall(BallSlotsByDistance[i + emptySlotsCount].ball);
+            if (BallSlotsByDistance[i].ball)
+            {
+                BallSlotsByDistance[i].ball.MoveToSlot();
+            }
+        }
+
+        for (int i = BallSlotsByDistance.Length - emptySlotsCount; i < BallSlotsByDistance.Length; i++)
+        {
+            BallSlotsByDistance[i].AssignBall(null);
         }
     }
 
@@ -108,6 +150,11 @@ public class Board : MonoBehaviour
     {
         List<BallSlot> ballsToDestroySlots = new List<BallSlot> { landedBallSlot };
         int indexOfLandedBallSlot = Array.IndexOf(BallSlotsByDistance, landedBallSlot);
+
+        if (!landedBallSlot.ball)
+        {
+            return ballsToDestroySlots;
+        }
 
         for (int i = indexOfLandedBallSlot + 1; i < BallSlotsByDistance.Length; i--)
         {

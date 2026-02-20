@@ -1,10 +1,12 @@
 using UnityEngine;
+using PathCreation;
 
 public class Ball : MonoBehaviour
 {
    private GameProperties gameProperties;
 
    private Board board;
+   private PathCreator pathCreator;
 
    private CircleCollider2D circleCollider2D;
 
@@ -14,11 +16,14 @@ public class Ball : MonoBehaviour
    private float upscaleCounter;
    private float downscaleCounter = 1;
    private Vector3 shootDirection;
+   private float distanceTraveled;
 
    private void Start()
    {
         gameProperties = FindObjectOfType<GameProperties>();
         board = FindObjectOfType<Board>();
+        pathCreator = FindObjectOfType<PathCreator>();
+
         circleCollider2D = GetComponent<CircleCollider2D>();
         circleCollider2D.enabled = false;
    }
@@ -67,8 +72,11 @@ public class Ball : MonoBehaviour
                 break;
 
             case BallState.SwitchingSlots:
-                transform.position = Vector3.MoveTowards(transform.position, slot.transform.position, 5 * Time.deltaTime);
-                if (Vector3.Distance(transform.position, slot.transform.position) < 0.1f)
+            int direction = distanceTraveled > slot.distanceTraveled ? -1 : 1;
+            distanceTraveled += direction * gameProperties.ballSlotSwitchingSpeed * Time.deltaTime;
+
+                transform.position = pathCreator.path.GetPointAtDistance(distanceTraveled);
+                if (Mathf.Abs(distanceTraveled - slot.distanceTraveled) < 0.1f)
                 {
                     state = BallState.InSlot;
                     transform.position = slot.transform.position;
@@ -83,12 +91,6 @@ public class Ball : MonoBehaviour
         shootDirection = direction;
         state = BallState.Shooting;
         circleCollider2D.enabled = true;
-    }
-
-
-    public void MoveToSlot()
-    {
-        state = BallState.SwitchingSlots;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -106,11 +108,18 @@ public class Ball : MonoBehaviour
         board.LandBall(ballSlot, this);
         circleCollider2D.enabled = false;
     }
+
     public void Land()
     {
         state = BallState.Landing;
     }
 
+    public void MoveToSlot()
+    {
+        state = BallState.SwitchingSlots;
+        distanceTraveled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
+    }
+    
     public void StartDestroying()
     {
         state = BallState.Destroying;
