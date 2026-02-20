@@ -153,12 +153,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 6296497313880635333, guid: 3353179892f66d746b0fa02de95ea92a,
     type: 3}
-  redSprite: {fileID: 21300000, guid: ad367a20f9ce8294fbdeaf0d2c422d04, type: 3}
-  greenSprite: {fileID: 21300000, guid: e2bb5ebc5132a134a99fa5d3b81fea6b, type: 3}
-  blueSprite: {fileID: 21300000, guid: 39e65360c7ba0ef4882d166fd9fba685, type: 3}
-  bombSprite: {fileID: 21300000, guid: ab5fed8983057c248abfca3b8b8afdb8, type: 3}
-  reverseSprite: {fileID: 21300000, guid: 6b231cfd94529224f96e6eb319c088eb, type: 3}
-  timeSlowSprite: {fileID: 21300000, guid: f3febbfbd32419e44a0138fe672760fa, type: 3}
+  redSprite: {fileID: 21300000, guid: 47c5192be9b3aa04ca32c81720f8088b, type: 3}
+  greenSprite: {fileID: 21300000, guid: 3e36afcbee44e054f8e3c06d8d1eb348, type: 3}
+  blueSprite: {fileID: 21300000, guid: 3270346a1c5277a4ea3a6f3517572871, type: 3}
+  bombSprite: {fileID: 21300000, guid: f2cd869373eec3348af5fdb9c7275247, type: 3}
+  reverseSprite: {fileID: 21300000, guid: 5eb625365d5b712499783581491784c2, type: 3}
+  timeSlowSprite: {fileID: 21300000, guid: dbc17824867df9b4d94e0d63caa3492b, type: 3}
 --- !u!4 &392654898
 Transform:
   m_ObjectHideFlags: 0
@@ -232,7 +232,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ffcb75dd411419348b68f0b03adcc939, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4777f7a63ce45a04e96a3cf8db8d3080, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -338,6 +338,38 @@ MonoBehaviour:
   ballSlotsContainer: {fileID: 1106314764}
   gameProperties: {fileID: 0}
   isDestroyingMatchingBalls: 0
+  isReverse: 0
+--- !u!1 &1191055218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1191055219}
+  m_Layer: 0
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1191055219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191055218}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.95, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1639997992}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1199020530
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,8 +792,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 832489df27e472541985ec2a25860f30, type: 3}
+  m_SortingOrder: 20
+  m_Sprite: {fileID: 21300000, guid: 7666d5bafae583a409d2d4752c592bae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -781,10 +813,11 @@ Transform:
   m_GameObject: {fileID: 1639997990}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.04, y: -0.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1191055219}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1639997993
@@ -799,6 +832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33e4c30ab575c20419c7e35cf729c824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootPoint: {fileID: 1191055219}
   nextShootBall: {fileID: 0}
 --- !u!1 &1851441559
 GameObject:
@@ -836,6 +870,8 @@ MonoBehaviour:
   ballLandingSpeed: 5
   ballSlotSwitchingSpeed: 5
   bombRadius: 1
+  reverseDuration: 2
+  timeSlowDuration: 2
 --- !u!4 &1851441561
 Transform:
   m_ObjectHideFlags: 0

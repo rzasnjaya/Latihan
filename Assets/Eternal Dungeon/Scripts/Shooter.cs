@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
+    public Transform shootPoint;
+
     private Camera mainCamera;
     private BallFactory ballFactory;
     private Board board;
@@ -24,7 +26,8 @@ public class Shooter : MonoBehaviour
 
         if (!nextShootBall)
         {
-            nextShootBall = ballFactory.CreateRandomBallAt(transform.position); 
+            nextShootBall = ballFactory.CreateRandomBallAt(shootPoint.position);
+            nextShootBall.transform.parent = shootPoint;
         }
 
         if (Input.GetMouseButtonDown(0) && !board.isDestroyingMatchingBalls && !board.isReverse)
@@ -34,6 +37,15 @@ public class Shooter : MonoBehaviour
             nextShootBall.Shoot(shootDirection);
             nextShootBall = null;
         }
+    }
+
+    private void ShootNextBall()
+    {
+        Vector3 shootDirection = (GetMousePos() - transform.position).normalized;
+
+        nextShootBall.Shoot(shootDirection);
+        nextShootBall.transform.parent = null;
+        nextShootBall = null;
     }
 
     private void FaceMouse()
