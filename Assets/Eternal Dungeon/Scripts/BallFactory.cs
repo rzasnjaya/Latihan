@@ -6,17 +6,28 @@ using Random = UnityEngine.Random;
 
 public class BallFactory : MonoBehaviour
 {
-    private static readonly BallType[] Colors = new []
+    private static readonly BallType[] Colors =
     {
         BallType.Red,
         BallType.Green,
         BallType.Blue
     };
-    public Ball ballPrefab;
 
+    private static readonly BallType[] SpecialTypes =
+    {
+        BallType.Bomb,
+        BallType.Reverse,
+        BallType.TimeSlow
+    };
+
+    public Ball ballPrefab;
     public Sprite redSprite;
     public Sprite greenSprite;
     public Sprite blueSprite;
+    public Sprite bombSprite;
+    public Sprite reverseSprite;
+    public Sprite timeSlowSprite;
+
     void Start()
     {
         
@@ -41,12 +52,22 @@ public class BallFactory : MonoBehaviour
 
     public Ball CreateRandomBallAt(Vector3 point)
     {
-        return CreateBallAt(point, GetRandomBallType());
+        return CreateBallAt(point, GetRandomBallColor());
     }
 
-    private BallType GetRandomBallType()
+    private BallType GetRandomBallColor ()
     {
         return Colors[Random.Range(0, Colors.Length)];
+    }
+
+    private BallType GetRandomBallSpecialType()
+    {
+        return SpecialTypes[Random.Range(0, SpecialTypes.Length)];
+    }
+
+    public BallType GetRandomBallType()
+    {
+        return Random.Range(0f, 1f) > 0.2f ? GetRandomBallColor() : GetRandomBallSpecialType();
     }
 
     private Sprite GetSpriteByType(BallType type)
@@ -54,13 +75,22 @@ public class BallFactory : MonoBehaviour
         switch (type)
         {
             case BallType.Red:
-            return redSprite;
+                return redSprite;
                 break;
             case BallType.Green:
-            return greenSprite;
+                return greenSprite;
                 break;
             case BallType.Blue:
-            return blueSprite;
+                return blueSprite;
+                break;
+            case BallType.Bomb:
+                return bombSprite;
+                break;
+            case BallType.Reverse:
+                return reverseSprite;
+                break;
+            case BallType.TimeSlow:
+                return timeSlowSprite;
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081da0bc858543d4ca75b06eeeb935b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 6296497313880635333, guid: 3353179892f66d746b0fa02de95ea92a, type: 3}
+  ball: {fileID: 0}
   distanceTraveled: 0
 --- !u!58 &4478502774371909122
 CircleCollider2D:
