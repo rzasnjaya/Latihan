@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
    private PathCreator pathCreator;
 
    private CircleCollider2D circleCollider2D;
+   private SpriteRenderer spriteRenderer;
 
    public BallSlot slot; 
    public BallState state;
@@ -24,6 +25,7 @@ public class Ball : MonoBehaviour
         board = FindObjectOfType<Board>();
         pathCreator = FindObjectOfType<PathCreator>();
 
+        spriteRenderer = GetComponent<SpriteRenderer>();
         circleCollider2D = GetComponent<CircleCollider2D>();
         circleCollider2D.enabled = false;
    }
@@ -47,7 +49,8 @@ public class Ball : MonoBehaviour
                 break;
         }
             case BallState.Destroying:
-                downscaleCounter -= gameProperties.ballUpscaleSpeed * Time.deltaTime;
+                float multiplier = downscaleCounter > 0.9f ? 0.3f : 1;
+                downscaleCounter -= multiplier * gameProperties.ballUpscaleSpeed * Time.deltaTime;
 
                 if (downscaleCounter < 0)
                 {
@@ -66,6 +69,7 @@ public class Ball : MonoBehaviour
                 if (Vector3.Distance(transform.position, slot.transform.position) < 0.1f)
                 {
                     state = BallState.InSlot;
+                    transform.rotation = Quaternion.identity;
                     PlaceInSlotTransform();
                 }
                 break;
@@ -127,6 +131,11 @@ public class Ball : MonoBehaviour
     public void StartDestroying()
     {
         state = BallState.Destroying;
+    }
+
+    public void UpdateSprite(Sprite newSprite)
+    {
+        spriteRenderer.sprite = newSprite; 
     }
 
 }
