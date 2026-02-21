@@ -5,14 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    private AudioManager3 audioManager;
+    private AudioManager audioManager;
+    private GameProperties gameProperties;
 
-    private void Start()
+    public GameObject confirmationPanel;
+    public GameObject mainMenuPanel;
+
+    void Start()
     {
-        audioManager = FindObjectOfType<AudioManager3>();
+        audioManager = FindObjectOfType<AudioManager>();
+        gameProperties = FindObjectOfType<GameProperties>();
 
         audioManager.PlayMenuMusic();
+        confirmationPanel.SetActive(false);
     }
+
     public void ContinueGame()
     {
         SceneManager.LoadScene("Game");
@@ -20,11 +27,25 @@ public class MainMenu : MonoBehaviour
 
     public void StartNewGame()
     {
-        SceneManager.LoadScene("Game");
+        confirmationPanel.SetActive(true);
+        mainMenuPanel.SetActive(false);
     }
 
     public void ExitGame()
     {
         Application.Quit();
     }
+
+    public void ConfirmNewGame()
+    {
+        gameProperties.ResetLastLevel();
+        SceneManager.LoadScene("Game");
+    }
+
+    public void CancelNewGame()
+    {
+        confirmationPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
+    }
+
 }
