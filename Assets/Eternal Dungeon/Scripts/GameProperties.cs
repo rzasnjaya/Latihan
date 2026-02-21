@@ -25,7 +25,7 @@ public class GameProperties : MonoBehaviour
     public int bombRadius = 1;
     public float reverseDuration = 2f;
     public float timeSlowDuration = 2f;
-    public float levelDurationSeconds = 60f;
+    public float levelDurationSeconds = 20f;
     public float slotSpeedUpPerLevel = 0.1f;
 
     private int lastLevel = 1;

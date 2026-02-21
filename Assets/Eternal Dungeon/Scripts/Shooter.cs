@@ -10,12 +10,14 @@ public class Shooter : MonoBehaviour
 
     private Camera mainCamera;
     private BallFactory ballFactory;
-    private SpriteRenderer spriteRenderer;
     private AudioManager3 audioManager;
     private Board board;
 
+    private SpriteRenderer spriteRenderer;
+
     public Ball nextShootBall;
     public bool isShooterDisabledFromOutside;
+
     private void Start()
     {
         ballFactory = FindObjectOfType<BallFactory>();
@@ -27,7 +29,6 @@ public class Shooter : MonoBehaviour
         mainCamera = Camera.main;
     }
 
-    // Update is called once per frame
     private void Update()
     {
         if (!board.isPaused)
@@ -36,7 +37,7 @@ public class Shooter : MonoBehaviour
             UpdateSprite();
         }
 
-            if (!nextShootBall)
+        if (!nextShootBall)
         {
             nextShootBall = ballFactory.CreateRandomBallAt(shootPoint.position);
             nextShootBall.state = BallState.SpawningToShoot;
@@ -45,10 +46,8 @@ public class Shooter : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && !isShooterDisabledFromOutside && !board.isPaused)
         {
-            Vector3 shootDirection = (GetMousePos() - transform.position).normalized;
             audioManager.PlaySfx(2);
-            nextShootBall.Shoot(shootDirection);
-            nextShootBall = null;
+            ShootNextBall();
         }
     }
 
@@ -59,6 +58,11 @@ public class Shooter : MonoBehaviour
 
     private void ShootNextBall()
     {
+        if (!nextShootBall || nextShootBall.state != BallState.ReadyToShoot)
+        {
+            return;
+        }
+
         Vector3 shootDirection = (GetMousePos() - transform.position).normalized;
 
         nextShootBall.Shoot(shootDirection);
@@ -73,10 +77,10 @@ public class Shooter : MonoBehaviour
 
         transform.up = new Vector2(direction.x, direction.y);
     }
-    
+
     private Vector3 GetMousePos()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
 
         return mousePos;

@@ -17,8 +17,10 @@ public class BallFactory : MonoBehaviour
     {
         BallType.Bomb,
         BallType.Reverse,
-        BallType.TimeSlow
+        BallType.TimeSlow,
     };
+
+    private readonly Stack<BallType> spawningStack = new();
 
     public Ball ballPrefab;
 
@@ -36,22 +38,10 @@ public class BallFactory : MonoBehaviour
     public Sprite activeReverseSprite;
     public Sprite activeTimeSlowSprite;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public Ball CreateBallAt(Vector3 point, BallType ballType)
     {
         Ball ball = Instantiate(ballPrefab, point, Quaternion.identity);
         ball.type = ballType;
-        ball.state = BallState.SpawningOnTrack;
         SpriteRenderer spriteRenderer = ball.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = GetSpriteByType(ballType);
 
@@ -63,7 +53,7 @@ public class BallFactory : MonoBehaviour
         return CreateBallAt(point, GetRandomBallColor());
     }
 
-    private BallType GetRandomBallColor ()
+    private BallType GetRandomBallColor()
     {
         return Colors[Random.Range(0, Colors.Length)];
     }
@@ -75,6 +65,10 @@ public class BallFactory : MonoBehaviour
 
     public BallType GetRandomBallType()
     {
+        if (spawningStack.Count > 0)
+        {
+            return spawningStack.Pop();
+        }
         return Random.Range(0f, 1f) > 0.2f ? GetRandomBallColor() : GetRandomBallSpecialType();
     }
 
@@ -84,22 +78,16 @@ public class BallFactory : MonoBehaviour
         {
             case BallType.Red:
                 return redSprite;
-                break;
             case BallType.Green:
                 return greenSprite;
-                break;
             case BallType.Blue:
                 return blueSprite;
-                break;
             case BallType.Bomb:
                 return bombSprite;
-                break;
             case BallType.Reverse:
                 return reverseSprite;
-                break;
             case BallType.TimeSlow:
                 return timeSlowSprite;
-                break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
         }
@@ -111,24 +99,23 @@ public class BallFactory : MonoBehaviour
         {
             case BallType.Red:
                 return activeRedSprite;
-                break;
             case BallType.Green:
                 return activeGreenSprite;
-                break;
             case BallType.Blue:
                 return activeBlueSprite;
-                break;
             case BallType.Bomb:
                 return activeBombSprite;
-                break;
             case BallType.Reverse:
                 return activeReverseSprite;
-                break;
             case BallType.TimeSlow:
                 return activeTimeSlowSprite;
-                break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
         }
+    }
+
+    public void AddTypeToStack(BallType type)
+    {
+        spawningStack.Push(type);
     }
 }

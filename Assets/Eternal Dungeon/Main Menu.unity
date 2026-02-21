@@ -292,7 +292,6 @@ RectTransform:
   - {fileID: 1357072406}
   - {fileID: 2077695463}
   - {fileID: 1838233726}
-  - {fileID: 1847702735}
   m_Father: {fileID: 1347293470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -915,6 +914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85dcc2133268a0e41971d5f6117efd80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  confirmationPanel: {fileID: 1847702732}
+  mainMenuPanel: {fileID: 405296653}
 --- !u!114 &1347293467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,6 +992,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 405296654}
+  - {fileID: 1847702735}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1216,7 +1218,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1347293466}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ExitGame
+        m_MethodName: CancelNewGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1766,7 +1768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1847702733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1820,7 +1822,7 @@ RectTransform:
   - {fileID: 1155911068}
   - {fileID: 2097741912}
   - {fileID: 1419755522}
-  m_Father: {fileID: 405296654}
+  m_Father: {fileID: 1347293470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2434,7 +2436,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1347293466}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ExitGame
+        m_MethodName: ConfirmNewGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

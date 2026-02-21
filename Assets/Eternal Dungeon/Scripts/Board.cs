@@ -17,7 +17,7 @@ public class Board : MonoBehaviour
 
     private PathCreator pathCreator;
     private BallFactory ballFactory;
-    private AudioManager audioManager;
+    private AudioManager3 audioManager;
     private GameProperties gameProperties;
     private Shooter shooter;
     private GameUICanvas gameUICanvas;
@@ -31,7 +31,7 @@ public class Board : MonoBehaviour
         ballFactory = FindObjectOfType<BallFactory>();
         gameProperties = FindObjectOfType<GameProperties>();
         shooter = FindObjectOfType<Shooter>();
-        audioManager = FindObjectOfType<AudioManager>();
+        audioManager = FindObjectOfType<AudioManager3>();
         gameUICanvas = FindObjectOfType<GameUICanvas>();
 
         InitBallSlots();

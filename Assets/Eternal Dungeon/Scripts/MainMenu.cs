@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    private AudioManager audioManager;
+    private AudioManager3 audioManager;
     private GameProperties gameProperties;
 
     public GameObject confirmationPanel;
@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
+        audioManager = FindObjectOfType<AudioManager3>();
         gameProperties = FindObjectOfType<GameProperties>();
 
         audioManager.PlayMenuMusic();

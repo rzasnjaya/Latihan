@@ -53,3 +53,5 @@ MonoBehaviour:
   bombRadius: 1
   reverseDuration: 2
   timeSlowDuration: 2
+  levelDurationSeconds: 20
+  slotSpeedUpPerLevel: 0.1

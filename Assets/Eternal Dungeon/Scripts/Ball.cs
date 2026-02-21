@@ -1,26 +1,26 @@
-using UnityEngine;
+using System;
 using PathCreation;
+using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-   private GameProperties gameProperties;
+    private GameProperties gameProperties;
+    private Board board;
+    private PathCreator pathCreator;
 
-   private Board board;
-   private PathCreator pathCreator;
+    private CircleCollider2D circleCollider2D;
+    private SpriteRenderer spriteRenderer;
 
-   private CircleCollider2D circleCollider2D;
-   private SpriteRenderer spriteRenderer;
+    public BallSlot slot;
+    public BallState state;
+    public BallType type;
+    private float upscaleCounter;
+    private float downscaleCounter = 1f;
+    private Vector3 shootDirection;
+    private float distanceTraveled;
 
-   public BallSlot slot; 
-   public BallState state;
-   public BallType type;
-   private float upscaleCounter;
-   private float downscaleCounter = 1;
-   private Vector3 shootDirection;
-   private float distanceTraveled;
-
-   private void Start()
-   {
+    private void Start()
+    {
         gameProperties = FindObjectOfType<GameProperties>();
         board = FindObjectOfType<Board>();
         pathCreator = FindObjectOfType<PathCreator>();
@@ -28,11 +28,10 @@ public class Ball : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         circleCollider2D = GetComponent<CircleCollider2D>();
         circleCollider2D.enabled = false;
-   }
+    }
 
-
-   private void Update()
-   {
+    private void Update()
+    {
         switch (state)
         {
             case BallState.SpawningOnTrack:
@@ -46,11 +45,13 @@ public class Ball : MonoBehaviour
                     }
 
                     transform.localScale = Vector3.one * upscaleCounter;
+                    transform.up = slot.transform.up;
                     break;
                 }
             case BallState.SpawningToShoot:
                 {
-                    upscaleCounter += gameProperties.ballUpscaleSpeed * Time.deltaTime;
+                    upscaleCounter += gameProperties.GetSlotSpeedMultiplier(1)
+                                      * gameProperties.ballUpscaleSpeed * Time.deltaTime;
 
                     if (upscaleCounter >= 1)
                     {
@@ -63,9 +64,10 @@ public class Ball : MonoBehaviour
                 }
             case BallState.Destroying:
                 float multiplier = downscaleCounter > 0.9f ? 0.3f : 1;
-                downscaleCounter -= multiplier * gameProperties.ballUpscaleSpeed * Time.deltaTime;
+                downscaleCounter -= multiplier * gameProperties.GetSlotSpeedMultiplier(1)
+                                               * gameProperties.ballDownscaleSpeed * Time.deltaTime;
 
-                if (downscaleCounter < 0)
+                if (downscaleCounter < 0 || board.isReverse && IsNearPathStart())
                 {
                     Destroy(gameObject);
                     return;
@@ -74,11 +76,13 @@ public class Ball : MonoBehaviour
                 transform.localScale = Vector3.one * downscaleCounter;
                 break;
             case BallState.Shooting:
-                transform.position += shootDirection * (gameProperties.ballShootingSpeed * Time.deltaTime);
+                transform.position += shootDirection * (gameProperties.GetSlotSpeedMultiplier(1)
+                                                        * gameProperties.ballShootingSpeed * Time.deltaTime);
                 break;
-
             case BallState.Landing:
-                transform.position = Vector3.MoveTowards(transform.position, slot.transform.position, gameProperties.ballLandingSpeed * Time.deltaTime);
+                transform.position =
+                    Vector3.MoveTowards(transform.position, slot.transform.position,
+                        gameProperties.ballLandingSpeed * gameProperties.GetSlotSpeedMultiplier(1) * Time.deltaTime);
                 if (Vector3.Distance(transform.position, slot.transform.position) < 0.1f)
                 {
                     state = BallState.InSlot;
@@ -86,10 +90,10 @@ public class Ball : MonoBehaviour
                     PlaceInSlotTransform();
                 }
                 break;
-
             case BallState.SwitchingSlots:
                 int direction = distanceTraveled > slot.distanceTraveled ? -1 : 1;
-                distanceTraveled += direction * gameProperties.ballSlotSwitchingSpeed * Time.deltaTime;
+                distanceTraveled += direction * gameProperties.ballSlotSwitchingSpeed
+                                              * gameProperties.GetSlotSpeedMultiplier(1) * Time.deltaTime;
 
                 transform.position = pathCreator.path.GetPointAtDistance(distanceTraveled);
                 if (Mathf.Abs(distanceTraveled - slot.distanceTraveled) < 0.1f)
@@ -99,13 +103,21 @@ public class Ball : MonoBehaviour
                 }
                 break;
             case BallState.InSlot:
+                transform.up = slot.transform.up;
                 break;
             case BallState.ReadyToShoot:
                 break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 
-    private void PlaceInSlotTransform()
+    private bool IsNearPathStart()
+    {
+        return pathCreator.path.GetClosestDistanceAlongPath(transform.position) < 0.2f;
+    }
+
+    public void PlaceInSlotTransform()
     {
         transform.position = slot.transform.position;
         transform.parent = slot.transform;
@@ -130,6 +142,7 @@ public class Ball : MonoBehaviour
         {
             return;
         }
+
         board.LandBall(ballSlot, this);
         circleCollider2D.enabled = false;
     }
@@ -144,7 +157,7 @@ public class Ball : MonoBehaviour
         state = BallState.SwitchingSlots;
         distanceTraveled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
     }
-    
+
     public void StartDestroying()
     {
         state = BallState.Destroying;
@@ -152,7 +165,6 @@ public class Ball : MonoBehaviour
 
     public void UpdateSprite(Sprite newSprite)
     {
-        spriteRenderer.sprite = newSprite; 
+        spriteRenderer.sprite = newSprite;
     }
-
 }

@@ -13,6 +13,7 @@ TagManager:
   - Critter
   - Boss
   - Ball Slot
+  - Ball
   layers:
   - Default
   - TransparentFX
