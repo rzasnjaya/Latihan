@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class GameProperties : MonoBehaviour
 {
+    private const string KeyLastLevel = "LAST_LEVEL";
+    private void Awake()
+    {
+        if (!PlayerPrefs.HasKey(KeyLastLevel))
+        {
+            PlayerPrefs.SetInt(KeyLastLevel, lastLevel);
+        }
+        lastLevel = PlayerPrefs.GetInt(KeyLastLevel);
+    }
+
     public float ballUpscaleSpeed = 2f;
     public float ballDownscaleSpeed = 2f;
     public float ballSlotsSpeed = 4f;
@@ -14,4 +24,21 @@ public class GameProperties : MonoBehaviour
     public int bombRadius = 1;
     public float reverseDuration = 2f;
     public float timeSlowDuration = 2f;
+    public float levelDurationSeconds = 10f;
+    public float slotSpeedUpPerLevel = 0.1f;
+
+    private int lastLevel = 1;
+
+    public int LastLevel => lastLevel;
+
+    public void IncrementLastLevel()
+    {
+        lastLevel++;
+        PlayerPrefs.SetInt(KeyLastLevel, lastLevel);
+    }
+
+    public float GetSlotSpeedMultiplier(float effectMultiplier)
+    {
+        return effectMultiplier * (1 + LastLevel * slotSpeedUpPerLevel);
+    }
 }
