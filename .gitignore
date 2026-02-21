@@ -97,3 +97,8 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+Assets/Eternal Dungeon/Scripts/Ball.cs
+Assets/Eternal Dungeon/Scripts/Board.cs
+Assets/Eternal Dungeon/Scripts/GameProperties.cs
+Assets/Eternal Dungeon/Scripts/GameUICanvas.cs
+Assets/Eternal Dungeon/Scripts/GameUICanvas.cs.meta

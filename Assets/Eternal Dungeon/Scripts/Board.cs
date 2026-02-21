@@ -1,37 +1,37 @@
-using System.Collections;
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using PathCreation;
 using System.Linq;
+using PathCreation;
 using UnityEngine;
-using System.Diagnostics;
-using Unity.VisualScripting;
 
 public class Board : MonoBehaviour
 {
     public BallSlot ballSlotPrefab;
     public GameObject ballSlotsContainer;
-    public GameProperties gameProperties;
-    private AudioManager3 audioManager;
-    private Shooter shooter;
-    private GameUICanvas gameUICanvas;
 
     public bool isDestroyingMatchingBalls;
     public bool isReverse;
     public bool isPaused;
+    public bool isGameOver;
 
     private PathCreator pathCreator;
     private BallFactory ballFactory;
+    private AudioManager audioManager;
+    private GameProperties gameProperties;
+    private Shooter shooter;
+    private GameUICanvas gameUICanvas;
 
     private BallSlot[] ballSlots;
     private float levelTime;
+
     private void Start()
     {
         pathCreator = FindObjectOfType<PathCreator>();
         ballFactory = FindObjectOfType<BallFactory>();
         gameProperties = FindObjectOfType<GameProperties>();
-        shooter = FindAnyObjectByType<Shooter>();
-        audioManager = FindObjectOfType<AudioManager3>();
+        shooter = FindObjectOfType<Shooter>();
+        audioManager = FindObjectOfType<AudioManager>();
         gameUICanvas = FindObjectOfType<GameUICanvas>();
 
         InitBallSlots();
@@ -45,7 +45,7 @@ public class Board : MonoBehaviour
     private void InitBallSlots()
     {
         float pathLength = pathCreator.path.length;
-        int slotsCount = (int) pathLength;
+        int slotsCount = (int)pathLength;
         float step = pathLength / slotsCount;
         ballSlots = new BallSlot[slotsCount];
 
@@ -61,18 +61,22 @@ public class Board : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        levelTime += Time.deltaTime;
-        gameUICanvas.UpdateLevelTime(levelTime);
-
-        if (levelTime >= gameProperties.levelDurationSeconds)
+        if (!isGameOver)
         {
-            gameProperties.IncrementLastLevel();
-            gameUICanvas.UpdateLevelNumber(gameProperties.LastLevel);
-            levelTime = 0;
+            levelTime += Time.deltaTime;
+            gameUICanvas.UpdateLevelTime(levelTime);
+
+            if (levelTime >= gameProperties.levelDurationSeconds)
+            {
+                gameProperties.IncrementLastLevel();
+                gameUICanvas.UpdateLevelNumber(gameProperties.LastLevel);
+                levelTime = 0;
+                DestroyAllBallsInList(BallSlotsByDistance.Where(bs => bs.ball).ToList());
+            }
         }
+
         ProduceBallsOnTrack();
     }
 
@@ -82,14 +86,16 @@ public class Board : MonoBehaviour
         {
             return;
         }
+
         BallSlot zeroSlot = BallSlotsByDistance[0];
         if (zeroSlot.ball)
         {
             return;
         }
+
         Ball ball = ballFactory.CreateBallAt(zeroSlot.transform.position, ballFactory.GetRandomBallType());
         zeroSlot.AssignBall(ball);
-        ball.transform.parent = zeroSlot.transform;
+        ball.PlaceInSlotTransform();
         ball.transform.localScale = Vector3.zero;
         ball.state = BallState.SpawningOnTrack;
     }
@@ -97,8 +103,10 @@ public class Board : MonoBehaviour
     public void LandBall(BallSlot collidedSlot, Ball landingBall)
     {
         audioManager.PlaySfx(0);
+
         BallSlot[] ballSlotsByDistance = BallSlotsByDistance;
         int indexOfCollidedSlot = Array.IndexOf(ballSlotsByDistance, collidedSlot);
+
         int firstEmptySlotIndexAfter = FirstEmptySlotIndexAfter(indexOfCollidedSlot, ballSlotsByDistance);
 
         for (int i = firstEmptySlotIndexAfter; i > indexOfCollidedSlot + 1; i--)
@@ -106,7 +114,8 @@ public class Board : MonoBehaviour
             ballSlotsByDistance[i].AssignBall(ballSlotsByDistance[i - 1].ball);
         }
 
-        if (collidedSlot.distanceTraveled < pathCreator.path.GetClosestDistanceAlongPath(landingBall.transform.position))
+        if (collidedSlot.distanceTraveled <
+            pathCreator.path.GetClosestDistanceAlongPath(landingBall.transform.position))
         {
             ballSlotsByDistance[indexOfCollidedSlot + 1].AssignBall(landingBall);
         }
@@ -117,7 +126,8 @@ public class Board : MonoBehaviour
         }
 
         landingBall.Land();
-        foreach (BallSlot ballSlot in ballSlotsByDistance.Where(bs => bs.ball && bs.ball.state == BallState.InSlot))
+        foreach (BallSlot ballSlot in ballSlotsByDistance
+            .Where(bs => bs.ball && bs.ball.state == BallState.InSlot))
         {
             ballSlot.ball.MoveToSlot();
         }
@@ -136,9 +146,9 @@ public class Board : MonoBehaviour
         do
         {
             yield return new WaitUntil(() => BallSlotsByDistance.All(bs =>
-            !bs.ball || bs.ball.state != BallState.Landing && bs.ball.state != BallState.SwitchingSlots));
+                !bs.ball || bs.ball.state != BallState.Landing && bs.ball.state != BallState.SwitchingSlots));
 
-            ballsToDestroySlots = GetSimiliarBalls(collidedBallSlot);
+            ballsToDestroySlots = GetSimilarBalls(collidedBallSlot);
 
             if (ballsToDestroySlots.Count < 3)
             {
@@ -161,7 +171,7 @@ public class Board : MonoBehaviour
 
             yield return new WaitForSeconds(0.5f);
 
-            MoveSeperatedBallsBack();
+            MoveSeparatedBallsBack();
         } while (ballsToDestroySlots.Count >= 3 && collidedBallSlot);
 
         yield return new WaitUntil(() => BallSlotsByDistance.All(bs =>
@@ -186,51 +196,47 @@ public class Board : MonoBehaviour
     private IEnumerator TimeSlowCo()
     {
         yield return new WaitUntil(() => BallSlotsByDistance.All(bs =>
-            isDestroyingMatchingBalls == false
-            && isReverse == false
-            && (!bs.ball
-                || bs.ball.state != BallState.Landing
-                && bs.ball.state != BallState.SwitchingSlots)
+                isDestroyingMatchingBalls == false
+                && isReverse == false
+                && (!bs.ball
+                    || bs.ball.state != BallState.Landing
+                    && bs.ball.state != BallState.SwitchingSlots)
             )
         );
 
-        foreach (BallSlot ballSlot in ballSlots)
-        {
-            ballSlot.speedMultiplier = gameProperties.GetSlotSpeedMultiplier(0.5f);
-        }
+        SpeedUpSlots(0.5f);
 
         yield return new WaitForSeconds(gameProperties.timeSlowDuration);
 
+        SpeedUpSlots(1);
+    }
+
+    private void SpeedUpSlots(float effectMultiplier)
+    {
         foreach (BallSlot ballSlot in ballSlots)
         {
-            ballSlot.speedMultiplier = gameProperties.GetSlotSpeedMultiplier(1);
+            ballSlot.speedMultiplier = gameProperties.GetSlotSpeedMultiplier(effectMultiplier);
         }
     }
 
     private IEnumerator StartReverseCo()
     {
         yield return new WaitUntil(() => BallSlotsByDistance.All(bs =>
-            isDestroyingMatchingBalls == false
-            && (!bs.ball
-                || bs.ball.state != BallState.Landing
-                && bs.ball.state != BallState.SwitchingSlots)
+                isDestroyingMatchingBalls == false
+                && (!bs.ball
+                    || bs.ball.state != BallState.Landing
+                    && bs.ball.state != BallState.SwitchingSlots)
             )
         );
 
         isReverse = true;
         shooter.isShooterDisabledFromOutside = true;
 
-        foreach (BallSlot ballSlot in ballSlots)
-        {
-            ballSlot.speedMultiplier = gameProperties.GetSlotSpeedMultiplier(-1);
-        }
+        SpeedUpSlots(-1);
 
         yield return new WaitForSeconds(gameProperties.reverseDuration);
 
-        foreach (BallSlot ballSlot in ballSlots)
-        {
-            ballSlot.speedMultiplier = gameProperties.GetSlotSpeedMultiplier(1);
-        }
+        SpeedUpSlots(1);
 
         isReverse = false;
         shooter.isShooterDisabledFromOutside = false;
@@ -238,16 +244,14 @@ public class Board : MonoBehaviour
 
     private void AddBallsIfThereIsBomb(List<BallSlot> ballsToDestroySlots)
     {
-        BallSlot ballSlot = ballsToDestroySlots.FirstOrDefault(bs => bs.ball.type == BallType.Bomb);
-
-        if (ballSlot)
+        List<BallSlot> bombSlots = ballsToDestroySlots.Where(bs => bs.ball.type == BallType.Bomb).ToList();
+        foreach (BallSlot bombSlot in bombSlots)
         {
-            int indexOfBombSlot = Array.IndexOf(BallSlotsByDistance, ballSlot);
+            int indexOfBombSlot = Array.IndexOf(BallSlotsByDistance, bombSlot);
             for (int i = 1; i <= gameProperties.bombRadius; i++)
             {
                 int leftIndex = indexOfBombSlot - i;
                 int rightIndex = indexOfBombSlot + i;
-
                 if (leftIndex >= 0 && BallSlotsByDistance[leftIndex].ball &&
                     !ballsToDestroySlots.Contains(BallSlotsByDistance[leftIndex]))
                 {
@@ -263,7 +267,7 @@ public class Board : MonoBehaviour
         }
     }
 
-    private void MoveSeperatedBallsBack()
+    private void MoveSeparatedBallsBack()
     {
         int firstEmptyIndex = Array.FindIndex(BallSlotsByDistance, 1, bs => !bs.ball);
         int firstNonEmptyIndexAfter = Array.FindIndex(BallSlotsByDistance, firstEmptyIndex, bs => bs.ball);
@@ -289,22 +293,23 @@ public class Board : MonoBehaviour
         }
     }
 
-    private List<BallSlot> GetSimiliarBalls(BallSlot landedBallSlot)
+    private List<BallSlot> GetSimilarBalls(BallSlot landedBallSlot)
     {
-        List<BallSlot> ballsToDestroySlots = new List<BallSlot> { landedBallSlot };
-        int indexOfLandedBallSlot = Array.IndexOf(BallSlotsByDistance, landedBallSlot);
+        List<BallSlot> ballsToDestroySlots = new() { landedBallSlot };
 
         if (!landedBallSlot.ball)
         {
             return ballsToDestroySlots;
         }
 
+        int indexOfLandedBallSlot = Array.IndexOf(BallSlotsByDistance, landedBallSlot);
+
         for (int i = indexOfLandedBallSlot - 1; i >= 0; i--)
         {
             BallSlot ballSlot = BallSlotsByDistance[i];
             if (ballSlot.ball && !ballsToDestroySlots.Contains(ballSlot)
-                && BallUtil.GetColorByType(ballSlot.ball.type) == 
-                BallUtil.GetColorByType(landedBallSlot.ball.type))
+                              && BallUtil.GetBallColorByType(ballSlot.ball.type) ==
+                              BallUtil.GetBallColorByType(landedBallSlot.ball.type))
             {
                 ballsToDestroySlots.Add(ballSlot);
             }
@@ -317,10 +322,10 @@ public class Board : MonoBehaviour
         for (int i = indexOfLandedBallSlot + 1; i < BallSlotsByDistance.Length; i++)
         {
             BallSlot ballSlot = BallSlotsByDistance[i];
-            if (ballSlot.ball && !ballsToDestroySlots.Contains(ballSlot) && 
-                BallUtil.GetColorByType(ballSlot.ball.type) ==
-                BallUtil.GetColorByType(landedBallSlot.ball.type))
-            { 
+            if (ballSlot.ball && !ballsToDestroySlots.Contains(ballSlot)
+                              && BallUtil.GetBallColorByType(ballSlot.ball.type) ==
+                              BallUtil.GetBallColorByType(landedBallSlot.ball.type))
+            {
                 ballsToDestroySlots.Add(ballSlot);
             }
             else
@@ -343,7 +348,22 @@ public class Board : MonoBehaviour
         }
 
         return -1;
-    }   
+    }
 
-    private BallSlot[] BallSlotsByDistance => ballSlots.OrderBy(bs => bs.distanceTraveled).ToArray();
+    public void GameOver()
+    {
+        StartCoroutine(GameOverCo());
+    }
+
+    private IEnumerator GameOverCo()
+    {
+        shooter.isShooterDisabledFromOutside = true;
+        shooter.UpdateSprite();
+        isGameOver = true;
+        SpeedUpSlots(1.5f);
+        yield return new WaitForSeconds(2);
+        gameUICanvas.ShowGameOver();
+    }
+
+    public BallSlot[] BallSlotsByDistance => ballSlots.OrderBy(bs => bs.distanceTraveled).ToArray();
 }
