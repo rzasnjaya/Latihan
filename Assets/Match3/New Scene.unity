@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a68e59ba83d9064291b479dc2146ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dimensions: {x: 10, y: 10}
+  dimensions: {x: 7, y: 7}
   gridOutput: {fileID: 1089983578}
 --- !u!4 &895975816
 Transform:
@@ -162,7 +162,7 @@ Transform:
   m_GameObject: {fileID: 895975814}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7251887, y: 1.34404, z: -0.13561642}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -434,6 +434,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 3732925668763049752, guid: 4246384899a29ec4682c5c220efe7bda, type: 3}
+  howManyTypes: 7
+  sprites:
+  - {fileID: -104027308, guid: 35213a7f4d8e9d4458b8c74290b3e5c1, type: 3}
+  - {fileID: 615529934, guid: 35213a7f4d8e9d4458b8c74290b3e5c1, type: 3}
+  - {fileID: -1990038285, guid: 35213a7f4d8e9d4458b8c74290b3e5c1, type: 3}
+  - {fileID: -18348725, guid: 35213a7f4d8e9d4458b8c74290b3e5c1, type: 3}
+  - {fileID: -2118895614, guid: 35213a7f4d8e9d4458b8c74290b3e5c1, type: 3}
+  - {fileID: -986869691, guid: 35213a7f4d8e9d4458b8c74290b3e5c1, type: 3}
+  - {fileID: 1655405076, guid: 35213a7f4d8e9d4458b8c74290b3e5c1, type: 3}
+  colors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 1, b: 0, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 0, g: 1, b: 1, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1207115138
 Transform:
   m_ObjectHideFlags: 0
@@ -443,7 +460,7 @@ Transform:
   m_GameObject: {fileID: 1207115136}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.0126116, y: 3.2190008, z: -0.16917133}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -664,6 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eca9ab1f346afc4993dc61de12b49be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offscreenOffset: {x: 0, y: 9, z: 0}
 --- !u!4 &2087459906
 Transform:
   m_ObjectHideFlags: 0
@@ -673,7 +691,7 @@ Transform:
   m_GameObject: {fileID: 2087459904}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.0126116, y: 3.2190008, z: -0.16917133}
+  m_LocalPosition: {x: -3, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -766,7 +784,7 @@ Transform:
   m_GameObject: {fileID: 2104843685}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
