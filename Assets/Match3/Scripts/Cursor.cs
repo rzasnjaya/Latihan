@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Cursor : Singleton<Cursor>
 {
+    private MatchableGrid grid;
+    
     private SpriteRenderer spriteRenderer;
 
     private Matchable[] selected;
@@ -28,6 +30,11 @@ public class Cursor : Singleton<Cursor>
         selected = new Matchable[2];
     }
 
+    private void Start()
+    {
+        grid = (MatchableGrid)MatchableGrid.Instance;
+    }
+
     public void SelectFirst(Matchable toSelect)
     {
         selected[0] = toSelect;
@@ -49,6 +56,7 @@ public class Cursor : Singleton<Cursor>
             return;
 
         if (SelectedAreAdjacent())
+            StartCoroutine(grid.TrySwap(selected));
 
         SelectFirst(null);
     }

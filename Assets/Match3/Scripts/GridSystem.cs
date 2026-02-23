@@ -39,23 +39,23 @@ public abstract class GridSystem<T> : Singleton<GridSystem<T>>
         data = new T[dimensions.x, dimensions.y];
     }
 
-    public bool CheckBounds(int x, int y)
+    public bool BoundsCheck(int x, int y)
     {
         if (!isReady)
             Debug.LogError("Grid has not been initialized.");
-        return x >= 0 && x < dimensions.x && y >= 0 && y < dimensions.y;
+        return x < 1 || x >= dimensions.x || y < 1 || y >= dimensions.y;
     }
 
-    public bool CheckBounds(Vector2Int position)
+    public bool BoundsCheck(Vector2Int position)
     {
-        return CheckBounds(position.x, position.y);
+        return BoundsCheck(position.x, position.y);
     }
 
     public bool IsEmpty(int x, int y)
     {
-        if (!CheckBounds(x, y))
-            Debug.LogError("(" + x + ", " + y + ") are not on the grid.");
-        return EqualityComparer<T>.Default.Equals(data[x, y], default(T));
+        BoundsCheck(x, y);
+
+        return EqualityComparer<T>.Default.Equals(data[x,y], default(T));
     }
 
     public bool IsEmpty(Vector2Int position)
@@ -65,11 +65,13 @@ public abstract class GridSystem<T> : Singleton<GridSystem<T>>
 
     public bool PutItemAt(T item, int x, int y, bool allowOverwrite = false)
     {
-        if (!CheckBounds(x, y))
-            Debug.LogError("(" + x + ", " + y + ") are not on the grid.");
+        BoundsCheck(x,y);
+
         if (!allowOverwrite && !IsEmpty(x, y))
             return false;
+
         data[x, y] = item;
+
         return true;
     }
 
@@ -80,7 +82,7 @@ public abstract class GridSystem<T> : Singleton<GridSystem<T>>
 
     public T GetItemAt(int x, int y)
     {
-        if (!CheckBounds(x, y))
+        if (!BoundsCheck(x, y))
             Debug.LogError("(" + x + ", " + y + ") are not on the grid.");
         return data[x, y];
     }
@@ -92,7 +94,7 @@ public abstract class GridSystem<T> : Singleton<GridSystem<T>>
 
     public T RemoveItemAt(int x, int y)
     {
-        if (!CheckBounds(x, y))
+        if (!BoundsCheck(x, y))
             Debug.LogError("(" + x + ", " + y + ") are not on the grid.");
         T temp = data[x, y];
         data[x, y] = default(T);
@@ -106,10 +108,9 @@ public abstract class GridSystem<T> : Singleton<GridSystem<T>>
 
     public void SwapItemsAt(int x1, int y1, int x2, int y2)
     {
-        if (!CheckBounds(x1, y1))
-            Debug.LogError("(" + x1 + ", " + y1 + ") are not on the grid.");
-        if (!CheckBounds(x2, y2))
-            Debug.LogError("(" + x2 + ", " + y2 + ") are not on the grid.");
+        BoundsCheck(x1, y1);
+        BoundsCheck(x2,  y2);
+
         T temp = data[x1, y1];
         data[x1, y1] = data[x2, y2];
         data[x2, y2] = temp;

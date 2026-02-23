@@ -50,11 +50,50 @@ public class MatchableGrid : GridSystem<Matchable>
 
                 yield return new WaitForSeconds(0.1f);
             }
-        //yield return null;
+        yield return null;
     }
 
     private bool IsPartOfAMatch(Matchable matchable)
     {
         return false;
+    }
+
+    public IEnumerator TrySwap(Matchable[] toBeSwapped)
+    {
+        Matchable[] copies = new Matchable[2];
+        copies[0] = toBeSwapped[0];
+        copies[1] = toBeSwapped[1];
+
+        yield return StartCoroutine(Swap(copies));
+
+        if(SwapWasValid())
+        {
+
+        }
+        else
+        {
+            StartCoroutine(Swap(copies));
+        }
+    }
+
+    private bool SwapWasValid()
+    {
+        return true;
+    }
+
+    private IEnumerator Swap(Matchable[] toBeSwapped)
+    {
+        SwapItemsAt(toBeSwapped[0].position, toBeSwapped[1].position);
+
+        Vector2Int temp = toBeSwapped[0].position;
+        toBeSwapped[0].position = toBeSwapped[1].position;
+        toBeSwapped[1].position = temp;
+
+        Vector3[] worldPosition = new Vector3[2];
+        worldPosition[0] = toBeSwapped[0].transform.position;
+        worldPosition[1] = toBeSwapped[1].transform.position;
+
+                        StartCoroutine(toBeSwapped[0].MoveToPosition(worldPosition[1]));
+        yield return    StartCoroutine(toBeSwapped[1].MoveToPosition(worldPosition[0]));
     }
 }
