@@ -30,6 +30,8 @@ public class MatchableGrid : GridSystem<Matchable>
 
                 newMatchable.gameObject.SetActive(true);
 
+                newMatchable.position = new Vector2Int(x, y);
+
                 PutItemAt(newMatchable, x, y);
 
                 int type = newMatchable.Type;
