@@ -53,9 +53,37 @@ public class MatchableGrid : GridSystem<Matchable>
         yield return null;
     }
 
-    private bool IsPartOfAMatch(Matchable matchable)
+    private bool IsPartOfAMatch(Matchable toMatch)
     {
+        int horizontalMatches = 0,
+            verticalMatches = 0;
+
+        horizontalMatches += CountMatchesInDirection(toMatch, Vector2Int.left);
+        horizontalMatches += CountMatchesInDirection(toMatch, Vector2Int.right);
+
+        if (horizontalMatches > 1)
+            return true;
+
+        verticalMatches += CountMatchesInDirection(toMatch, Vector2Int.up);
+        verticalMatches += CountMatchesInDirection(toMatch, Vector2Int.down);
+
+        if (verticalMatches > 1)
+            return true;
+
         return false;
+    }
+
+    private int CountMatchesInDirection(Matchable toMatch, Vector2Int direction)
+    {
+        int matches = 0;
+        Vector2Int position = toMatch.position + direction;
+
+        if (BoundsCheck(position) && !IsEmpty(position) && GetItemAt(position).Type == toMatch.Type)
+        {
+            ++matches;
+            position += direction;
+        }
+        return matches;
     }
 
     public IEnumerator TrySwap(Matchable[] toBeSwapped)
@@ -66,19 +94,67 @@ public class MatchableGrid : GridSystem<Matchable>
 
         yield return StartCoroutine(Swap(copies));
 
-        if(SwapWasValid())
-        {
+        Match[] matches = new Match[2];
 
-        }
-        else
+        matches[0] = GetMatch(copies[0]);
+        matches[1] = GetMatch(copies[1]);
+
+        if (matches[0] != null)
         {
-            StartCoroutine(Swap(copies));
+            print(matches[0]);
         }
+        if (matches[1] != null)
+        {
+            print(matches[1]);
+        }
+        if (matches[0] == null && matches[1] == null)
+            StartCoroutine(Swap(copies));
     }
 
-    private bool SwapWasValid()
+    private Match GetMatch(Matchable toMatch)
     {
-        return true;
+        Match match = new Match(toMatch);
+
+        Match horizontalMatch,
+              verticalMatch;
+
+        horizontalMatch = GetMatchesInDirection(toMatch, Vector2Int.left);
+        horizontalMatch.Merge(GetMatchesInDirection(toMatch, Vector2Int.right));
+
+        if (horizontalMatch.Count > 1)
+            match.Merge(horizontalMatch);
+
+        verticalMatch = GetMatchesInDirection(toMatch, Vector2Int.up);
+        verticalMatch.Merge(GetMatchesInDirection(toMatch, Vector2Int.down));
+
+        if (verticalMatch.Count > 1)
+            match.Merge(verticalMatch);
+
+        if(match.Count == 1)
+            return null;
+
+        return match;
+    }
+
+    private Match GetMatchesInDirection(Matchable toMatch, Vector2Int direction)
+    {
+        Match match = new Match();
+        Vector2Int position = toMatch.position + direction;
+        Matchable next;
+
+        while (BoundsCheck(position) && !IsEmpty(position))
+        {
+            next = GetItemAt(position);
+
+            if (next.Type == toMatch.Type && next.Idle)
+            {
+                match.AddMatchable(next);
+                position += direction;
+            }
+            else
+                break;
+        }
+        return match;
     }
 
     private IEnumerator Swap(Matchable[] toBeSwapped)
