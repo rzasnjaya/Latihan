@@ -32,4 +32,9 @@ public class MatchablePool : ObjectPool<Matchable>
 
         return nextType;
     }
+
+    public void ChangeType(Matchable toChange, int type)
+    {
+        toChange.SetType(type, sprites[type], colors[type]);
+    }
 }

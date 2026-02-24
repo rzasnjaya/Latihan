@@ -862,6 +862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2c1f6a5f151f245bf1e09b704eceaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cheatMode: 0
   verticalStretch: {x: 1, y: 2}
   horizontalStretch: {x: 2, y: 1}
   halfUp: {x: 0, y: 0.5, z: 0}
