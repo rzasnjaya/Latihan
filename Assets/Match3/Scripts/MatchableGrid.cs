@@ -24,37 +24,38 @@ public class MatchableGrid : GridSystem<Matchable>
 
         for (int y = 0; y != Dimensions.y; ++y)
             for(int x = 0; x != Dimensions.x; ++x)
-            {
-                newMatchable = pool.GetRandomMatchable();
-
-                //newMatchable.transform.position = transform.position + new Vector3(x,y);
-                onscreenPosition = transform.position + new Vector3(x, y);
-                newMatchable.transform.position = onscreenPosition + offscreenOffset;
-
-                newMatchable.gameObject.SetActive(true);
-
-                newMatchable.position = new Vector2Int(x, y);
-
-                PutItemAt(newMatchable, x, y);
-
-                int type = newMatchable.Type;
-
-                while(!allowMatches && IsPartOfAMatch(newMatchable))
+                if(IsEmpty(x, y))
                 {
-                    if (pool.NextType(newMatchable) == type)
+                    newMatchable = pool.GetRandomMatchable();
+
+                    //newMatchable.transform.position = transform.position + new Vector3(x,y);
+                    onscreenPosition = transform.position + new Vector3(x, y);
+                    newMatchable.transform.position = onscreenPosition + offscreenOffset;
+
+                    newMatchable.gameObject.SetActive(true);
+
+                    newMatchable.position = new Vector2Int(x, y);
+
+                    PutItemAt(newMatchable, x, y);
+
+                    int type = newMatchable.Type;
+
+                    while(!allowMatches && IsPartOfAMatch(newMatchable))
                     {
-                        Debug.LogWarning("failed to find a matchable type that didnt match at (" + x +", " + y + ")"); 
-                        Debug.Break();
-                        break;
+                        if (pool.NextType(newMatchable) == type)
+                        {
+                            Debug.LogWarning("failed to find a matchable type that didnt match at (" + x +", " + y + ")"); 
+                            Debug.Break();
+                            break;
+                        }
                     }
+
+                    StartCoroutine(newMatchable.MoveToPosition(onscreenPosition));
+
+                    yield return new WaitForSeconds(0.1f);
                 }
-
-                StartCoroutine(newMatchable.MoveToPosition(onscreenPosition));
-
-                yield return new WaitForSeconds(0.1f);
-            }
-        yield return null;
-    }
+            yield return null;
+        }
 
     private bool IsPartOfAMatch(Matchable toMatch)
     {
@@ -105,12 +106,16 @@ public class MatchableGrid : GridSystem<Matchable>
         if (matches[0] != null)
             StartCoroutine(score.ResolveMatch(matches[0]));
         if (matches[1] != null)
-        {
             StartCoroutine(score.ResolveMatch(matches[1]));
 
-        }
         if (matches[0] == null && matches[1] == null)
             StartCoroutine(Swap(copies));
+        else
+        {
+            CollapseGrid();
+            StartCoroutine(PopulateGrid(true));
+        }
+
     }
 
     private Match GetMatch(Matchable toMatch)
@@ -173,5 +178,27 @@ public class MatchableGrid : GridSystem<Matchable>
 
                         StartCoroutine(toBeSwapped[0].MoveToPosition(worldPosition[1]));
         yield return    StartCoroutine(toBeSwapped[1].MoveToPosition(worldPosition[0]));
+    }
+
+    private void CollapseGrid()
+    {
+        for (int x = 0; x != Dimensions.x; ++x)
+            for (int yEmpty = 0; yEmpty != Dimensions.y - 1; ++yEmpty)
+                if (IsEmpty(x, yEmpty))
+                    for (int yNotEmpty = yEmpty + 1; yNotEmpty != Dimensions.y; ++yNotEmpty)
+                        if (!IsEmpty(x, yNotEmpty) && GetItemAt(x, yNotEmpty).Idle)
+                        {
+                            MoveMatchableToPosition(GetItemAt(x, yNotEmpty), x, yEmpty);
+                            break;
+                        }
+    }
+
+    private void MoveMatchableToPosition(Matchable toMove, int x, int y)
+    {
+        MoveItemTo(toMove.position, new Vector2Int(x, y));
+
+        toMove.position = new Vector2Int(x, y);
+
+        StartCoroutine(toMove.MoveToPosition(transform.position + new Vector3(x, y)));
     }
 }
