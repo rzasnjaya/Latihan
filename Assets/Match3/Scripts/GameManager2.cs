@@ -32,7 +32,7 @@ public class GameManager2 : Singleton<GameManager2>
 
         yield return null;
 
-        StartCoroutine(grid.PopulateGrid());
+        StartCoroutine(grid.PopulateGrid(false, true));
 
 
     }

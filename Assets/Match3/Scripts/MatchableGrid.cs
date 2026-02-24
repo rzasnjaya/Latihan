@@ -17,20 +17,20 @@ public class MatchableGrid : GridSystem<Matchable>
         score = ScoreManager.Instance;
     }
 
-    public IEnumerator PopulateGrid(bool allowMatches = false)
+    public IEnumerator PopulateGrid(bool allowMatches = false, bool initialPopulation = false)
     {
+        List<Matchable> newMatchables = new List<Matchable>();
+
         Matchable newMatchable;
         Vector3 onscreenPosition;
 
         for (int y = 0; y != Dimensions.y; ++y)
-            for(int x = 0; x != Dimensions.x; ++x)
-                if(IsEmpty(x, y))
+            for (int x = 0; x != Dimensions.x; ++x)
+                if (IsEmpty(x, y))
                 {
                     newMatchable = pool.GetRandomMatchable();
 
-                    //newMatchable.transform.position = transform.position + new Vector3(x,y);
-                    onscreenPosition = transform.position + new Vector3(x, y);
-                    newMatchable.transform.position = onscreenPosition + offscreenOffset;
+                    newMatchable.transform.position = transform.position + new Vector3(x, y) + offscreenOffset;
 
                     newMatchable.gameObject.SetActive(true);
 
@@ -38,24 +38,34 @@ public class MatchableGrid : GridSystem<Matchable>
 
                     PutItemAt(newMatchable, x, y);
 
+                    newMatchables.Add(newMatchable);
+
                     int type = newMatchable.Type;
 
-                    while(!allowMatches && IsPartOfAMatch(newMatchable))
+                    while (!allowMatches && IsPartOfAMatch(newMatchable))
                     {
                         if (pool.NextType(newMatchable) == type)
                         {
-                            Debug.LogWarning("failed to find a matchable type that didnt match at (" + x +", " + y + ")"); 
+                            Debug.LogWarning("failed to find a matchable type that didnt match at (" + x + ", " + y + ")");
                             Debug.Break();
+                            yield return null;
                             break;
                         }
                     }
-
-                    StartCoroutine(newMatchable.MoveToPosition(onscreenPosition));
-
-                    yield return new WaitForSeconds(0.1f);
                 }
-            yield return null;
+        for (int i = 0; i != newMatchables.Count; ++i)
+        {
+            onscreenPosition = transform.position + new Vector3(newMatchables[i].position.x, newMatchables[i].position.y);
+
+            if (i == newMatchables.Count - 1)
+                yield return StartCoroutine(newMatchables[i].MoveToPosition(onscreenPosition));
+            else
+                StartCoroutine(newMatchables[i].MoveToPosition(onscreenPosition));
+
+            if (initialPopulation)
+                yield return new WaitForSeconds(0.1f);
         }
+    }
 
     private bool IsPartOfAMatch(Matchable toMatch)
     {
@@ -109,13 +119,23 @@ public class MatchableGrid : GridSystem<Matchable>
             StartCoroutine(score.ResolveMatch(matches[1]));
 
         if (matches[0] == null && matches[1] == null)
-            StartCoroutine(Swap(copies));
-        else
         {
-            CollapseGrid();
-            StartCoroutine(PopulateGrid(true));
-        }
+            yield return StartCoroutine(Swap(copies));
 
+            if(ScanForMatches())
+                StartCoroutine(FillAndScanGrid());
+        }
+        else
+            StartCoroutine(FillAndScanGrid());
+    }
+
+    private IEnumerator FillAndScanGrid()
+    {
+        CollapseGrid();
+        yield return StartCoroutine(PopulateGrid(true));
+
+        if (ScanForMatches())
+            StartCoroutine(FillAndScanGrid());
     }
 
     private Match GetMatch(Matchable toMatch)
@@ -200,5 +220,31 @@ public class MatchableGrid : GridSystem<Matchable>
         toMove.position = new Vector2Int(x, y);
 
         StartCoroutine(toMove.MoveToPosition(transform.position + new Vector3(x, y)));
+    }
+
+    private bool ScanForMatches()
+    {
+        bool madeAMatch = false;
+        Matchable toMatch;
+        Match match;
+
+        for(int y = 0; y != Dimensions.y; ++y)
+            for(int x = 0; x != Dimensions.x; ++x)
+                if(!IsEmpty(x, y))
+                {
+                    toMatch = GetItemAt(x, y);
+
+                    if (!toMatch.Idle)
+                        continue;
+
+                    match = GetMatch(toMatch);
+
+                    if (match != null)
+                    {
+                        madeAMatch = true;
+                        StartCoroutine(score.ResolveMatch(match));
+                    }
+                }
+        return madeAMatch;
     }
 }
