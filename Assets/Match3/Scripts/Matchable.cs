@@ -6,6 +6,7 @@ using UnityEngine;
 public class Matchable : Movable
 {
     private Cursor cursor;
+    private MatchablePool pool;
     private int type;
 
     public int Type
@@ -23,6 +24,7 @@ public class Matchable : Movable
     private void Awake()
     {
         cursor = Cursor.Instance;
+        pool = (MatchablePool) MatchablePool.Instance;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -31,6 +33,17 @@ public class Matchable : Movable
         this.type = type;
         spriteRenderer.sprite = sprite;
         spriteRenderer.color = color;
+    }
+
+    public IEnumerator Resolve(Transform collectionPoint)
+    {
+        spriteRenderer.sortingOrder = 2;
+
+        yield return StartCoroutine (MoveToPosition(collectionPoint.position));
+
+        spriteRenderer.sortingOrder = 1;
+
+        pool.ReturnObjectToPool(this);
     }
 
     private void OnMouseDown()
