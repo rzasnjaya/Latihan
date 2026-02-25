@@ -8,13 +8,17 @@ public class MatchableGrid : GridSystem<Matchable>
 {
     private MatchablePool pool;
     private ScoreManager score;
+    private HintIndicator hint;
 
     [SerializeField] private Vector3 offscreenOffset;
+
+    private List<Matchable> possibleMoves;
 
     private void Start()
     {
         pool = (MatchablePool) MatchablePool.Instance;   
         score = ScoreManager.Instance;
+        hint = HintIndicator.Instance;
     }
 
     public IEnumerator PopulateGrid(bool allowMatches = false, bool initialPopulation = false)
@@ -106,6 +110,8 @@ public class MatchableGrid : GridSystem<Matchable>
         copies[0] = toBeSwapped[0];
         copies[1] = toBeSwapped[1];
 
+        hint.CancelHint();
+
         yield return StartCoroutine(Swap(copies));
 
         if (copies[0].IsGem && copies[1].IsGem)
@@ -153,6 +159,22 @@ public class MatchableGrid : GridSystem<Matchable>
 
         if (ScanForMatches())
             StartCoroutine(FillAndScanGrid());
+        else
+            CheckPossibleMoves();
+    }
+
+    public void CheckPossibleMoves()
+    {
+        if(ScanForMoves() == 0)
+        {
+            GameManager2.Instance.NoMoreMoves();
+        }
+        else
+        {
+            //hint.EnableHintButton();
+
+            hint.StartAutoHint(possibleMoves[Random.Range(0, possibleMoves.Count)].transform);
+        }
     }
 
     private Match GetMatch(Matchable toMatch)
@@ -353,5 +375,90 @@ public class MatchableGrid : GridSystem<Matchable>
 
         StartCoroutine(score.ResolveMatch(everything, MatchType.match5));
         StartCoroutine(FillAndScanGrid());
+    }
+
+    private int ScanForMoves()
+    {
+        possibleMoves = new List<Matchable>();
+
+        for (int y = 0; y != Dimensions.y; ++y)
+            for (int x = 0; x != Dimensions.x; ++x)
+                if (BoundsCheck(x, y) && !IsEmpty(x, y) && CanMove(GetItemAt(x, y)))
+                    possibleMoves.Add(GetItemAt(x, y));
+
+                    return possibleMoves.Count;
+    }
+
+    private bool CanMove(Matchable toCheck)
+    {
+        if
+        (
+                CanMove(toCheck, Vector2Int.up) 
+            ||  CanMove(toCheck, Vector2Int.right) 
+            ||  CanMove(toCheck, Vector2Int.down) 
+            ||  CanMove(toCheck, Vector2Int.left)
+        )
+            return true;
+
+        if (toCheck.IsGem)
+            return true;
+
+        return false;
+    }
+
+    private bool CanMove(Matchable toCheck, Vector2Int direction)
+    {
+        Vector2Int cw = new Vector2Int(direction.y, -direction.x),
+                   ccw = new Vector2Int(-direction.y, direction.x);
+
+        // X X o  — dua di depan
+        Vector2Int position1 = toCheck.position + direction + cw,
+                   position2 = toCheck.position + direction + ccw;
+
+        if (IsAPotentialMatch(toCheck, position1, position2))
+            return true;
+
+        // X o X  — satu di depan, dua ke kanan (cw)
+        position1 = toCheck.position + direction + cw;
+        position2 = toCheck.position + direction + cw * 2;
+
+        if (IsAPotentialMatch(toCheck, position1, position2))
+            return true;
+
+        // o X X  — satu di depan, dua ke kiri (ccw)
+        position1 = toCheck.position + direction + ccw;
+        position2 = toCheck.position + direction + ccw * 2;
+
+        if (IsAPotentialMatch(toCheck, position1, position2))
+            return true;
+
+        // lurus: o o X X
+        position1 = toCheck.position + direction * 2;
+        position2 = toCheck.position + direction * 3;
+
+        if (IsAPotentialMatch(toCheck, position1, position2))
+            return true;
+
+        return false;
+    }
+
+    private bool IsAPotentialMatch(Matchable toCompare, Vector2Int position1, Vector2Int position2)
+    {
+        if
+        (
+            BoundsCheck(position1) && BoundsCheck(position2)
+            && !IsEmpty(position1) && !IsEmpty(position2)
+            && GetItemAt(position1).Idle && GetItemAt(position2).Idle
+            && GetItemAt(position1).Type == toCompare.Type
+            && GetItemAt(position2).Type == toCompare.Type
+        )        
+            return true;
+
+        return false;
+    }
+
+    public void ShowHint()
+    {
+        hint.IndicateHint(possibleMoves[Random.Range(0, possibleMoves.Count)].transform);
     }
 }
