@@ -484,7 +484,7 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   match4Powerup: {fileID: 1138620967, guid: 35213a7f4d8e9d4458b8c74290b3e5c1, type: 3}
-  match5Powerup: {fileID: -462617049, guid: 35213a7f4d8e9d4458b8c74290b3e5c1, type: 3}
+  match5Powerup: {fileID: 354245565, guid: 35213a7f4d8e9d4458b8c74290b3e5c1, type: 3}
   crossPowerup: {fileID: -332129776, guid: 35213a7f4d8e9d4458b8c74290b3e5c1, type: 3}
 --- !u!4 &1207115138
 Transform:

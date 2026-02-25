@@ -108,6 +108,23 @@ public class MatchableGrid : GridSystem<Matchable>
 
         yield return StartCoroutine(Swap(copies));
 
+        if (copies[0].IsGem && copies[1].IsGem)
+        {
+            MatchEverything();
+            yield break;
+        }
+
+        else if (copies[0].IsGem)
+        {
+            MatchEverythingByType(copies[0], copies[1].Type);
+            yield break;
+        }
+        else if (copies[1].IsGem)
+        {
+            MatchEverythingByType(copies[1], copies[0].Type);
+            yield break;
+        }
+
         Match[] matches = new Match[2];
 
         matches[0] = GetMatch(copies[0]);
@@ -281,5 +298,60 @@ public class MatchableGrid : GridSystem<Matchable>
                     }
                 }
         return madeAMatch;
+    }
+
+    public void MatchAllAdjacent(Matchable powerup)
+    {
+        Match allAdjacent = new Match();
+
+        for(int y = powerup.position.y - 1; y != powerup.position.y + 2; ++y)
+            for(int x = powerup.position.x - 1; x != powerup.position.x +2; ++x)
+                if(BoundsCheck(x, y) && !IsEmpty(x,y) && GetItemAt(x, y).Idle)
+                {
+                    allAdjacent.AddMatchable(GetItemAt(x,y));
+                }
+
+        StartCoroutine(score.ResolveMatch(allAdjacent, MatchType.match4));
+    }
+
+    public void MatchRowAndColumn(Matchable powerup)
+    {
+        Match rowAndColumn = new Match();
+
+        for (int y = 0; y !=  + Dimensions.y; ++y)
+            if (BoundsCheck(powerup.position.x, y) && !IsEmpty(powerup.position.x, y) && GetItemAt(powerup.position.x, y).Idle)
+                rowAndColumn.AddMatchable(GetItemAt(powerup.position.x, y));
+
+        for (int x = 0; x != Dimensions.x; ++x)
+            if (BoundsCheck(x, powerup.position.y) && !IsEmpty(x, powerup.position.y) && GetItemAt(x, powerup.position.y).Idle)
+                rowAndColumn.AddMatchable(GetItemAt(x, powerup.position.y));
+
+        StartCoroutine(score.ResolveMatch(rowAndColumn, MatchType.cross));
+    }
+
+    public void MatchEverythingByType(Matchable gem, int type)
+    {
+        Match everythingByType = new Match(gem);
+
+        for (int y = 0; y != Dimensions.y; ++y)
+            for (int x = 0; x != Dimensions.x; ++x)
+                if (BoundsCheck(x, y) && !IsEmpty(x, y) && GetItemAt(x, y).Idle && GetItemAt(x, y).Type == type)
+                    everythingByType.AddMatchable(GetItemAt(x, y));
+
+        StartCoroutine(score.ResolveMatch(everythingByType, MatchType.match5));
+        StartCoroutine(FillAndScanGrid());
+    }
+
+    public void MatchEverything()
+    {
+        Match everything = new Match();
+
+        for (int y = 0; y != Dimensions.y; ++y)
+            for (int x = 0; x != Dimensions.x; ++x)
+                if (BoundsCheck(x, y) && !IsEmpty(x, y) && GetItemAt(x, y).Idle)
+                    everything.AddMatchable(GetItemAt(x,y));
+
+        StartCoroutine(score.ResolveMatch(everything, MatchType.match5));
+        StartCoroutine(FillAndScanGrid());
     }
 }

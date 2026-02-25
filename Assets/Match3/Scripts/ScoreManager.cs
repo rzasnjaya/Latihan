@@ -42,24 +42,27 @@ public class ScoreManager : Singleton<ScoreManager>
         scoreText.text = "Score : " + score;
     }
 
-    public IEnumerator ResolveMatch(Match toResolve)
+    public IEnumerator ResolveMatch(Match toResolve, MatchType powerupUsed = MatchType.invalid)
     {
-        Matchable powerup = null;
+        Matchable powerupFormed = null;
         Matchable matchable;
 
         Transform target = collectionPoint;
 
-        if (toResolve.Count > 3)
+        if (powerupUsed == MatchType.invalid && toResolve.Count > 3)
         {
-            powerup = pool.UpgradeMatchable(toResolve.ToBeUpgraded, toResolve.Type);
-            toResolve.RemoveMatchable(powerup);
-            target = powerup.transform;
-            powerup.SortingOrder = 3;
+            powerupFormed = pool.UpgradeMatchable(toResolve.ToBeUpgraded, toResolve.Type);
+            toResolve.RemoveMatchable(powerupFormed);
+            target = powerupFormed.transform;
+            powerupFormed.SortingOrder = 3;
         }
 
             for (int i = 0; i != toResolve.Count; ++i)
             {
                 matchable = toResolve.Matchables[i];
+
+            if (powerupUsed != MatchType.match5 && matchable.IsGem)
+                continue;
 
                 grid.RemoveItemAt(matchable.position);
 
@@ -70,7 +73,7 @@ public class ScoreManager : Singleton<ScoreManager>
             }
         AddScore(toResolve.Count * toResolve.Count);
 
-        if(powerup != null) 
-            powerup.SortingOrder = 1;
+        if(powerupFormed != null)
+            powerupFormed.SortingOrder = 1;
     }
 }

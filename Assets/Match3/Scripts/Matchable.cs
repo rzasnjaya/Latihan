@@ -7,13 +7,24 @@ public class Matchable : Movable
 {
     private Cursor cursor;
     private MatchablePool pool;
-    private int type;
+    private MatchableGrid grid;
+    private int type;    
 
     public int Type
     {
         get 
         { 
             return type; 
+        }
+    }
+
+    private MatchType powerup = MatchType.invalid;
+
+    public bool IsGem
+    {
+        get
+        {
+            return powerup == MatchType.match5;
         }
     }
 
@@ -25,6 +36,7 @@ public class Matchable : Movable
     {
         cursor = Cursor.Instance;
         pool = (MatchablePool) MatchablePool.Instance;
+        grid = (MatchableGrid) MatchableGrid.Instance;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -37,6 +49,24 @@ public class Matchable : Movable
 
     public IEnumerator Resolve(Transform collectionPoint)
     {
+        if (powerup != MatchType.invalid)
+        {
+            if(powerup == MatchType.match4)
+            {
+                grid.MatchAllAdjacent(this);
+            }
+
+            if (powerup == MatchType.cross)
+            {
+                grid.MatchRowAndColumn(this);
+            }
+
+            powerup = MatchType.invalid;
+        }
+
+        if(collectionPoint == null) 
+            yield break;
+
         spriteRenderer.sortingOrder = 2;
 
         yield return StartCoroutine (MoveToTransform(collectionPoint));
@@ -46,8 +76,20 @@ public class Matchable : Movable
         pool.ReturnObjectToPool(this);
     }
 
-    public Matchable Upgrade(Sprite powerupSprite)
+    public Matchable Upgrade(MatchType powerupType, Sprite powerupSprite)
     {
+        if (powerup != MatchType.invalid)
+        {
+            idle = false;
+            StartCoroutine(Resolve(null));
+            idle = true;
+        }
+        if (powerupType == MatchType.match5)
+        {
+            type = -1;
+            spriteRenderer.color = Color.white;
+        }
+        powerup = powerupType;
         spriteRenderer.sprite = powerupSprite;
 
         return this;
