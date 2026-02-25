@@ -39,12 +39,28 @@ public class Matchable : Movable
     {
         spriteRenderer.sortingOrder = 2;
 
-        yield return StartCoroutine (MoveToPosition(collectionPoint.position));
+        yield return StartCoroutine (MoveToTransform(collectionPoint));
 
         spriteRenderer.sortingOrder = 1;
 
         pool.ReturnObjectToPool(this);
     }
+
+    public Matchable Upgrade(Sprite powerupSprite)
+    {
+        spriteRenderer.sprite = powerupSprite;
+
+        return this;
+    }
+
+    public int SortingOrder
+    {
+        set 
+        {
+            spriteRenderer.sortingOrder = value;
+        }
+    }
+       
 
     private void OnMouseDown()
     {

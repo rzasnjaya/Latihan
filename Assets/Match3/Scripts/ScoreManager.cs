@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class ScoreManager : Singleton<ScoreManager>
 {
+    private MatchablePool pool;
     private MatchableGrid grid;
 
     [SerializeField]
@@ -30,7 +31,9 @@ public class ScoreManager : Singleton<ScoreManager>
 
     private void Start()
     {
+        scoreText = GetComponent<TMP_Text>();
         grid = (MatchableGrid)MatchableGrid.Instance;
+        pool = (MatchablePool)MatchablePool.Instance;
     }
 
     public void AddScore(int amount)
@@ -41,21 +44,33 @@ public class ScoreManager : Singleton<ScoreManager>
 
     public IEnumerator ResolveMatch(Match toResolve)
     {
+        Matchable powerup = null;
         Matchable matchable;
 
-        for (int i = 0; i != toResolve.Count; ++i)
+        Transform target = collectionPoint;
+
+        if (toResolve.Count > 3)
         {
-            matchable = toResolve.Matchables[i];
-
-            grid.RemoveItemAt(matchable.position);
-
-            if (i == toResolve.Count - 1)
-                yield return StartCoroutine(matchable.Resolve(collectionPoint));
-            else
-                StartCoroutine(matchable.Resolve(collectionPoint));
+            powerup = pool.UpgradeMatchable(toResolve.ToBeUpgraded, toResolve.Type);
+            toResolve.RemoveMatchable(powerup);
+            target = powerup.transform;
+            powerup.SortingOrder = 3;
         }
+
+            for (int i = 0; i != toResolve.Count; ++i)
+            {
+                matchable = toResolve.Matchables[i];
+
+                grid.RemoveItemAt(matchable.position);
+
+                if (i == toResolve.Count - 1)
+                    yield return StartCoroutine(matchable.Resolve(target));
+                else
+                    StartCoroutine(matchable.Resolve(target));
+            }
         AddScore(toResolve.Count * toResolve.Count);
 
-        yield return null; 
+        if(powerup != null) 
+            powerup.SortingOrder = 1;
     }
 }

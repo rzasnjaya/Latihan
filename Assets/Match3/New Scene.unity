@@ -483,6 +483,9 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 1, a: 1}
   - {r: 1, g: 0, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
+  match4Powerup: {fileID: 1138620967, guid: 35213a7f4d8e9d4458b8c74290b3e5c1, type: 3}
+  match5Powerup: {fileID: -462617049, guid: 35213a7f4d8e9d4458b8c74290b3e5c1, type: 3}
+  crossPowerup: {fileID: -332129776, guid: 35213a7f4d8e9d4458b8c74290b3e5c1, type: 3}
 --- !u!4 &1207115138
 Transform:
   m_ObjectHideFlags: 0
@@ -862,7 +865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2c1f6a5f151f245bf1e09b704eceaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cheatMode: 0
+  cheatMode: 1
   verticalStretch: {x: 1, y: 2}
   horizontalStretch: {x: 2, y: 1}
   halfUp: {x: 0, y: 0.5, z: 0}
