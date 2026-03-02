@@ -20,6 +20,14 @@ public class Movable : MonoBehaviour
     [SerializeField]
     private float speed = 1;
 
+    public float Speed
+    {
+        get
+        {
+            return speed;
+        }
+    }
+
     public IEnumerator MoveToPosition(Vector3 targetPosition)
     {
         if (speed < 0)
