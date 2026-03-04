@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,9 +106,421 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pirateUI_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 957
+        width: 157
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bcfa269c8978524d92212bf0ce67710
+      internalID: 839533326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_1
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 877
+        width: 136
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d107142cb9c23fa45a3d46c1bffd1e43
+      internalID: 1479100584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_2
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 882
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c61e26d7cb3f8b34f8d257fc49e2ffca
+      internalID: 722010391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_3
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 882
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4fd7b134bc43c345a4116dc533a15fd
+      internalID: 2083323718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_4
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 882
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7749a56a3671e3448bd0fab0bf566f24
+      internalID: -973739701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_5
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 882
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53306b9c2eb6d74ca3aa75a1f6c15ad
+      internalID: 916276386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_6
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 953
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ce36bae64400040bd825010abe093e
+      internalID: -1697826340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_7
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 19
+        width: 976
+        height: 1005
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c12b28150ec7cc84886ac1d5e3545a36
+      internalID: -15718214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 851
+        width: 167
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad50d32fdf8f0546bd1ad0d75e4b523
+      internalID: 1231252397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_9
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 896
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176817db271666248ae6a30c6946c70f
+      internalID: -753971655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_10
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 737
+        width: 492
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5ce7bca6187584e88235874aff06ae
+      internalID: -236773250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_11
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 823
+        width: 19
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb5233d9262bd87489c03f473787a897
+      internalID: 1418419013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_12
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 754
+        width: 454
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b277619e0899a2743b4d7dc9edeefe48
+      internalID: 1478630094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_13
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 579
+        width: 493
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6420645139833ce42bd13028a9215e96
+      internalID: -81959467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_14
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 545
+        width: 492
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de4e0f1c8b589cf4088b5364d378e413
+      internalID: -273946140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_15
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 358
+        width: 492
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e3e9b18de0ff7e47a65361fef3c69cf
+      internalID: 1305558721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_16
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 358
+        width: 492
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e47d076c9d36edd41a1c6eeddf67292a
+      internalID: 753872295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_17
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 178
+        width: 492
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 794075d9cb7d6c34095f7e4c7ce6226c
+      internalID: -418976456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirateUI_18
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 109
+        width: 493
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30a687ba65e48e4491d6b0a3b96da7e
+      internalID: -386555154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +531,26 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pirateUI_0: 839533326
+      pirateUI_1: 1479100584
+      pirateUI_10: -236773250
+      pirateUI_11: 1418419013
+      pirateUI_12: 1478630094
+      pirateUI_13: -81959467
+      pirateUI_14: -273946140
+      pirateUI_15: 1305558721
+      pirateUI_16: 753872295
+      pirateUI_17: -418976456
+      pirateUI_18: -386555154
+      pirateUI_2: 722010391
+      pirateUI_3: 2083323718
+      pirateUI_4: -973739701
+      pirateUI_5: 916276386
+      pirateUI_6: -1697826340
+      pirateUI_7: -15718214
+      pirateUI_8: 1231252397
+      pirateUI_9: -753971655
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

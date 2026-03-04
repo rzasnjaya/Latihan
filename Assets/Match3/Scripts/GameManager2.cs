@@ -31,22 +31,26 @@ public class GameManager2 : Singleton<GameManager2>
 
     private IEnumerator Setup()
     {
+        yield return new WaitUntil(() => 
+            MatchablePool.Instance != null && 
+            MatchableGrid.Instance != null && 
+            AudioMixer.Instance != null
+        );
+
+        pool = (MatchablePool)MatchablePool.Instance;
+        grid = (MatchableGrid)MatchableGrid.Instance;
+        cursor = Cursor.Instance;
+        audioMixer = AudioMixer.Instance;
+
         cursor.enabled = false;
-
         loadingScreen.Hide(false);
-
         pool.PoolObjects(dimensions.x * dimensions.y * 2);
-
         grid.InitializeGrid(dimensions);
-
         StartCoroutine(loadingScreen.Fade(0));
-
         audioMixer.PlayMusic();
-        
+
         yield return StartCoroutine(grid.PopulateGrid(false, true));
-
         grid.CheckPossibleMoves();
-
         cursor.enabled = true;
     }
 

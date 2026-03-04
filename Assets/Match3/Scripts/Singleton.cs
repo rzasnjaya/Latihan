@@ -14,7 +14,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
             if (instance == null)
                 Debug.LogError("No instance of " + typeof(T) + " exists in the scene.");
 
-                return instance;
+            return instance;
         }
     }
 
