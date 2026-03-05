@@ -31,7 +31,7 @@ public class Fader : MonoBehaviour
         do
         {
             t += Time.deltaTime * fadespeed;
-            if (t > 0)
+            if (t > 1)
                 t = 1;
 
             faded.a = Mathf.Lerp(startAlpha, targetAlpha, t);

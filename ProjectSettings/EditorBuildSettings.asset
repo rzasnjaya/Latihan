@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Eternal Dungeon/Main Menu.unity
-    guid: 88ea8c1fa5973b648bf3ea23cc0bd340
+    path: Assets/Match3/Main Menu.unity
+    guid: e6f97cbdfa4aac9469b3972e2e6e08ec
   - enabled: 1
-    path: Assets/Eternal Dungeon/Game.unity
-    guid: 4b95f0b1a75818646b50ab16de647914
+    path: Assets/Match3/Survival.unity
+    guid: 465e279357276d144b2f625efe486f74
+  - enabled: 1
+    path: Assets/Match3/Time Rush.unity
+    guid: 9f9a4c4a16696044b839bb6b567b9cf5
   m_configObjects: {}

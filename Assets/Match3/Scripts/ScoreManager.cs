@@ -35,7 +35,7 @@ public class ScoreManager : Singleton<ScoreManager>
     private float timeSinceLastScore;
 
     [SerializeField]
-    private float   maxComboTIme,
+    private float   maxComboTime,
                     currentComboTime;
 
     private bool timerIsActive;
@@ -48,6 +48,13 @@ public class ScoreManager : Singleton<ScoreManager>
 
         comboText.enabled = false;
         comboSlider.gameObject.SetActive(false);
+    }
+
+    public void Reset()
+    {
+        score = 0;
+        scoreText.text = score.ToString();
+        timeSinceLastScore = maxComboTime;
     }
 
     public void AddScore(int amount)
@@ -88,7 +95,7 @@ public class ScoreManager : Singleton<ScoreManager>
     {
         comboText.text = "Combo x" + ++comboMultiplier;
 
-        currentComboTime = maxComboTIme - Mathf.Log(comboMultiplier) / 2;
+        currentComboTime = maxComboTime - Mathf.Log(comboMultiplier) / 2;
 
         return comboMultiplier;
     }
