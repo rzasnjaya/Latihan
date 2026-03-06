@@ -25,5 +25,7 @@ public class Interactable : MonoBehaviour
         }
 
         Debug.Log("Player Arrived");
+
+        player.SetDirection(transform.position);
     }
 }

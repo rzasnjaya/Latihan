@@ -8,6 +8,8 @@ public class PlayerScript : MonoBehaviour
     private NavMeshAgent agent;
     private Camera mainCamera;
 
+    private bool turning;
+    private Quaternion targetRot;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,11 @@ public class PlayerScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
             OnClick();
+
+        if (turning && transform.rotation != targetRot)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, 15f * Time.deltaTime);
+        }
     }
 
     void OnClick()
@@ -56,6 +63,13 @@ public class PlayerScript : MonoBehaviour
 
     void MovePlayer(Vector3 targetPosition)
     {
+        turning = false;
         agent.SetDestination(targetPosition);
+    }
+
+    public void SetDirection(Vector3 targetDirection)
+    {
+        turning = true;
+        targetRot = Quaternion.LookRotation(targetDirection - transform.position);
     }
 }
