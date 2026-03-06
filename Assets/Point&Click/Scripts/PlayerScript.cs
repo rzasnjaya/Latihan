@@ -21,7 +21,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !Extensions.IsMouseOverUI())
             OnClick();
 
         if (turning && transform.rotation != targetRot)

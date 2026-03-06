@@ -23,7 +23,7 @@ public class DialogSystem : MonoBehaviour
         panel.SetActive(false);
     }
 
-    public void ShowMessages(List<string> messages)
+    public void ShowMessages(List<string> messages, bool dialog, List<Actions> yesActions = null, List<Actions> noActions = null)
     {
         currentMessages = messages;
 
@@ -38,17 +38,18 @@ public class DialogSystem : MonoBehaviour
 
         while(msgId < currentMessages.Count)
         {
-            if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            if(Input.GetKeyDown(KeyCode.Space) || (Input.GetMouseButtonDown(0) && Extensions.IsMouseOverUI()))  
             {
                 msgId++;
 
-                if(msgId == currentMessages.Count)
+                if(msgId < currentMessages.Count)
                     messageText.text = currentMessages[msgId];
             }
 
             yield return null;
         }
 
-
+        panel.SetActive(false);
+        msgId = 0;
     }
 }
