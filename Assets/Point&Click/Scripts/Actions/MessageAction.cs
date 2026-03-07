@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class MessageAction : Actions
 {
-    [Multiline(5)] 
+    [Multiline(5)]
     [SerializeField] List<string> message;
     [SerializeField] bool enableDialog;
-    [SerializeField] List<Action> yesActions, noActions;
+    [SerializeField] string yesText, noText;
+    [SerializeField] List<Actions> yesActions, noActions;
+
     public override void Act()
     {
-        DialogSystem.Instance.ShowMessages(message);
-    } 
+        DialogSystem.Instance.ShowMessages(message, enableDialog, yesActions, noActions, yesText, noText);
+    }
 }

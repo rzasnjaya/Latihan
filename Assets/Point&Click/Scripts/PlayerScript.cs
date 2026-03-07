@@ -65,6 +65,7 @@ public class PlayerScript : MonoBehaviour
     {
         turning = false;
         agent.SetDestination(targetPosition);
+        DialogSystem.Instance.HideDialog();
     }
 
     public void SetDirection(Vector3 targetDirection)
