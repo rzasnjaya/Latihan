@@ -12,10 +12,18 @@ public class Item
     [SerializeField] bool allowMultiple;
     [SerializeField] int amount;
 
-    public Item(int itemId, string name, string desc)
+    public Item(int itemId, string name, string desc, Sprite sprite, bool allowMultiple)
     {
         this.itemId = itemId;
         this.itemName = name;
         this.itemDescription = desc;
+        itemSprite = sprite;
+        this.allowMultiple = allowMultiple;
     }
+
+    public int ItemId { get { return itemId; } }
+    public string ItemName{ get { return itemName; } }
+    public string ItemDesc { get { return itemDescription; } }
+    public Sprite ItemSprite { get { return itemSprite; } } 
+    public bool AllowMultiple { get { return allowMultiple; } }
 }

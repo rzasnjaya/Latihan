@@ -27,7 +27,7 @@ public class ItemDatabaseEditor : Editor
 
         if (GUILayout.Button("Add Item"))
         {
-            Item newItem = new Item(s_items.arraySize, "", "");
+            Item newItem = new Item(s_items.arraySize, "","", null, false);
             source.AddItem(newItem);
         }
 
@@ -35,6 +35,9 @@ public class ItemDatabaseEditor : Editor
         {
             DrawItemEntry(s_items.GetArrayElementAtIndex(i));
         }
+
+        if (GUI.changed)
+            ReCalculateID();
 
         serializedObject.ApplyModifiedProperties();
     }
@@ -74,7 +77,8 @@ public class ItemDatabaseEditor : Editor
         for (int i = 0; i < s_items.arraySize; i++)
         {
             s_items.GetArrayElementAtIndex(i).FindPropertyRelative("itemId").intValue = i;
-            s_itemsName.GetArrayElementAtIndex(i).stringValue = s_items.GetArrayElementAtIndex(i).FindPropertyRelative("itemName").stringValue;
+            s_itemsName.GetArrayElementAtIndex(i).stringValue = 
+                s_items.GetArrayElementAtIndex(i).FindPropertyRelative("itemName").stringValue;
         }
     }
 }
