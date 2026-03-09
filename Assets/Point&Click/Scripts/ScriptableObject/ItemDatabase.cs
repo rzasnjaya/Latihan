@@ -7,4 +7,10 @@ public class ItemDatabase : ScriptableObject
 {
     [SerializeField] List<Item> items = new List<Item>();
     [SerializeField] List<string> itemsNames = new List<string>();
+
+    public void AddItem(Item item)
+    {
+        items.Add(item);
+        itemsNames.Add("");
+    }
 }

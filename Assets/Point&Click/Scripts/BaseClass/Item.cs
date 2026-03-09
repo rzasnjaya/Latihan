@@ -11,4 +11,11 @@ public class Item
     [SerializeField] Sprite itemSprite;
     [SerializeField] bool allowMultiple;
     [SerializeField] int amount;
+
+    public Item(int itemId, string name, string desc)
+    {
+        this.itemId = itemId;
+        this.itemName = name;
+        this.itemDescription = desc;
+    }
 }
