@@ -57,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 928495655
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 2100278135, guid: 72e9250ce0409e54981a5e1fc41ae09e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -163,10 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aba195439a492e43b959feea256dff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whiteMaterial: {fileID: 2100000, guid: 7001718b9d88b624e90b25789b14a046, type: 2}
-  destroyEffect: {fileID: 2741441434104683212, guid: d592da035484ae245a4e20c4f5aaa982,
-    type: 3}
-  lives: 5
   sprites:
   - {fileID: 2100278135, guid: 72e9250ce0409e54981a5e1fc41ae09e, type: 3}
   - {fileID: -1625763803, guid: 72e9250ce0409e54981a5e1fc41ae09e, type: 3}
