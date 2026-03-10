@@ -26,4 +26,10 @@ public class Item
     public string ItemDesc { get { return itemDescription; } }
     public Sprite ItemSprite { get { return itemSprite; } } 
     public bool AllowMultiple { get { return allowMultiple; } }
+    public int Amount { get { return amount; } }
+
+    public void ModifyAmount(int value)
+    {
+        amount += value;    
+    }
 }

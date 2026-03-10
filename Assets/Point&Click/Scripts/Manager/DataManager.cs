@@ -11,7 +11,7 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance = null)
+        if (instance == null) // Fix: == bukan =
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -20,5 +20,5 @@ public class DataManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }    
+    }
 }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
-
 using UnityEditor.TerrainTools;
 
 [CustomEditor(typeof(ItemActions))]
@@ -21,7 +20,6 @@ public class ItemActionEditor : Editor
         s_noActions = serializedObject.FindProperty("noActions");
         s_amount = serializedObject.FindProperty("amount");
 
-        // Inisialisasi CurrentItem saat pertama kali dibuka
         if (source.ItemDatabase != null)
             source.ChangeItem(source.ItemDatabase.GetItem(source.itemId));
     }
@@ -31,55 +29,48 @@ public class ItemActionEditor : Editor
         serializedObject.Update();
         EditorGUILayout.PropertyField(s_itemDatabase, new GUIContent("Item Database: "));
 
-        if (s_itemDatabase.objectReferenceValue != null && source.ItemDatabase != null)
+        // Fix: check source.ItemDatabase (the actual object), not the SerializedProperty
+        if (source.ItemDatabase != null)
         {
             source.itemId = EditorGUILayout.Popup(source.itemId, source.ItemDatabase.ItemsNames.ToArray());
             EditorGUILayout.PropertyField(s_giveItem, new GUIContent("Give Item: "));
 
+            // Fix: guard against CurrentItem being null
             if (source.CurrentItem != null)
                 DrawItemEntry(source.CurrentItem);
 
             EditorExtensions.DrawActionArray(s_yesActions, "Yes Actions: ");
-            //EditorGUILayout.PropertyField(s_yesActions, new GUIContent("Yes Actions: "), true);
             EditorExtensions.DrawActionArray(s_noActions, "No Actions: ");
-            //EditorGUILayout.PropertyField(s_noActions, new GUIContent("No Actions: "), true);
         }
 
         if (GUI.changed)
         {
-            if (source.ItemDatabase != null) // ← juga guard di sini
-            {
+            if (source.ItemDatabase != null)
                 source.ChangeItem(source.ItemDatabase.GetItem(source.itemId));
-                EditorUtility.SetDirty(source);
+            EditorUtility.SetDirty(source);
+
+            // Fix: only mark scene dirty when not in Play Mode
+            if (!Application.isPlaying)
                 EditorSceneManager.MarkSceneDirty(source.gameObject.scene);
-            }
         }
+
         serializedObject.ApplyModifiedProperties();
     }
 
     void DrawItemEntry(Item item)
     {
         GUILayout.BeginVertical("box");
-
         GUILayout.BeginHorizontal();
-
         EditorGUILayout.LabelField("Item Id:" + item.ItemId, GUILayout.Width(75f));
-        EditorGUILayout.LabelField("Item Name: " + item.ItemName);        
-
+        EditorGUILayout.LabelField("Item Name: " + item.ItemName);
         GUILayout.EndHorizontal();
-
-        EditorGUILayout.LabelField("Item Description" + item.ItemDesc, GUILayout.Height(70f));
-
+        EditorGUILayout.LabelField("Item Description: " + item.ItemDesc, GUILayout.Height(70f));
         GUILayout.BeginHorizontal();
-
         var spriteViewer = AssetPreview.GetAssetPreview(item.ItemSprite);
         GUILayout.Label(spriteViewer);
-
         if (item.AllowMultiple)
             EditorGUILayout.PropertyField(s_amount);
-
         GUILayout.EndHorizontal();
-
         GUILayout.EndVertical();
     }
 }

@@ -13,4 +13,16 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: 09de1f44023d2604b81df00f7d6934f8, type: 2}
-  inventory: []
+  inventory:
+  - itemId: 0
+    itemName: Chicken
+    itemDescription: a big size chicken meat
+    itemSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    allowMultiple: 1
+    amount: 1
+  - itemId: 1
+    itemName: Key
+    itemDescription: Some key for opening certain lock
+    itemSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    allowMultiple: 1
+    amount: 0

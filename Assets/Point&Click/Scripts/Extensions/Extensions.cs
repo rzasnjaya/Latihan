@@ -15,4 +15,12 @@ public class Extensions
         Item newItem = new Item(item.ItemId, item.ItemName, item.ItemDesc, item.ItemSprite, item.AllowMultiple);
         return newItem;
     }
+
+    public static void RunActions(Actions[] actions)
+    {
+        for (int i = 0; i < actions.Length; i++)
+        {
+            actions[i].Act();
+        }
+    }
 }
