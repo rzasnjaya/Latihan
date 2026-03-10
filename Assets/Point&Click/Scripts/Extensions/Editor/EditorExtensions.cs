@@ -5,7 +5,7 @@ using UnityEngine;
 
 public static class EditorExtensions
 {
-    public static void DrawActionArray(SerializedProperty array, string label)
+    public static void DrawActionsArray(SerializedProperty array, string label)
     {
         GUILayout.BeginVertical("box");
         EditorGUILayout.LabelField(label);

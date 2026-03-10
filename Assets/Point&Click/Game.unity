@@ -2390,6 +2390,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1384465247}
+    - targetCorrespondingSourceObject: {fileID: 8619338778009079851, guid: 47a3741b253f088469eedd6d403dd89a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1384465249}
   m_SourcePrefab: {fileID: 100100000, guid: 47a3741b253f088469eedd6d403dd89a, type: 3}
 --- !u!1 &1384465245 stripped
 GameObject:
@@ -2418,7 +2422,23 @@ MonoBehaviour:
   anims:
   - triggerName: Talk
     invokeDelay: 0
-  actions: []
+  actions:
+  - {fileID: 1384465249}
+--- !u!114 &1384465249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384465245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84ca184ef74cfe4aa8923abe260205b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customGameObjects:
+  - gO: {fileID: 1337142458}
+    activeStatus: 0
 --- !u!1 &1563091466
 GameObject:
   m_ObjectHideFlags: 0

@@ -39,10 +39,10 @@ public class MessageActionEditor : Editor
         if (s_enableDialog.boolValue)
         {
             EditorGUILayout.PropertyField(s_yesText, new GUIContent("Yes Button Label"), GUILayout.Height(30f));
-            EditorExtensions.DrawActionArray(s_yesActions, "Yes Actions");
+            EditorExtensions.DrawActionsArray(s_yesActions, "Yes Actions");
 
             EditorGUILayout.PropertyField(s_noText, new GUIContent("No Button Label"), GUILayout.Height(30f));
-            EditorExtensions.DrawActionArray(s_noActions, "No Actions");
+            EditorExtensions.DrawActionsArray(s_noActions, "No Actions");
         }
 
         GUILayout.EndVertical();

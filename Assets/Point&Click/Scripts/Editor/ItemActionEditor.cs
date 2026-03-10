@@ -39,8 +39,8 @@ public class ItemActionEditor : Editor
             if (source.CurrentItem != null)
                 DrawItemEntry(source.CurrentItem);
 
-            EditorExtensions.DrawActionArray(s_yesActions, "Yes Actions: ");
-            EditorExtensions.DrawActionArray(s_noActions, "No Actions: ");
+            EditorExtensions.DrawActionsArray(s_yesActions, "Yes Actions: ");
+            EditorExtensions.DrawActionsArray(s_noActions, "No Actions: ");
         }
 
         if (GUI.changed)
