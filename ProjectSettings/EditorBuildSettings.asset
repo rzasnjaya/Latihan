@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Match3/Main Menu.unity
-    guid: e6f97cbdfa4aac9469b3972e2e6e08ec
+    path: Assets/Point&Click/Game.unity
+    guid: 278f5decbf7d63542aee94cba5a3e1eb
   - enabled: 1
-    path: Assets/Match3/Survival.unity
-    guid: 465e279357276d144b2f625efe486f74
-  - enabled: 1
-    path: Assets/Match3/Time Rush.unity
-    guid: 9f9a4c4a16696044b839bb6b567b9cf5
+    path: Assets/Point&Click/City.unity
+    guid: e5f493a8d2319fa46b6f533ae19aa16b
   m_configObjects: {}

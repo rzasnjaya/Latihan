@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager Instance { get; private set; }
 
     [SerializeField] GameObject panel;
     [SerializeField] RectTransform loadBar;
@@ -15,8 +14,6 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
-
         HidePanel();
     }
 

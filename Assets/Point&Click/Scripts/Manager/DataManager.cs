@@ -9,9 +9,12 @@ public class DataManager : MonoBehaviour
 
     [SerializeField] Inventory inventory;
 
+    public string PrevSceneName { get; private set; }
+    public LevelManager LevelManager { get; private set; }
+
     private void Awake()
     {
-        if (instance == null) // Fix: == bukan =
+        if (instance == null) 
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -20,5 +23,12 @@ public class DataManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        LevelManager = GetComponentInChildren<LevelManager>();
+    }
+
+    public void SetPrevScene(string name)
+    {
+        PrevSceneName = name;   
     }
 }
