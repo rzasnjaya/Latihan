@@ -29,6 +29,7 @@ public class NPCMoveAction : Actions
         if (isMoving && agent.remainingDistance <= agent.stoppingDistance)
         {
             isMoving = false;
+            agent.isStopped = true;
             npcAnim.UpdateAnimation(0f);
         }
     }
@@ -42,6 +43,7 @@ public class NPCMoveAction : Actions
     {
         yield return new WaitForSeconds(delay);
         isMoving = true;
+        agent.isStopped = false;
         agent.SetDestination(targetPosition);
     }
 }

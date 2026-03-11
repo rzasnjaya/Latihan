@@ -34,6 +34,9 @@ public class PlayerScript : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, 15f * Time.deltaTime);
         }
 
+        if (!agent.isStopped && CheckIfArrived())
+            agent.isStopped = true;
+
         playerAnim.UpdateAnimation(agent.velocity.sqrMagnitude);
     }
 
@@ -71,7 +74,11 @@ public class PlayerScript : MonoBehaviour
     void MovePlayer(Vector3 targetPosition)
     {
         turning = false;
+
+        agent.isStopped = false;
+
         agent.SetDestination(targetPosition);
+
         DialogSystem.Instance.HideDialog();
     }
 
