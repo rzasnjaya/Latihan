@@ -10,7 +10,7 @@ public class MessageActionEditor : Editor
 
     private void OnEnable()
     {
-        s_messages.serializedObject.FindProperty("message");
+        s_messages = serializedObject.FindProperty("message");
         s_enableDialog = serializedObject.FindProperty("enableDialog");
         s_yesText = serializedObject.FindProperty("yesText");
         s_noText = serializedObject.FindProperty("noText");
