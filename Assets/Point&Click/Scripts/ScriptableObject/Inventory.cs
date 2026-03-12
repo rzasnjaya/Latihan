@@ -8,12 +8,17 @@ public class Inventory : ScriptableObject
     [SerializeField] ItemDatabase itemDatabase;
     [SerializeField] List<Item> inventory = new List<Item>();
 
-    public ItemDatabase ItemDatabase { get { return itemDatabase; } }
+    public event System.Action<List<Item>> OnItemChange = delegate { };
+
+    public List<Item> GetInventory { get { return inventory; } }
 
     public void AddItem(Item item)
     {
         inventory.Add(item);
+        OnItemChange(inventory);
     }
+
+    public ItemDatabase ItemDatabase { get { return itemDatabase; } }
 
     public int CheckAmount(Item item)
     {
@@ -51,11 +56,16 @@ public class Inventory : ScriptableObject
                 {
                     inventory.RemoveAt(i);
                 }
+
+                OnItemChange(inventory);
+
                 return;
             }
         }
         Item newItem = Extensions.CopyItem(item);
         newItem.ModifyAmount(amount);
+
         AddItem(newItem);
+        OnItemChange(inventory);
     }
 }
