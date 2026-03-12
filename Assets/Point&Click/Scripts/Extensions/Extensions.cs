@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
-public class Extensions
+public static class Extensions
 {
     public static bool IsMouseOverUI()
     {
@@ -32,5 +32,25 @@ public class Extensions
         SceneManager.GetActiveScene().GetRootGameObjects().ToList().ForEach(g => result.AddRange(g.GetComponentsInChildren<T>()));
 
         return result;
+    }
+
+    public static void SaveItemsToId(this List<int> itemsId, List<Item> inventory)
+    {
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            if (itemsId.Contains(inventory[i].ItemId))
+                return;
+
+            itemsId.Add(inventory[i].ItemId);
+        }
+    }
+
+    public static void LoadIdToItems(this List<Item> inventory, ItemDatabase itemDatabase, List<int> itemsId)
+    {
+        for (int i = 0; i < itemsId.Count; i++)
+        {
+            Item item = CopyItem(itemDatabase.GetItem(itemsId[i]));
+            inventory.Add(item);
+        }
     }
 }

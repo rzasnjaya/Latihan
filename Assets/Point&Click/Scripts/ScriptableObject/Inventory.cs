@@ -68,4 +68,11 @@ public class Inventory : ScriptableObject
         AddItem(newItem);
         OnItemChange(inventory);
     }
+
+    public void UpdateInventory(List<int> itemsId)
+    {
+        inventory.Clear();
+        inventory.LoadIdToItems(itemDatabase, itemsId);
+        OnItemChange(inventory);
+    }
 }

@@ -15,7 +15,9 @@ public class DataManager : MonoBehaviour
     public string PrevSceneName { get; private set; }
     public LevelManager LevelManager { get; private set; }
 
-    private SaveData saveData = new SaveData();
+    private int saveDataId = 0;
+    private List<SaveData> saveDatas = new List<SaveData>();
+
 
     private void Awake()
     {
@@ -32,31 +34,82 @@ public class DataManager : MonoBehaviour
         LevelManager = GetComponentInChildren<LevelManager>();
     }
 
+    public bool HasSaveData()
+    {
+        if (saveDatas != null)
+        {
+            return (saveDatas.Count > 0);
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void Save()
+    {
+        SaveSystem.Save(saveDatas);
+    }
+
+    public void Load()
+    {
+        saveDatas = SaveSystem.Load<List<SaveData>>();
+    }
+
     public void SetPrevScene(string name)
     {
         PrevSceneName = name;
     }
 
+    public void SavaDataEntry()
+    {
+        if (saveDatas.Count == 0)
+            saveDatas.Add(new SaveData());
+
+        OnSave();
+        saveDatas[saveDataId].currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        SaveInventory();
+        Save();
+    }
+
+    public void LoadDataEntry(int id)
+    {
+        Load();
+        saveDataId = id;
+        LoadInventory();
+        OnLoad();
+    }
+
     public void SaveEntities(string id, EntityData data)
     {
-        if (saveData.entitiesData.ContainsKey(id))
+        if (saveDatas[saveDataId].entitiesData.ContainsKey(id))
         {
-            saveData.entitiesData[id] = data;
+            saveDatas[saveDataId].entitiesData[id] = data;
 
             return;
         }
         else
         {
-            saveData.entitiesData.Add(id, data);
+            saveDatas[saveDataId].entitiesData.Add(id, data);
         }
     }
 
     public EntityData LoadEntities(string id)
     {
-        if (saveData.entitiesData.ContainsKey(id))
-            return saveData.entitiesData[id];
+        if (saveDatas[saveDataId].entitiesData.ContainsKey(id))
+            return saveDatas[saveDataId].entitiesData[id];
         else
             return null;
+    }
+
+    public void SaveInventory()
+    {
+        saveDatas[saveDataId].inventoryItemsId.SaveItemsToId(inventory.GetInventory);
+    }
+
+    public void LoadInventory()
+    {
+        inventory.UpdateInventory(saveDatas[saveDataId].inventoryItemsId);
     }
 
     private void Update()
@@ -76,5 +129,7 @@ public class DataManager : MonoBehaviour
 [System.Serializable]
 public class SaveData
 {
+    public string currentScene;
         public Dictionary<string, EntityData> entitiesData = new Dictionary<string, EntityData>();
+    public List<int> inventoryItemsId = new List<int>();
 }
