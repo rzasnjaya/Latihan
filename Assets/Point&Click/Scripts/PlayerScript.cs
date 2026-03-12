@@ -21,6 +21,13 @@ public class PlayerScript : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         playerAnim.Init(GetComponentInChildren<Animator>());
+
+        CameraManager.Instance.OnCameraSwitch += CameraSwitched;
+    }
+
+    private void OnDestroy()
+    {
+        CameraManager.Instance.OnCameraSwitch -= CameraSwitched;
     }
 
     // Update is called once per frame
@@ -86,5 +93,10 @@ public class PlayerScript : MonoBehaviour
     {
         turning = true;
         targetRot = Quaternion.LookRotation(targetDirection - transform.position);
+    }
+
+    void CameraSwitched(Camera cam)
+    {
+        mainCamera = cam;
     }
 }

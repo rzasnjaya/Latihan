@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class Extensions
 {
@@ -22,5 +24,13 @@ public class Extensions
         {
             actions[i].Act();
         }
+    }
+
+    public static List<T> FindObjectsOfTypeAll<T>()
+    {
+        List<T> result = new List<T>();
+        SceneManager.GetActiveScene().GetRootGameObjects().ToList().ForEach(g => result.AddRange(g.GetComponentsInChildren<T>()));
+
+        return result;
     }
 }
