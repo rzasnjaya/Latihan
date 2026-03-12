@@ -7,6 +7,9 @@ public class InventorySystemUI : MonoBehaviour
     [SerializeField] Transform itemsParents;
     [SerializeField] InventoryItemUI itemUIprefabs;
     [SerializeField] Inventory playerInventory;
+    [SerializeField] InventoryDescriptionUI invDesc;
+
+    public InventoryDescriptionUI InvDesc { get { return invDesc; } }
 
     private List<InventoryItemUI> itemUICollection = new List<InventoryItemUI>();
 
@@ -53,6 +56,9 @@ public class InventorySystemUI : MonoBehaviour
 
     public void ShowInventory()
     {
+        if (gameObject.activeInHierarchy)
+            invDesc.gameObject.SetActive(false);
+
         gameObject.SetActive(!gameObject.activeInHierarchy);
     }
 }

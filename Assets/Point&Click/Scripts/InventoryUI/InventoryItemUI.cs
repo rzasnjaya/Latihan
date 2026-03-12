@@ -24,5 +24,12 @@ public class InventoryItemUI : MonoBehaviour
 
         amountText.gameObject.SetActive(thisItem.AllowMultiple);
         amountText.text = "x" + thisItem.Amount;
+
+        button.onClick.AddListener(Tapped);
+    }
+
+    void Tapped()
+    {
+        invSystem.InvDesc.ShowItemDescription(thisItem.ItemDesc, GetComponent<RectTransform>().anchoredPosition);
     }
 }
