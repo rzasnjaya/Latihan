@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class PlayerScript : MonoBehaviour
 {
+    [SerializeField] LayerMask interactLayer;
+
     private NavMeshAgent agent;
     private Camera mainCamera;
 
@@ -54,7 +56,7 @@ public class PlayerScript : MonoBehaviour
         RaycastHit hit;
         Ray camToScreen = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(camToScreen, out hit,Mathf.Infinity))
+        if (Physics.Raycast(camToScreen, out hit,Mathf.Infinity, interactLayer))
         {
             if (hit.collider != null)
             {

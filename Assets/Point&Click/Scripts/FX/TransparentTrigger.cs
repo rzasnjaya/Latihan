@@ -1,0 +1,52 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TransparentTrigger : MonoBehaviour
+{
+    private Transform player;
+    private Ray ray;
+    private RaycastHit hit;
+    private TransparentFX fx;
+
+    // Use this for initialization
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        ray = new Ray(transform.position, (player.position - transform.position));
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        {
+            if (hit.collider != null)
+            {
+                //if hit anything else but player
+                if (fx == null)
+                {
+                    fx = hit.collider.GetComponent<TransparentFX>();
+
+                    if (fx != null)
+                    {
+                        //run the transparent fx
+                        fx.SwitchMaterial(true);
+                    }
+                }
+                else if (hit.collider.CompareTag("Player"))
+                {
+                    if (fx != null)
+                    {
+
+                        fx.SwitchMaterial(false);
+                        fx = null;
+                    }
+                }
+
+
+            }
+        }
+    }
+}
