@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+    [SerializeField] Sprite spriteCursor;
     [SerializeField] Actions[] actions;
     [SerializeField] float distancePosition = 1f;
+
+    public Sprite SpriteCursor { get { return spriteCursor; } }
     public Vector3 InteractPosition()
     {
         return transform.position + transform.forward * distancePosition;

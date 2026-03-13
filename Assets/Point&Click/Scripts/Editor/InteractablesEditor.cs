@@ -6,12 +6,13 @@ using UnityEditor;
 [CustomEditor(typeof(Interactable))]
 public class InteractablesEditor : Editor
 {
-    SerializedProperty s_actions, s_distancePosition;
+    SerializedProperty s_actions, s_distancePosition, s_spriteCursor;
 
     private void OnEnable()
     {
         s_actions = serializedObject.FindProperty("actions");
         s_distancePosition = serializedObject.FindProperty("distancePosition");
+        s_spriteCursor = serializedObject.FindProperty("spriteCursor");
     }
 
     public override void OnInspectorGUI()
@@ -19,6 +20,8 @@ public class InteractablesEditor : Editor
         serializedObject.Update();
 
         GUILayout.BeginVertical("box");
+
+        s_spriteCursor.objectReferenceValue = EditorGUILayout.ObjectField("Sprite Cursor", s_spriteCursor.objectReferenceValue, typeof(Sprite), false, GUILayout.Height(75f));
 
         EditorGUILayout.PropertyField(s_distancePosition, new GUIContent("Distance Position: "));
 
