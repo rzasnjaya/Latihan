@@ -1,36 +1,92 @@
 fileFormatVersion: 2
 guid: 0456c66eaaae9244fa4db408fcabc88c
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: PoliceCar
-    100004: PoliceWheel
-    100006: PoliceWheel.001
-    100008: PoliceWheel.002
-    100010: PoliceWheel.003
-    400000: //RootNode
-    400002: PoliceCar
-    400004: PoliceWheel
-    400006: PoliceWheel.001
-    400008: PoliceWheel.002
-    400010: PoliceWheel.003
-    2100000: Taxi
-    2300000: PoliceCar
-    2300002: PoliceWheel
-    2300004: PoliceWheel.001
-    2300006: PoliceWheel.002
-    2300008: PoliceWheel.003
-    3300000: PoliceCar
-    3300002: PoliceWheel
-    3300004: PoliceWheel.001
-    3300006: PoliceWheel.002
-    3300008: PoliceWheel.003
-    4300000: PoliceCar
-    4300002: PoliceWheel
-    4300004: PoliceWheel.001
-    4300006: PoliceWheel.003
-    4300008: PoliceWheel.002
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: PoliceCar
+  - first:
+      1: 100004
+    second: PoliceWheel
+  - first:
+      1: 100006
+    second: PoliceWheel.001
+  - first:
+      1: 100008
+    second: PoliceWheel.002
+  - first:
+      1: 100010
+    second: PoliceWheel.003
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: PoliceCar
+  - first:
+      4: 400004
+    second: PoliceWheel
+  - first:
+      4: 400006
+    second: PoliceWheel.001
+  - first:
+      4: 400008
+    second: PoliceWheel.002
+  - first:
+      4: 400010
+    second: PoliceWheel.003
+  - first:
+      21: 2100000
+    second: Taxi
+  - first:
+      23: 2300000
+    second: PoliceCar
+  - first:
+      23: 2300002
+    second: PoliceWheel
+  - first:
+      23: 2300004
+    second: PoliceWheel.001
+  - first:
+      23: 2300006
+    second: PoliceWheel.002
+  - first:
+      23: 2300008
+    second: PoliceWheel.003
+  - first:
+      33: 3300000
+    second: PoliceCar
+  - first:
+      33: 3300002
+    second: PoliceWheel
+  - first:
+      33: 3300004
+    second: PoliceWheel.001
+  - first:
+      33: 3300006
+    second: PoliceWheel.002
+  - first:
+      33: 3300008
+    second: PoliceWheel.003
+  - first:
+      43: 4300000
+    second: PoliceCar
+  - first:
+      43: 4300002
+    second: PoliceWheel
+  - first:
+      43: 4300004
+    second: PoliceWheel.001
+  - first:
+      43: 4300006
+    second: PoliceWheel.003
+  - first:
+      43: 4300008
+    second: PoliceWheel.002
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -38,7 +94,7 @@ ModelImporter:
       name: Taxi
     second: {fileID: 2100000, guid: 53ba73129c9377e4994b5a54b32031f9, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -47,6 +103,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -70,34 +127,49 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -107,14 +179,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

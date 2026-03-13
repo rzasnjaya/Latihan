@@ -1,36 +1,92 @@
 fileFormatVersion: 2
 guid: 9e8efad86bd1ad245bcf5754d481742d
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Hood_01
-    100002: Hood_02
-    100004: LightPole
-    100006: //RootNode
-    100008: Sign_01
-    100010: Sign_02
-    400000: Hood_01
-    400002: Hood_02
-    400004: LightPole
-    400006: //RootNode
-    400008: Sign_01
-    400010: Sign_02
-    2100000: Material.003
-    2300000: Hood_01
-    2300002: Hood_02
-    2300004: LightPole
-    2300006: Sign_01
-    2300008: Sign_02
-    3300000: Hood_01
-    3300002: Hood_02
-    3300004: LightPole
-    3300006: Sign_01
-    3300008: Sign_02
-    4300000: Hood_02
-    4300002: Sign_02
-    4300004: Hood_01
-    4300006: Sign_01
-    4300008: LightPole
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Hood_01
+  - first:
+      1: 100002
+    second: Hood_02
+  - first:
+      1: 100004
+    second: LightPole
+  - first:
+      1: 100006
+    second: //RootNode
+  - first:
+      1: 100008
+    second: Sign_01
+  - first:
+      1: 100010
+    second: Sign_02
+  - first:
+      4: 400000
+    second: Hood_01
+  - first:
+      4: 400002
+    second: Hood_02
+  - first:
+      4: 400004
+    second: LightPole
+  - first:
+      4: 400006
+    second: //RootNode
+  - first:
+      4: 400008
+    second: Sign_01
+  - first:
+      4: 400010
+    second: Sign_02
+  - first:
+      21: 2100000
+    second: Material.003
+  - first:
+      23: 2300000
+    second: Hood_01
+  - first:
+      23: 2300002
+    second: Hood_02
+  - first:
+      23: 2300004
+    second: LightPole
+  - first:
+      23: 2300006
+    second: Sign_01
+  - first:
+      23: 2300008
+    second: Sign_02
+  - first:
+      33: 3300000
+    second: Hood_01
+  - first:
+      33: 3300002
+    second: Hood_02
+  - first:
+      33: 3300004
+    second: LightPole
+  - first:
+      33: 3300006
+    second: Sign_01
+  - first:
+      33: 3300008
+    second: Sign_02
+  - first:
+      43: 4300000
+    second: Hood_02
+  - first:
+      43: 4300002
+    second: Sign_02
+  - first:
+      43: 4300004
+    second: Hood_01
+  - first:
+      43: 4300006
+    second: Sign_01
+  - first:
+      43: 4300008
+    second: LightPole
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -38,7 +94,7 @@ ModelImporter:
       name: Material.003
     second: {fileID: 2100000, guid: 8584c7f3957dc1645890d78fb8c237f4, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -47,6 +103,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -70,34 +127,49 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 10
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -107,14 +179,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
