@@ -5,10 +5,18 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     [SerializeField] Sprite spriteCursor;
+    [SerializeField] bool lookOnly;
     [SerializeField] Actions[] actions;
     [SerializeField] float distancePosition = 1f;
 
     public Sprite SpriteCursor { get { return spriteCursor; } }
+    public bool LookOnly { get { return lookOnly; } }
+
+    private void Reset()
+    {
+        gameObject.layer = LayerMask.NameToLayer("Interactable");
+    }
+
     public Vector3 InteractPosition()
     {
         return transform.position + transform.forward * distancePosition;

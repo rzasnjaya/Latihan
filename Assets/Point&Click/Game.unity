@@ -1469,6 +1469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteCursor: {fileID: 0}
+  lookOnly: 0
   actions:
   - {fileID: 1009516251}
   distancePosition: 2
@@ -1775,6 +1776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteCursor: {fileID: 21300004, guid: bf938c7161836c84a8904b0098d902db, type: 3}
+  lookOnly: 0
   actions:
   - {fileID: 1324584713}
   - {fileID: 1324584721}
@@ -2054,6 +2056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteCursor: {fileID: 0}
+  lookOnly: 0
   actions:
   - {fileID: 1336367552}
   distancePosition: 1
@@ -2092,6 +2095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteCursor: {fileID: 21300002, guid: bf938c7161836c84a8904b0098d902db, type: 3}
+  lookOnly: 0
   actions:
   - {fileID: 1337142464}
   - {fileID: 1337142467}
@@ -2808,6 +2812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteCursor: {fileID: 21300002, guid: bf938c7161836c84a8904b0098d902db, type: 3}
+  lookOnly: 0
   actions:
   - {fileID: 1533772424}
   - {fileID: 1533772425}
@@ -3222,7 +3227,9 @@ GameObject:
   - component: {fileID: 2078100830}
   - component: {fileID: 2078100829}
   - component: {fileID: 2078100828}
-  m_Layer: 0
+  - component: {fileID: 2078100832}
+  - component: {fileID: 2078100831}
+  m_Layer: 15
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3315,6 +3322,42 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078100826}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2078100831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078100826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05056bc8c15b5804180e4ab79cbd3218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message:
+  - There is nothing special on this box
+  enableDialog: 0
+  yesText: 
+  noText: 
+  yesActions: []
+  noActions: []
+--- !u!114 &2078100832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078100826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd4fb8ee70ef168489fad85ec956b6bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteCursor: {fileID: 21300000, guid: bf938c7161836c84a8904b0098d902db, type: 3}
+  lookOnly: 1
+  actions:
+  - {fileID: 2078100831}
+  distancePosition: 1
 --- !u!1 &2116106934
 GameObject:
   m_ObjectHideFlags: 0
@@ -3416,6 +3459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteCursor: {fileID: 0}
+  lookOnly: 0
   actions:
   - {fileID: 2116106937}
   distancePosition: 2

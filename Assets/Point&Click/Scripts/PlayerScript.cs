@@ -64,7 +64,9 @@ public class PlayerScript : MonoBehaviour
 
                 if (interactable != null)
                 {
-                    MovePlayer(interactable.InteractPosition());
+                    if (!interactable.LookOnly)
+                        MovePlayer(interactable.InteractPosition());
+
                     interactable.Interact(this);
                 }
                 else
