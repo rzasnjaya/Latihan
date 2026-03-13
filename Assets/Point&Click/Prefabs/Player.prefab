@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1600115736899352149}
   - component: {fileID: 1393406946377860381}
   - component: {fileID: 209612100868319310}
+  - component: {fileID: 6959888727728560480}
+  - component: {fileID: 7842979334445016754}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -92,6 +94,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7194b6ff10a801542bf5e8463a2cbbc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactLayer:
+    serializedVersion: 2
+    m_Bits: 49152
+--- !u!114 &6959888727728560480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2403271605991000793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e4286444619446478f55355991d25ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instanceID: Player-1266
+--- !u!54 &7842979334445016754
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2403271605991000793}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &294477583486538761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -163,7 +208,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7447163605589988728, guid: 907fd825e3988774caab4234b943bf44,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5330380735104912335}
   m_SourcePrefab: {fileID: 100100000, guid: 907fd825e3988774caab4234b943bf44, type: 3}
 --- !u!4 &7156098977063558417 stripped
 Transform:
@@ -171,3 +220,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 294477583486538761}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7156098977063977329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7447163605589988728, guid: 907fd825e3988774caab4234b943bf44,
+    type: 3}
+  m_PrefabInstance: {fileID: 294477583486538761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5330380735104912335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7156098977063977329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ceb85826dd0d84baa7c9e8d0596799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 2a4883dd7c8c8bd42bac3e11252e6ffc, type: 3}
+  - {fileID: 8300000, guid: 88dd2afafcbbc2440b344e56e18cc2ae, type: 3}
+  isMusic: 0
