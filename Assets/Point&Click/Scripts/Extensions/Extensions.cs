@@ -22,7 +22,6 @@ public static class Extensions
     {
         for (int i = 0; i < actions.Length; i++)
         {
-            if (actions[i] != null)
             actions[i].Act();
         }
     }

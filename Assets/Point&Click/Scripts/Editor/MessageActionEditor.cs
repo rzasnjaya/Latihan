@@ -6,7 +6,7 @@ using UnityEditor;
 [CustomEditor(typeof(MessageAction))]
 public class MessageActionEditor : Editor
 {
-    SerializedProperty s_messages, s_enableDialog, s_yesText, s_noText,s_chainActions, s_yesActions, s_noActions;
+    SerializedProperty s_messages, s_enableDialog, s_yesText, s_noText, s_yesActions, s_noActions;
 
     private void OnEnable()
     {
@@ -14,7 +14,6 @@ public class MessageActionEditor : Editor
         s_enableDialog = serializedObject.FindProperty("enableDialog");
         s_yesText = serializedObject.FindProperty("yesText");
         s_noText = serializedObject.FindProperty("noText");
-        s_chainActions = serializedObject.FindProperty("chainActions");
         s_yesActions = serializedObject.FindProperty("yesActions");
         s_noActions= serializedObject.FindProperty("noActions");
     }
@@ -32,8 +31,6 @@ public class MessageActionEditor : Editor
         {
             DrawMessagesEntry(s_messages.GetArrayElementAtIndex(i), "Message " + (i+1), i);
         }
-
-        EditorExtensions.DrawActionsArray(s_chainActions, "Chain actions: ");
 
         GUILayout.BeginVertical("box");
 
