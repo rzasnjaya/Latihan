@@ -14,17 +14,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - itemId: 0
-    itemName: Chicken
-    itemDescription: a big size chicken meat
-    itemSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-    allowMultiple: 1
+    itemName: Potrait
+    itemDescription: Potrait of the missing person
+    itemSprite: {fileID: -1046008303, guid: bf938c7161836c84a8904b0098d902db, type: 3}
+    allowMultiple: 0
     amount: 0
   - itemId: 1
     itemName: Key
-    itemDescription: Some key for opening certain lock
-    itemSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-    allowMultiple: 1
+    itemDescription: a key for opening certain lock
+    itemSprite: {fileID: -2085280189, guid: bf938c7161836c84a8904b0098d902db, type: 3}
+    allowMultiple: 0
+    amount: 0
+  - itemId: 2
+    itemName: Money
+    itemDescription: 50 bucks
+    itemSprite: {fileID: -891079566, guid: bf938c7161836c84a8904b0098d902db, type: 3}
+    allowMultiple: 0
+    amount: 0
+  - itemId: 3
+    itemName: Name Card
+    itemDescription: a name card with an address on it
+    itemSprite: {fileID: -743144402, guid: bf938c7161836c84a8904b0098d902db, type: 3}
+    allowMultiple: 0
+    amount: 0
+  - itemId: 4
+    itemName: Lighter
+    itemDescription: a small gas lighter
+    itemSprite: {fileID: 124250209, guid: bf938c7161836c84a8904b0098d902db, type: 3}
+    allowMultiple: 0
     amount: 0
   itemsNames:
-  - Chicken
+  - Potrait
   - Key
+  - Money
+  - Name Card
+  - Lighter
