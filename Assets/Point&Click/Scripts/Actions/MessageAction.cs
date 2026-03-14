@@ -8,10 +8,13 @@ public class MessageAction : Actions
     [SerializeField] List<string> message;
     [SerializeField] bool enableDialog;
     [SerializeField] string yesText, noText;
-    [SerializeField] List<Actions> yesActions, noActions;
+    [SerializeField] List<Actions> chainActions, yesActions, noActions;
 
     public override void Act()
     {
-        DialogSystem.Instance.ShowMessages(message, enableDialog, yesActions, noActions, yesText, noText);
+        if (enableDialog)
+            DialogSystem.Instance.ShowMessages(message, enableDialog, yesActions, noActions, yesText, noText);
+        else
+            DialogSystem.Instance.ShowMessages(message, chainActions);
     }
 }
