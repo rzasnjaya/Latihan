@@ -62,7 +62,16 @@ public class DialogSystem : MonoBehaviour
         StartCoroutine(ShowMultipleMessages(dialog));
     }
 
-    IEnumerator ShowMultipleMessages(bool useDialog)
+    public void ShowMessages(List<string> messages, List<Actions> chainActions = null)
+    {
+        msgId = 0;
+        yesButton.transform.parent.gameObject.SetActive(false);
+        currentMessages = messages;
+        panel.SetActive(true);
+        StartCoroutine(ShowMultipleMessages(false, chainActions));
+    }
+
+    IEnumerator ShowMultipleMessages(bool useDialog, List<Actions> chainActions = null)
     {
         messageText.text = currentMessages[msgId];
 
@@ -77,6 +86,12 @@ public class DialogSystem : MonoBehaviour
 
                 if (useDialog && msgId == currentMessages.Count - 1)
                     yesButton.transform.parent.gameObject.SetActive(true);
+
+                if (!useDialog && msgId == currentMessages.Count)
+                {
+                    if (chainActions != null)
+                        Extensions.RunActions(chainActions.ToArray());
+                }
             }
 
             yield return null;
@@ -92,6 +107,7 @@ public class DialogSystem : MonoBehaviour
 
         for (int i = 0; i < localActions.Count; i++)
         {
+            if(actions[i] != null)
             localActions[i].Act();
         }
     }
